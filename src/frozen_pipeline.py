@@ -15,6 +15,8 @@ def get_backbone_spec(backbone_name, device):
         model = models.resnet50(weights=weights)
         feature_extractor = nn.Sequential(*list(model.children())[:-1])
         output_dim = 2048
+        model_type = "cnn"
+
     elif backbone_name == "convnext_tiny":
         weights = models.ConvNeXt_Tiny_Weights.DEFAULT
         model = models.convnext_tiny(weights=weights)
@@ -24,6 +26,8 @@ def get_backbone_spec(backbone_name, device):
             nn.Flatten(1),
         )
         output_dim = 768
+        model_type = "cnn"
+
     elif backbone_name == "densenet121":
         weights = models.DenseNet121_Weights.DEFAULT
         model = models.densenet121(weights=weights)
@@ -34,19 +38,39 @@ def get_backbone_spec(backbone_name, device):
             nn.Flatten(1),
         )
         output_dim = 1024
+        model_type = "cnn"
+
+    elif backbone_name == "vit_b_16":
+        weights = models.ViT_B_16_Weights.DEFAULT
+        model = models.vit_b_16(weights=weights)
+        feature_extractor = model
+        output_dim = 768
+        model_type = "vit"
+
     else:
         raise ValueError(f"Unsupported backbone: {backbone_name}")
 
     preprocess = weights.transforms()
     feature_extractor = feature_extractor.to(device)
     feature_extractor.eval()
+
     return {
         "name": backbone_name,
         "weights": weights,
         "preprocess": preprocess,
         "model": feature_extractor,
         "output_dim": output_dim,
+        "model_type": model_type,
     }
+
+def extract_vit_features(vit_model, x):
+    n = x.shape[0]
+    x = vit_model._process_input(x)
+    cls_token = vit_model.class_token.expand(n, -1, -1)
+    x = torch.cat([cls_token, x], dim=1)
+    x = vit_model.encoder(x)
+    x = x[:, 0]
+    return x
 
 def image_cache_key(image_path):
     key = str(Path(image_path).resolve())
@@ -59,7 +83,12 @@ def embedding_cache_path(backbone_name, image_path, cache_dir):
 def compute_embedding(image_path, backbone_spec, device):
     image = Image.open(image_path).convert("RGB")
     x = backbone_spec["preprocess"](image).unsqueeze(0).to(device)
-    feat = backbone_spec["model"](x)
+
+    if backbone_spec["model_type"] == "vit":
+        feat = extract_vit_features(backbone_spec["model"], x)
+    else:
+        feat = backbone_spec["model"](x)
+
     return feat.squeeze().detach().cpu().numpy().astype(np.float32)
 
 def load_or_compute_embedding(image_path, backbone_name, backbone_spec_cache, cache_dir, device):
@@ -72,7 +101,7 @@ def load_or_compute_embedding(image_path, backbone_name, backbone_spec_cache, ca
     if backbone_name not in backbone_spec_cache:
         backbone_spec_cache[backbone_name] = get_backbone_spec(backbone_name, device)
 
-    vector = compute_embedding(image_path, backbone_spec_cache[backbone_name])
+    vector = compute_embedding(image_path, backbone_spec_cache[backbone_name], device)
     np.save(cache_path, vector)
     return vector
 

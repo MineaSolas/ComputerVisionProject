@@ -1,18 +1,6 @@
 import glob
 from pathlib import Path
-
 import pandas as pd
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-
-
-def make_pipeline(estimator):
-    return Pipeline([
-        ("imputer", SimpleImputer(strategy="mean")),
-        ("scaler",  StandardScaler()),
-        ("model",   estimator),
-    ])
 
 def find_photo(folder, pic_num):
     folder = Path(folder)
