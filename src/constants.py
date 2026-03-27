@@ -19,6 +19,8 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 RANDOM_STATE = 42
 OUTER_SPLITS = 5
 INNER_SPLITS = 5
+BATCH_SIZE = 8
+MAX_EPOCHS = 20
 
 CSV_PATH = Path("experiments/experiments_1_36.csv")
 TOP_FOLDER = Path("photos/top_view_images")
@@ -97,4 +99,24 @@ REGRESSION_MODEL_CONFIGS = {
             "model__learning_rate_init": [1e-3, 3e-4],
         },
     )
+}
+
+TRAINING_CONFIGS = {
+    "last_stage": [
+        {"head_lr": 1e-3, "backbone_lr": 1e-5, "weight_decay": 1e-4},
+        # {"head_lr": 3e-4, "backbone_lr": 3e-5, "weight_decay": 1e-4},
+    ],
+    # "bias": [
+    #     {"head_lr": 1e-3, "backbone_lr": 3e-4, "weight_decay": 1e-4},
+    #     {"head_lr": 3e-4, "backbone_lr": 1e-4, "weight_decay": 1e-4},
+    # ],
+    # "adapter": [
+    #     {"head_lr": 1e-3, "adapter_lr": 1e-3, "weight_decay": 1e-4, "adapter_dim": 32},
+    #     {"head_lr": 3e-4, "adapter_lr": 1e-3, "weight_decay": 1e-4, "adapter_dim": 64},
+    # ],
+}
+
+HEAD_CONFIGS = {
+    # "linear": {},
+    "mlp": {"hidden_dim": 64, "dropout": 0.2},
 }

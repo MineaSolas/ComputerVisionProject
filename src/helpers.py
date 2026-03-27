@@ -1,6 +1,11 @@
 import glob
+import random
 from pathlib import Path
+
+import numpy as np
 import pandas as pd
+import torch
+
 
 def find_photo(folder, pic_num):
     folder = Path(folder)
@@ -31,3 +36,8 @@ def load_image_paths(data_path, top_folder, side_folder):
 
     image_paths = sorted({Path(p) for p in samples["top_path"].tolist() + samples["side_path"].tolist()})
     return samples.reset_index(drop=True), image_paths
+def seed_everything(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
