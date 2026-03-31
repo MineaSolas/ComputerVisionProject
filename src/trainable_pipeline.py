@@ -2,6 +2,7 @@ import copy
 
 import numpy as np
 import torch
+import cv2
 from PIL import Image
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import GroupKFold
@@ -9,6 +10,7 @@ from torch import nn
 from torchvision import models
 import torch.nn.functional as F
 from tqdm import trange, tqdm
+from pathlib import Path
 
 from src.helpers import seed_everything
 
@@ -195,7 +197,7 @@ def cleanup_hooks(hook_handles):
     for handle in hook_handles:
         handle.remove()
 
-def load_pair_batch(batch_df, preprocess, device):
+def load_pair_batch(batch_df, preprocess, device, side_mask_path=None, top_mask_path1=None, top_mask_path2=None):
     top_tensors = []
     side_tensors = []
     targets = []
@@ -203,6 +205,36 @@ def load_pair_batch(batch_df, preprocess, device):
     for _, row in batch_df.iterrows():
         top_img = Image.open(row["top_path"]).convert("RGB")
         side_img = Image.open(row["side_path"]).convert("RGB")
+
+        # Apply top mask if provided
+        top_path = Path(row["top_path"])
+        top_mask_path = None
+        if top_mask_path1 and top_mask_path2:
+            # Shift in camera angle between image "P2050047" and "P2060048"
+            if top_path.name <= "P2050047.JPG":
+                top_mask_path = top_mask_path1
+            else:
+                top_mask_path = top_mask_path2
+
+        if top_mask_path:
+            mask = cv2.imread(str(top_mask_path), cv2.IMREAD_GRAYSCALE)
+            if mask is not None:
+                if mask.shape[:2] != (top_img.height, top_img.width):
+                    mask = cv2.resize(mask, (top_img.width, top_img.height), interpolation=cv2.INTER_NEAREST)
+                top_img_np = np.array(top_img)
+                top_img_np[mask == 0] = 0
+                top_img = Image.fromarray(top_img_np)
+
+        # Apply side mask if provided
+        if side_mask_path:
+            mask = cv2.imread(str(side_mask_path), cv2.IMREAD_GRAYSCALE)
+            if mask is not None:
+                if mask.shape[:2] != (side_img.height, side_img.width):
+                    mask = cv2.resize(mask, (side_img.width, side_img.height), interpolation=cv2.INTER_NEAREST)
+                side_img_np = np.array(side_img)
+                side_img_np[mask == 0] = 0
+                side_img = Image.fromarray(side_img_np)
+
         top_tensors.append(preprocess(top_img))
         side_tensors.append(preprocess(side_img))
         targets.append(float(row["volume"]))
@@ -212,7 +244,8 @@ def load_pair_batch(batch_df, preprocess, device):
     y_batch = torch.tensor(targets, dtype=torch.float32, device=device)
     return top_batch, side_batch, y_batch
 
-def iterate_batches(samples_df, indices, preprocess, batch_size, shuffle, seed, device):
+def iterate_batches(samples_df, indices, preprocess, batch_size, shuffle, seed, device,
+                    side_mask_path=None, top_mask_path1=None, top_mask_path2=None):
     idx = np.array(indices, dtype=int).copy()
     if shuffle:
         rng = np.random.default_rng(seed)
@@ -221,7 +254,7 @@ def iterate_batches(samples_df, indices, preprocess, batch_size, shuffle, seed, 
     for start in range(0, len(idx), batch_size):
         batch_idx = idx[start:start + batch_size]
         batch_df = samples_df.iloc[batch_idx]
-        yield load_pair_batch(batch_df, preprocess, device)
+        yield load_pair_batch(batch_df, preprocess, device, side_mask_path, top_mask_path1, top_mask_path2)
 
 def make_group_train_val_split(indices, groups, seed):
     unique_groups = np.unique(groups[indices])
@@ -243,14 +276,16 @@ def make_group_train_val_split(indices, groups, seed):
 
     return train_idx, val_idx
 
-def predict_indices(samples_df, indices, preprocess, backbone_name, backbone, head, fusion_name, batch_size, device):
+def predict_indices(samples_df, indices, preprocess, backbone_name, backbone, head, fusion_name, batch_size, device,
+                    side_mask_path=None, top_mask_path1=None, top_mask_path2=None):
     backbone.eval()
     head.eval()
     preds = []
     ys = []
 
     with torch.no_grad():
-        for top_batch, side_batch, y_batch in iterate_batches(samples_df, indices, preprocess, batch_size, shuffle=False, seed=0, device=device):
+        for top_batch, side_batch, y_batch in iterate_batches(samples_df, indices, preprocess, batch_size, shuffle=False, seed=0, device=device,
+                                                                side_mask_path=side_mask_path, top_mask_path1=top_mask_path1, top_mask_path2=top_mask_path2):
             top_feat = backbone_forward(backbone_name, backbone, top_batch)
             side_feat = backbone_forward(backbone_name, backbone, side_batch)
             fused = fuse_features(top_feat, side_feat, fusion_name)
@@ -262,7 +297,8 @@ def predict_indices(samples_df, indices, preprocess, backbone_name, backbone, he
     y_pred = np.concatenate(preds)
     return y_true, y_pred
 
-def fit_model(samples_df, train_idx, val_idx, backbone_name, fusion_name, head_name, mode_name, cfg, head_cfg, batch_size, max_epochs, seed, device):
+def fit_model(samples_df, train_idx, val_idx, backbone_name, fusion_name, head_name, mode_name, cfg, head_cfg, batch_size, max_epochs, seed, device,
+              side_mask_path=None, top_mask_path1=None, top_mask_path2=None):
     PATIENCE = 6
     seed_everything(seed)
     backbone, preprocess, feature_dim = get_backbone_and_preprocess(backbone_name, device)
@@ -297,7 +333,8 @@ def fit_model(samples_df, train_idx, val_idx, backbone_name, fusion_name, head_n
         head.train()
         batch_losses = []
 
-        for top_batch, side_batch, y_batch in iterate_batches(samples_df, train_idx, preprocess, batch_size, shuffle=True, seed=seed + epoch, device=device):
+        for top_batch, side_batch, y_batch in iterate_batches(samples_df, train_idx, preprocess, batch_size, shuffle=True, seed=seed + epoch, device=device,
+                                                                side_mask_path=side_mask_path, top_mask_path1=top_mask_path1, top_mask_path2=top_mask_path2):
             optimizer.zero_grad()
             top_feat = backbone_forward(backbone_name, backbone, top_batch)
             side_feat = backbone_forward(backbone_name, backbone, side_batch)
@@ -308,7 +345,8 @@ def fit_model(samples_df, train_idx, val_idx, backbone_name, fusion_name, head_n
             optimizer.step()
             batch_losses.append(loss.item())
 
-        val_true, val_pred = predict_indices(samples_df, val_idx, preprocess, backbone_name, backbone, head, fusion_name, batch_size, device)
+        val_true, val_pred = predict_indices(samples_df, val_idx, preprocess, backbone_name, backbone, head, fusion_name, batch_size, device,
+                                             side_mask_path=side_mask_path, top_mask_path1=top_mask_path1, top_mask_path2=top_mask_path2)
         val_mae = mean_absolute_error(val_true, val_pred)
 
         if val_mae < best_val_mae:
