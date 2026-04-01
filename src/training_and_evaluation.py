@@ -128,7 +128,7 @@ def make_oof_plot(y_true, y_pred, title_prefix=""):
     axes[0].plot([0, 6], [0, 6], "--")
     axes[0].set_xlabel("True volume")
     axes[0].set_ylabel("Predicted volume")
-    axes[0].set_title(f"{title_prefix} | Out-of-fold True vs Predicted")
+    axes[0].set_title(f"{title_prefix} | True vs Predicted")
     axes[0].set_xlim(0, 6)
     axes[0].set_ylim(0, pred_limit)
 

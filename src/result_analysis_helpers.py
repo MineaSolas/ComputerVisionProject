@@ -1,3 +1,25 @@
+import pandas as pd
+from IPython.display import display
+from src.constants import *
+
+# True = glob pattern must match exactly one file
+# False = the newest matching file is used
+REQUIRE_UNIQUE_MATCH = False
+
+SUMMARY_METRIC_COLUMNS = [
+    "cv_mae_mean",
+    "cv_mae_std",
+    "cv_mse_mean",
+    "cv_mse_std",
+    "cv_rmse_mean",
+    "cv_rmse_std",
+    "cv_r2_mean",
+    "cv_r2_std",
+]
+
+LOWER_IS_BETTER_METRICS = {"cv_mae_mean", "cv_mae_std", "cv_mse_mean", "cv_mse_std", "cv_rmse_mean", "cv_rmse_std"}
+HIGHER_IS_BETTER_METRICS = {"cv_r2_mean", "cv_r2_std"}
+
 def resolve_result_file(file_spec, results_dir=OUTPUT_DIR, require_unique_match=REQUIRE_UNIQUE_MATCH):
     file_path = Path(file_spec)
 
@@ -22,24 +44,6 @@ def resolve_result_file(file_spec, results_dir=OUTPUT_DIR, require_unique_match=
 
     return candidates[0]
 
-def infer_protocol_from_name(path):
-    name = path.name.lower()
-    if "LOVO" in name:
-        return "LOVO"
-    if "performance" in name:
-        return "GroupKFold"
-    return "unknown"
-
-def infer_view_from_name(path):
-    name = path.name.lower()
-    if "only_top" in name:
-        return "top only"
-    if "only_side" in name:
-        return "side only"
-    if "top_side" in name:
-        return "top+side"
-    return "unknown"
-
 def load_result_csv(file_spec, experiment_name=None, results_dir=OUTPUT_DIR):
     path = Path(file_spec)
 
@@ -57,22 +61,6 @@ def load_result_csv(file_spec, experiment_name=None, results_dir=OUTPUT_DIR):
         df["experiment"] = experiment_name
 
     return df
-
-
-def load_all_results(result_file_specs=None, results_dir=OUTPUT_DIR):
-    if result_file_specs is None:
-        result_file_specs = RESULT_FILE_SPECS
-
-    frames = []
-    resolved = {}
-
-    for experiment_name, file_spec in result_file_specs.items():
-        path = resolve_result_file(file_spec, results_dir=results_dir)
-        resolved[experiment_name] = path
-        frames.append(load_result_csv(path, experiment_name=experiment_name, results_dir=results_dir))
-
-    combined = pd.concat(frames, ignore_index=True)
-    return combined, resolved
 
 def metric_sort_direction(metric):
     if metric in LOWER_IS_BETTER_METRICS:
@@ -115,11 +103,7 @@ def filter_results(
     out = df.copy()
 
     if experiments is not None:
-        out = out[out["experiment_name"].isin(experiments)]
-    if protocols is not None:
-        out = out[out["protocol"].isin(protocols)]
-    if views is not None:
-        out = out[out["view"].isin(views)]
+        out = out[out["experiment"].isin(experiments)]
     if backbones is not None:
         out = out[out["backbone"].isin(backbones)]
     if fusions is not None:
@@ -149,16 +133,6 @@ def show_top(df, n=10, metric="cv_mae_mean", columns=None):
     available = [c for c in columns if c in ranked.columns]
     display(ranked[available])
 
-def add_within_experiment_rank(df, metric="cv_mae_mean"):
-    out = df.copy()
-    ascending = metric_sort_direction(metric)
-    out[f"{metric}_rank_in_experiment"] = (
-        out.groupby("experiment_name")[metric]
-        .rank(method="dense", ascending=ascending)
-        .astype(int)
-    )
-    return out
-
 def summarize_by(df, group_col, metric="cv_mae_mean", top_k=10):
     top_df = sort_results(df, metric=metric).head(top_k)
     top_counts = top_df[group_col].value_counts()
@@ -166,7 +140,6 @@ def summarize_by(df, group_col, metric="cv_mae_mean", top_k=10):
     summary = (
         df.groupby(group_col)
         .agg(
-            n_configs=("config", "count"),
             best_mae=("cv_mae_mean", "min"),
             mean_mae=("cv_mae_mean", "mean"),
             median_mae=("cv_mae_mean", "median"),
@@ -181,7 +154,3 @@ def summarize_by(df, group_col, metric="cv_mae_mean", top_k=10):
     summary[f"top_{top_k}_count"] = summary[group_col].map(top_counts).fillna(0).astype(int)
     summary = summary.sort_values(["best_mae", "mean_mae", "best_r2"], ascending=[True, True, False]).reset_index(drop=True)
     return summary
-
-def best_per_experiment(df, metric="cv_mae_mean"):
-    ranked = sort_results(df, metric=metric)
-    return ranked.groupby("experiment_name", as_index=False).first()
