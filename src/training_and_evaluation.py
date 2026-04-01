@@ -122,18 +122,18 @@ def make_oof_plot(y_true, y_pred, title_prefix=""):
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 
     x_max = np.max(y_pred[valid])
-    pred_limit = max(100, int(x_max * 1.1))
+    pred_limit = max(6, int(x_max * 1.1))
 
     axes[0].scatter(y_true[valid], y_pred[valid], alpha=0.8)
-    axes[0].plot([0, 100], [0, 100], "--")
+    axes[0].plot([0, 6], [0, 6], "--")
     axes[0].set_xlabel("True volume")
     axes[0].set_ylabel("Predicted volume")
     axes[0].set_title(f"{title_prefix} | Out-of-fold True vs Predicted")
-    axes[0].set_xlim(0, 100)
+    axes[0].set_xlim(0, 6)
     axes[0].set_ylim(0, pred_limit)
 
-    counts, _, _ = axes[1].hist(y_pred[valid], bins=(round(0.2 * pred_limit)), range=(0, pred_limit))
-    hist_height = max(36, int(np.max(counts) * 1.1))
+    counts, _, _ = axes[1].hist(y_pred[valid], bins=(round(2 * pred_limit)), range=(0, pred_limit))
+    hist_height = max(80, int(np.max(counts) * 1.1))
     axes[1].set_xlabel("Predicted volume")
     axes[1].set_ylabel("Count")
     axes[1].set_title(f"{title_prefix} | Prediction Distribution")

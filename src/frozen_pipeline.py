@@ -155,3 +155,28 @@ def build_feature_matrix(samples, backbone_name, fusion_name, cache_dir, device,
     y = samples["volume"].to_numpy(dtype=float)
     groups = samples["exp_id"].to_numpy()
     return x, y, groups
+
+def build_single_view_feature_matrix(samples, backbone_name, image_path_col, cache_dir,
+    device, mask_path=None, mask_path1=None, mask_path2=None):
+
+    backbone_spec_cache = {}
+    vectors = []
+
+    for _, row in tqdm(samples.iterrows(), total=len(samples), desc=f"{backbone_name} | {image_path_col}"):
+        current_mask_path = mask_path
+
+        if image_path_col == "top_path" and mask_path1 and mask_path2:
+            top_path = Path(row[image_path_col])
+            # Shift in camera angle between image "P2050047" and "P2060048"
+            if top_path.name <= "P2050047.JPG":
+                current_mask_path = mask_path1
+            else:
+                current_mask_path = mask_path2
+
+        vec = load_or_compute_embedding(row[image_path_col], backbone_name, backbone_spec_cache, cache_dir, device, mask_path=current_mask_path)
+        vectors.append(vec)
+
+    x = np.vstack(vectors)
+    y = samples["volume"].to_numpy(dtype=float)
+    groups = samples["exp_id"].to_numpy()
+    return x, y, groups
