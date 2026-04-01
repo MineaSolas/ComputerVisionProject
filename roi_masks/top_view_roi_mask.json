@@ -1,1 +1,73 @@
-[{"id":37,"annotations":[{"id":30,"completed_by":1,"result":[{"original_width":4000,"original_height":3000,"image_rotation":0,"value":{"points":[[0.1597444089456869,62.40681576144836],[0.3194888178913738,23.003194888178914],[99.68051118210862,34.71778487752928],[99.52076677316293,70.28753993610223]],"closed":true,"polygonlabels":["ROI"]},"id":"sReUWkSgH3","from_name":"label","to_name":"image","type":"polygonlabels","origin":"manual"}],"was_cancelled":false,"ground_truth":false,"created_at":"2026-03-29T08:52:46.066622Z","updated_at":"2026-03-29T08:52:46.066622Z","draft_created_at":"2026-03-29T08:51:32.039374Z","lead_time":117.453,"prediction":{},"result_count":1,"unique_id":"33467920-c933-4acd-a6f2-1b911243b310","import_id":null,"last_action":null,"bulk_created":false,"task":37,"project":2,"updated_by":1,"parent_prediction":null,"parent_annotation":null,"last_created_by":null}],"file_upload":"05ed7010-P2020002.JPG","drafts":[],"predictions":[],"data":{"image":"\/data\/upload\/2\/05ed7010-P2020002.JPG"},"meta":{},"created_at":"2026-03-29T08:50:24.573217Z","updated_at":"2026-03-29T08:52:46.248476Z","allow_skip":true,"inner_id":1,"total_annotations":1,"cancelled_annotations":0,"total_predictions":0,"comment_count":0,"unresolved_comment_count":0,"last_comment_updated_at":null,"project":2,"updated_by":1,"comment_authors":[]},{"id":38,"annotations":[{"id":31,"completed_by":1,"result":[{"original_width":4000,"original_height":3000,"image_rotation":0,"value":{"points":[[0.1597444089456869,27.47603833865815],[99.52076677316293,20.873269435569757],[99.68051118210862,60.70287539936102],[0,65.38871139510117]],"closed":true,"polygonlabels":["ROI"]},"id":"PT8qkHagae","from_name":"label","to_name":"image","type":"polygonlabels","origin":"manual"}],"was_cancelled":false,"ground_truth":false,"created_at":"2026-03-29T08:53:37.414238Z","updated_at":"2026-03-29T08:53:37.414238Z","draft_created_at":"2026-03-29T08:53:04.310964Z","lead_time":44.831,"prediction":{},"result_count":1,"unique_id":"49a40b39-5994-4014-bb50-9170ec85da4e","import_id":null,"last_action":null,"bulk_created":false,"task":38,"project":2,"updated_by":1,"parent_prediction":null,"parent_annotation":null,"last_created_by":null}],"file_upload":"7da11262-P2060048.JPG","drafts":[],"predictions":[],"data":{"image":"\/data\/upload\/2\/7da11262-P2060048.JPG"},"meta":{},"created_at":"2026-03-29T08:50:24.573217Z","updated_at":"2026-03-29T08:53:37.591366Z","allow_skip":true,"inner_id":2,"total_annotations":1,"cancelled_annotations":0,"total_predictions":0,"comment_count":0,"unresolved_comment_count":0,"last_comment_updated_at":null,"project":2,"updated_by":1,"comment_authors":[]},{"id":39,"annotations":[{"id":32,"completed_by":1,"result":[{"original_width":4000,"original_height":3000,"image_rotation":0,"value":{"points":[[5.7507987220447285,77.31629392971246],[6.869009584664537,35.356762513312034],[93.45047923322683,37.06070287539936],[93.76996805111821,77.74227902023429]],"closed":true,"polygonlabels":["ROI"]},"id":"zTpCtOolwd","from_name":"label","to_name":"image","type":"polygonlabels","origin":"manual"}],"was_cancelled":false,"ground_truth":false,"created_at":"2026-03-29T13:25:43.509092Z","updated_at":"2026-03-29T13:25:43.509092Z","draft_created_at":"2026-03-29T13:25:25.810246Z","lead_time":32.326,"prediction":{},"result_count":1,"unique_id":"15bd6048-ad40-4d42-83bc-5d5b6bb5a29e","import_id":null,"last_action":null,"bulk_created":false,"task":39,"project":2,"updated_by":1,"parent_prediction":null,"parent_annotation":null,"last_created_by":null}],"file_upload":"ea4f61fd-P2020001.JPG","drafts":[],"predictions":[],"data":{"image":"\/data\/upload\/2\/ea4f61fd-P2020001.JPG"},"meta":{},"created_at":"2026-03-29T13:25:01.983103Z","updated_at":"2026-03-29T13:25:43.696188Z","allow_skip":true,"inner_id":3,"total_annotations":1,"cancelled_annotations":0,"total_predictions":0,"comment_count":0,"unresolved_comment_count":0,"last_comment_updated_at":null,"project":2,"updated_by":1,"comment_authors":[]},{"id":40,"annotations":[{"id":34,"completed_by":1,"result":[{"original_width":4000,"original_height":3000,"image_rotation":0,"value":{"points":[[0,16.561514195583594],[99.72397476340693,24.605678233438486],[99.84227129337539,73.50157728706627],[0.11829652996845426,61.82965299684543]],"closed":true,"polygonlabels":["ROI"]},"id":"z1rGYnvGBo","from_name":"label","to_name":"image","type":"polygonlabels","origin":"manual"}],"was_cancelled":false,"ground_truth":false,"created_at":"2026-03-31T16:50:05.201479Z","updated_at":"2026-03-31T16:50:05.201479Z","draft_created_at":"2026-03-31T16:49:32.152892Z","lead_time":48.471,"prediction":{},"result_count":1,"unique_id":"5e1d73da-e903-4765-8a72-9b012347de79","import_id":null,"last_action":null,"bulk_created":false,"task":40,"project":2,"updated_by":1,"parent_prediction":null,"parent_annotation":null,"last_created_by":null}],"file_upload":"81612630-P2020002.JPG","drafts":[],"predictions":[],"data":{"image":"\/data\/upload\/2\/81612630-P2020002.JPG"},"meta":{},"created_at":"2026-03-31T16:44:15.453694Z","updated_at":"2026-03-31T16:50:05.358238Z","allow_skip":true,"inner_id":4,"total_annotations":1,"cancelled_annotations":0,"total_predictions":0,"comment_count":0,"unresolved_comment_count":0,"last_comment_updated_at":null,"project":2,"updated_by":1,"comment_authors":[]},{"id":41,"annotations":[{"id":35,"completed_by":1,"result":[{"original_width":4000,"original_height":3000,"image_rotation":0,"value":{"points":[[0,65.93059936908517],[0,27.129337539432175],[100,21.135646687697164],[99.84227129337539,60.252365930599375]],"closed":true,"polygonlabels":["ROI"]},"id":"dRaOwQbMP_","from_name":"label","to_name":"image","type":"polygonlabels","origin":"manual"}],"was_cancelled":false,"ground_truth":false,"created_at":"2026-03-31T16:51:47.065917Z","updated_at":"2026-03-31T16:51:47.065917Z","draft_created_at":"2026-03-31T16:50:22.716698Z","lead_time":100.973,"prediction":{},"result_count":1,"unique_id":"6ce8c6ef-b765-446e-9009-41333a1db54f","import_id":null,"last_action":null,"bulk_created":false,"task":41,"project":2,"updated_by":1,"parent_prediction":null,"parent_annotation":null,"last_created_by":null}],"file_upload":"321313d4-P2060048.JPG","drafts":[],"predictions":[],"data":{"image":"\/data\/upload\/2\/321313d4-P2060048.JPG"},"meta":{},"created_at":"2026-03-31T16:44:15.453694Z","updated_at":"2026-03-31T16:51:47.236629Z","allow_skip":true,"inner_id":5,"total_annotations":1,"cancelled_annotations":0,"total_predictions":0,"comment_count":0,"unresolved_comment_count":0,"last_comment_updated_at":null,"project":2,"updated_by":1,"comment_authors":[]},{"id":42,"annotations":[{"id":36,"completed_by":1,"result":[{"original_width":4000,"original_height":3000,"image_rotation":0,"value":{"points":[[5.796529968454259,78.0757097791798],[6.624605678233437,35.01577287066246],[93.57255520504731,36.43533123028392],[94.16403785488959,77.7602523659306]],"closed":true,"polygonlabels":["ROI"]},"id":"h3dFFGcdV9","from_name":"label","to_name":"image","type":"polygonlabels","origin":"manual"}],"was_cancelled":false,"ground_truth":false,"created_at":"2026-03-31T16:52:58.592697Z","updated_at":"2026-03-31T16:52:58.592697Z","draft_created_at":"2026-03-31T16:52:17.261127Z","lead_time":70.563,"prediction":{},"result_count":1,"unique_id":"375dbfc5-3acf-4300-bd21-6a03726031ba","import_id":null,"last_action":null,"bulk_created":false,"task":42,"project":2,"updated_by":1,"parent_prediction":null,"parent_annotation":null,"last_created_by":null}],"file_upload":"7901cf0f-P2020001.JPG","drafts":[],"predictions":[],"data":{"image":"\/data\/upload\/2\/7901cf0f-P2020001.JPG"},"meta":{},"created_at":"2026-03-31T16:44:15.453694Z","updated_at":"2026-03-31T16:52:58.874055Z","allow_skip":true,"inner_id":6,"total_annotations":1,"cancelled_annotations":0,"total_predictions":0,"comment_count":0,"unresolved_comment_count":0,"last_comment_updated_at":null,"project":2,"updated_by":1,"comment_authors":[]}]
+[{
+  "id": 40,
+  "data": {
+    "image": "/data/upload/2/81612630-P2020002.JPG"
+  },
+  "annotations": [
+    {
+      "id": 34,
+      "result": [
+        {
+          "original_width": 4000,
+          "original_height": 3000,
+          "image_rotation": 0,
+          "value": {
+            "points": [
+              [
+                0,
+                16.561514195583594
+              ],
+              [
+                99.72397476340693,
+                24.605678233438486
+              ],
+              [
+                99.84227129337539,
+                73.50157728706627
+              ],
+              [
+                0.11829652996845426,
+                61.82965299684543
+              ]
+            ],
+            "closed": true,
+            "polygonlabels": [
+              "ROI"
+            ]
+          },
+          "id": "z1rGYnvGBo",
+          "from_name": "label",
+          "to_name": "image",
+          "type": "polygonlabels",
+          "origin": "manual"
+        }
+      ],
+      "created_username": " skrafft@tudelft.nl, 1",
+      "created_ago": "18 hours, 26 minutes",
+      "completed_by": {
+        "id": 1,
+        "first_name": "",
+        "last_name": "",
+        "avatar": null,
+        "email": "skrafft@tudelft.nl",
+        "initials": "sk"
+      },
+      "was_cancelled": false,
+      "ground_truth": false,
+      "created_at": "2026-03-31T16:50:05.201479Z",
+      "updated_at": "2026-03-31T16:50:05.201479Z",
+      "draft_created_at": "2026-03-31T16:49:32.152892Z",
+      "lead_time": 48.471,
+      "import_id": null,
+      "last_action": null,
+      "bulk_created": false,
+      "task": 40,
+      "project": 2,
+      "updated_by": 1,
+      "parent_prediction": null,
+      "parent_annotation": null,
+      "last_created_by": null
+    }
+  ],
+  "predictions": []
+}]
