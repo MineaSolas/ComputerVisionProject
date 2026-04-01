@@ -113,18 +113,33 @@ def compute_embedding(image_path, backbone_spec, device, mask_path=None):
 
     return feat.squeeze().detach().cpu().numpy().astype(np.float32)
 
-def load_or_compute_embedding(image_path, backbone_name, backbone_spec_cache, cache_dir, device, mask_path=None):
+def load_or_compute_embedding(image_path, backbone_name, backbone_spec_cache, cache_dir, device, mask_path=None, embedding_memory_cache=None):
+    key = image_cache_key(image_path, mask_path)
+    cache_key = f"{backbone_name}_{key}"
+
+    if embedding_memory_cache is not None and cache_key in embedding_memory_cache:
+        return embedding_memory_cache[cache_key]
+
     cache_path = embedding_cache_path(backbone_name, image_path, cache_dir=cache_dir, mask_path=mask_path)
-    cache_path.parent.mkdir(parents=True, exist_ok=True)
 
     if cache_path.exists():
-        return np.load(cache_path)
+        vector = np.load(cache_path)
+    else:
+        if backbone_name not in backbone_spec_cache:
+            backbone_spec_cache[backbone_name] = get_backbone_spec(backbone_name, device)
 
-    if backbone_name not in backbone_spec_cache:
-        backbone_spec_cache[backbone_name] = get_backbone_spec(backbone_name, device)
+        vector = compute_embedding(
+            image_path,
+            backbone_spec_cache[backbone_name],
+            device,
+            mask_path=mask_path,
+        )
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        np.save(cache_path, vector)
 
-    vector = compute_embedding(image_path, backbone_spec_cache[backbone_name], device, mask_path=mask_path)
-    np.save(cache_path, vector)
+    if embedding_memory_cache is not None:
+        embedding_memory_cache[cache_key] = vector
+
     return vector
 
 def fuse_pair(top_vec, side_vec, fusion_name):
@@ -154,18 +169,24 @@ def build_feature_matrix(
     device,
     side_mask_paths=None,
     top_mask_paths=None,
+    embedding_memory_cache=None
 ):
     backbone_spec_cache = {}
     fused_vectors = []
     resolved_side_mask_paths = _normalize_mask_paths(side_mask_paths)
     resolved_top_mask_paths = _normalize_mask_paths(top_mask_paths)
 
+    if embedding_memory_cache is None:
+        embedding_memory_cache = {}
+
     for _, row in tqdm(samples.iterrows(), total=len(samples), desc=f"{backbone_name} + {fusion_name}"):
         top_mask_path = resolve_mask_path(row["top_path"], resolved_top_mask_paths)
         side_mask_path_resolved = resolve_mask_path(row["side_path"], resolved_side_mask_paths)
 
-        top_vec = load_or_compute_embedding(row["top_path"], backbone_name, backbone_spec_cache, cache_dir, device, mask_path=top_mask_path)
-        side_vec = load_or_compute_embedding(row["side_path"], backbone_name, backbone_spec_cache, cache_dir, device, mask_path=side_mask_path_resolved)
+        top_vec = load_or_compute_embedding(row["top_path"], backbone_name, backbone_spec_cache, cache_dir, device,
+                                            mask_path=top_mask_path, embedding_memory_cache=embedding_memory_cache)
+        side_vec = load_or_compute_embedding(row["side_path"], backbone_name, backbone_spec_cache, cache_dir, device,
+                                             mask_path=side_mask_path_resolved, embedding_memory_cache=embedding_memory_cache)
         fused_vectors.append(fuse_pair(top_vec, side_vec, fusion_name))
 
     x = np.vstack(fused_vectors)

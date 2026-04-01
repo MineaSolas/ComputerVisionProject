@@ -23,7 +23,7 @@ BATCH_SIZE = 16
 MAX_EPOCHS = 20
 PATIENCE = 3
 
-CSV_PATH = Path("experiments/experiments_1_110_cleaned.csv")
+CSV_PATH = Path("experiments/experiments_1_110.csv")
 TOP_FOLDER = Path("photos/top_view_images")
 SIDE_FOLDER = Path("photos/side_view_images")
 SIDE_ROI_MASKS = [
@@ -83,21 +83,26 @@ REGRESSION_MODEL_CONFIGS = {
     "elasticnet": (
         make_pipeline(ElasticNet(max_iter=20000)),
         {
-            "model__alpha":    [0.0001, 0.001, 0.01, 0.1, 1.0],
-            "model__l1_ratio": [0.1, 0.2, 0.5, 0.8, 0.9],
+            "model__alpha":    [0.001, 0.01, 0.1, 1.0],
+            "model__l1_ratio": [0.1, 0.2, 0.5, 0.8],
         },
     ),
 
     "random_forest": (
         Pipeline([
             ("imputer", SimpleImputer(strategy="mean")),
-            ("model",   RandomForestRegressor(random_state=RANDOM_STATE, n_jobs=1)),
+            ("model",   RandomForestRegressor(
+                random_state=RANDOM_STATE,
+                n_jobs=1,
+                n_estimators=200,
+                max_depth=10,
+            )),
         ]),
         {
-            "model__n_estimators":    [100, 300, 500],
+            # "model__n_estimators":    [100, 300, 500],
             # "model__max_depth":       [None, 5, 10]   # Seemed to always select None anyway
-            "model__min_samples_leaf": [1, 2, 4],
-            "model__max_features":    [0.3, 0.5, 1.0]
+            "model__min_samples_leaf": [2, 4],
+            "model__max_features":    [0.3, 0.5]
         },
     ),
 
@@ -105,15 +110,15 @@ REGRESSION_MODEL_CONFIGS = {
         make_pipeline(
             MLPRegressor(
                 random_state=RANDOM_STATE,
-                hidden_layer_sizes=(64,),
+                # hidden_layer_sizes=(64,),
                 max_iter=2000,
                 early_stopping=True,
                 validation_fraction=0.15,
             )
         ),
         {
-            # "model__hidden_layer_sizes": [(64,), (128,), (64, 32)],
-            "model__alpha": [1e-4, 1e-3],
+            "model__hidden_layer_sizes": [(64,), (128,), (64, 32)],
+            "model__alpha": [1e-4, 1e-3, 1e-2],
             "model__learning_rate_init": [1e-3, 3e-4],
         },
     )
