@@ -109,7 +109,7 @@ def summarise_nested_results(nested_results, backbone_name, fusion_name):
             "cv_mae_mean": np.mean([f["MAE"] for f in folds]),
             "cv_mae_std": np.std([f["MAE"] for f in folds]),
             "cv_mse_mean": np.mean([f["MSE"] for f in folds]),
-            "cv_mse_stc": np.std([f["MSE"] for f in folds]),
+            "cv_mse_std": np.std([f["MSE"] for f in folds]),
             "cv_rmse_mean": np.mean([f["RMSE"] for f in folds]),
             "cv_rmse_std": np.std([f["RMSE"] for f in folds]),
             "cv_r2_mean": np.mean([f["R2"] for f in folds]),

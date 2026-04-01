@@ -1,12 +1,9 @@
-import hashlib
-import numpy as np
-import torch
 import cv2
 from PIL import Image
 from torch import nn
 from torchvision import models
 from tqdm import tqdm
-from pathlib import Path
+from src.helpers import *
 
 
 # Create a pretrained torchvision backbone + preprocessing + output dimensions
@@ -72,12 +69,6 @@ def extract_vit_features(vit_model, x):
     x = vit_model.encoder(x)
     x = x[:, 0]
     return x
-
-def image_cache_key(image_path, mask_path=None):
-    key = str(Path(image_path).resolve())
-    if mask_path:
-        key += f"_mask_{Path(mask_path).name}"
-    return hashlib.md5(key.encode()).hexdigest()
 
 def embedding_cache_path(backbone_name, image_path, cache_dir, mask_path=None):
     return cache_dir / backbone_name / f"{image_cache_key(image_path, mask_path)}.npy"

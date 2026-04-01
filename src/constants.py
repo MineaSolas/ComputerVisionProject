@@ -3,8 +3,8 @@ from sklearn.impute import SimpleImputer
 from sklearn.neural_network import MLPRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.dummy import DummyRegressor
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import ParameterGrid
 from sklearn.linear_model import ElasticNet, Ridge, LinearRegression
 from pathlib import Path
 
@@ -19,8 +19,9 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 RANDOM_STATE = 42
 OUTER_SPLITS = 5
 INNER_SPLITS = 5
-BATCH_SIZE = 8
+BATCH_SIZE = 16
 MAX_EPOCHS = 20
+PATIENCE = 3
 
 CSV_PATH = Path("experiments/experiments_1_110.csv")
 TOP_FOLDER = Path("photos/top_view_images")
@@ -92,29 +93,9 @@ REGRESSION_MODEL_CONFIGS = {
             )
         ),
         {
-            "model__hidden_layer_sizes": [(64,), (128,), (64, 32)],
-            "model__alpha": [1e-4, 1e-3, 1e-2],
+            # "model__hidden_layer_sizes": [(64,), (128,), (64, 32)],
+            "model__alpha": [1e-4, 1e-3],
             "model__learning_rate_init": [1e-3, 3e-4],
         },
     )
-}
-
-TRAINING_CONFIGS = {
-    "last_stage": [
-        {"head_lr": 1e-3, "backbone_lr": 1e-5, "weight_decay": 1e-4},
-        # {"head_lr": 3e-4, "backbone_lr": 3e-5, "weight_decay": 1e-4},
-    ],
-    "bias": [
-        {"head_lr": 1e-3, "backbone_lr": 3e-4, "weight_decay": 1e-4},
-        {"head_lr": 3e-4, "backbone_lr": 1e-4, "weight_decay": 1e-4},
-    ],
-    "adapter": [
-        {"head_lr": 1e-3, "adapter_lr": 1e-3, "weight_decay": 1e-4, "adapter_dim": 32},
-        {"head_lr": 3e-4, "adapter_lr": 1e-3, "weight_decay": 1e-4, "adapter_dim": 64},
-    ],
-}
-
-HEAD_CONFIGS = {
-    "linear": {},
-    "mlp": {"hidden_dim": 64, "dropout": 0.2},
 }

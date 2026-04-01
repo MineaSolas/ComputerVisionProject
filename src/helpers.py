@@ -1,4 +1,5 @@
 import glob
+import hashlib
 import random
 from pathlib import Path
 
@@ -6,6 +7,11 @@ import numpy as np
 import pandas as pd
 import torch
 
+def image_cache_key(image_path, mask_path=None):
+    key = str(Path(image_path).resolve())
+    if mask_path:
+        key += f"_mask_{Path(mask_path).name}"
+    return hashlib.md5(key.encode()).hexdigest()
 
 def find_photo(folder, pic_num):
     folder = Path(folder)
