@@ -201,16 +201,21 @@ def build_single_view_feature_matrix(
     cache_dir,
     device,
     mask_paths=None,
+    embedding_memory_cache=None
 ):
 
     backbone_spec_cache = {}
     vectors = []
     resolved_mask_paths = _normalize_mask_paths(mask_paths)
 
+    if embedding_memory_cache is None:
+        embedding_memory_cache = {}
+
     for _, row in tqdm(samples.iterrows(), total=len(samples), desc=f"{backbone_name} | {image_path_col}"):
         current_mask_path = resolve_mask_path(row[image_path_col], resolved_mask_paths)
 
-        vec = load_or_compute_embedding(row[image_path_col], backbone_name, backbone_spec_cache, cache_dir, device, mask_path=current_mask_path)
+        vec = load_or_compute_embedding(row[image_path_col], backbone_name, backbone_spec_cache, cache_dir, device,
+                                        mask_path=current_mask_path, embedding_memory_cache=embedding_memory_cache)
         vectors.append(vec)
 
     x = np.vstack(vectors)
