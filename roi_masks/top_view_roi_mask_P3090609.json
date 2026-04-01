@@ -1,11 +1,11 @@
-[{
-  "id": 42,
+{
+  "id": 51,
   "data": {
-    "image": "/data/upload/2/7901cf0f-P2020001.JPG"
+    "image": "/data/upload/2/18554b58-P3090609.JPG"
   },
   "annotations": [
     {
-      "id": 36,
+      "id": 46,
       "result": [
         {
           "original_width": 4000,
@@ -14,20 +14,20 @@
           "value": {
             "points": [
               [
-                5.796529968454259,
-                78.0757097791798
+                0,
+                58.51735015772871
               ],
               [
-                6.624605678233437,
-                35.01577287066246
+                0,
+                20.347003154574132
               ],
               [
-                93.57255520504731,
-                36.43533123028392
+                99.96056782334385,
+                11.198738170347003
               ],
               [
-                94.16403785488959,
-                77.7602523659306
+                99.72397476340693,
+                51.73501577287066
               ]
             ],
             "closed": true,
@@ -35,7 +35,7 @@
               "ROI"
             ]
           },
-          "id": "h3dFFGcdV9",
+          "id": "_oCvaMN2LM",
           "from_name": "label",
           "to_name": "image",
           "type": "polygonlabels",
@@ -43,7 +43,7 @@
         }
       ],
       "created_username": " skrafft@tudelft.nl, 1",
-      "created_ago": "18 hours, 20 minutes",
+      "created_ago": "0 minutes",
       "completed_by": {
         "id": 1,
         "first_name": "",
@@ -54,14 +54,14 @@
       },
       "was_cancelled": false,
       "ground_truth": false,
-      "created_at": "2026-03-31T16:52:58.592697Z",
-      "updated_at": "2026-03-31T16:52:58.592697Z",
-      "draft_created_at": "2026-03-31T16:52:17.261127Z",
-      "lead_time": 70.563,
+      "created_at": "2026-04-01T16:54:29.042629Z",
+      "updated_at": "2026-04-01T16:54:29.042629Z",
+      "draft_created_at": "2026-04-01T16:54:07.233427Z",
+      "lead_time": 39.995,
       "import_id": null,
       "last_action": null,
       "bulk_created": false,
-      "task": 42,
+      "task": 51,
       "project": 2,
       "updated_by": 1,
       "parent_prediction": null,
@@ -70,4 +70,4 @@
     }
   ],
   "predictions": []
-}]
+}

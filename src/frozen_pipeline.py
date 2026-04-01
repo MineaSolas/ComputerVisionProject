@@ -1,9 +1,19 @@
+import hashlib
+import sys
+import numpy as np
+import torch
 import cv2
 from PIL import Image
 from torch import nn
 from torchvision import models
 from tqdm import tqdm
-from src.helpers import *
+from pathlib import Path
+
+SRC_DIR = Path(__file__).resolve().parent
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+from helpers import resolve_mask_path
 
 
 # Create a pretrained torchvision backbone + preprocessing + output dimensions
@@ -70,6 +80,12 @@ def extract_vit_features(vit_model, x):
     x = x[:, 0]
     return x
 
+def image_cache_key(image_path, mask_path=None):
+    key = str(Path(image_path).resolve())
+    if mask_path:
+        key += f"_mask_{Path(mask_path).name}"
+    return hashlib.md5(key.encode()).hexdigest()
+
 def embedding_cache_path(backbone_name, image_path, cache_dir, mask_path=None):
     return cache_dir / backbone_name / f"{image_cache_key(image_path, mask_path)}.npy"
 
@@ -122,24 +138,34 @@ def fuse_pair(top_vec, side_vec, fusion_name):
         return np.concatenate([top_vec, side_vec, np.abs(top_vec - side_vec)], axis=0)
     raise ValueError(f"Unsupported fusion: {fusion_name}")
 
-def build_feature_matrix(samples, backbone_name, fusion_name, cache_dir, device, 
-                         side_mask_path=None, top_mask_path1=None, top_mask_path2=None):
+def _normalize_mask_paths(mask_paths=None):
+    if mask_paths is None:
+        return None
+    if isinstance(mask_paths, (str, Path)):
+        return [Path(mask_paths)]
+    return [Path(p) for p in mask_paths if p is not None]
+
+
+def build_feature_matrix(
+    samples,
+    backbone_name,
+    fusion_name,
+    cache_dir,
+    device,
+    side_mask_paths=None,
+    top_mask_paths=None,
+):
     backbone_spec_cache = {}
     fused_vectors = []
+    resolved_side_mask_paths = _normalize_mask_paths(side_mask_paths)
+    resolved_top_mask_paths = _normalize_mask_paths(top_mask_paths)
 
     for _, row in tqdm(samples.iterrows(), total=len(samples), desc=f"{backbone_name} + {fusion_name}"):
-        # Determine the correct top mask based on the filename
-        top_path = Path(row["top_path"])
-        top_mask_path = None
-        if top_mask_path1 and top_mask_path2:
-            # Shift in camera angle between image "P2050047" and "P2060048"
-            if top_path.name <= "P2050047.JPG":
-                top_mask_path = top_mask_path1
-            else:
-                top_mask_path = top_mask_path2
-        
+        top_mask_path = resolve_mask_path(row["top_path"], resolved_top_mask_paths)
+        side_mask_path_resolved = resolve_mask_path(row["side_path"], resolved_side_mask_paths)
+
         top_vec = load_or_compute_embedding(row["top_path"], backbone_name, backbone_spec_cache, cache_dir, device, mask_path=top_mask_path)
-        side_vec = load_or_compute_embedding(row["side_path"], backbone_name, backbone_spec_cache, cache_dir, device, mask_path=side_mask_path)
+        side_vec = load_or_compute_embedding(row["side_path"], backbone_name, backbone_spec_cache, cache_dir, device, mask_path=side_mask_path_resolved)
         fused_vectors.append(fuse_pair(top_vec, side_vec, fusion_name))
 
     x = np.vstack(fused_vectors)
@@ -147,22 +173,21 @@ def build_feature_matrix(samples, backbone_name, fusion_name, cache_dir, device,
     groups = samples["exp_id"].to_numpy()
     return x, y, groups
 
-def build_single_view_feature_matrix(samples, backbone_name, image_path_col, cache_dir,
-    device, mask_path=None, mask_path1=None, mask_path2=None):
+def build_single_view_feature_matrix(
+    samples,
+    backbone_name,
+    image_path_col,
+    cache_dir,
+    device,
+    mask_paths=None,
+):
 
     backbone_spec_cache = {}
     vectors = []
+    resolved_mask_paths = _normalize_mask_paths(mask_paths)
 
     for _, row in tqdm(samples.iterrows(), total=len(samples), desc=f"{backbone_name} | {image_path_col}"):
-        current_mask_path = mask_path
-
-        if image_path_col == "top_path" and mask_path1 and mask_path2:
-            top_path = Path(row[image_path_col])
-            # Shift in camera angle between image "P2050047" and "P2060048"
-            if top_path.name <= "P2050047.JPG":
-                current_mask_path = mask_path1
-            else:
-                current_mask_path = mask_path2
+        current_mask_path = resolve_mask_path(row[image_path_col], resolved_mask_paths)
 
         vec = load_or_compute_embedding(row[image_path_col], backbone_name, backbone_spec_cache, cache_dir, device, mask_path=current_mask_path)
         vectors.append(vec)

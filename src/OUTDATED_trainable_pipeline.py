@@ -1,4 +1,5 @@
 import copy
+import sys
 
 import numpy as np
 import torch
@@ -9,10 +10,22 @@ from sklearn.model_selection import GroupKFold
 from torch import nn
 from torchvision import models
 import torch.nn.functional as F
-from tqdm import trange, tqdm
+from tqdm import tqdm
 from pathlib import Path
 
-from src.helpers import seed_everything
+SRC_DIR = Path(__file__).resolve().parent
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+from helpers import resolve_mask_path, seed_everything
+
+
+def _normalize_mask_paths(mask_paths=None):
+    if mask_paths is None:
+        return None
+    if isinstance(mask_paths, (str, Path)):
+        return [Path(mask_paths)]
+    return [Path(p) for p in mask_paths if p is not None]
 
 
 def get_backbone_and_preprocess(backbone_name, device):
@@ -197,10 +210,19 @@ def cleanup_hooks(hook_handles):
     for handle in hook_handles:
         handle.remove()
 
-def load_pair_batch(batch_df, preprocess, device, side_mask_path=None, top_mask_path1=None, top_mask_path2=None):
+def load_pair_batch(
+    batch_df,
+    preprocess,
+    device,
+    side_mask_paths=None,
+    top_mask_paths=None,
+):
     top_tensors = []
     side_tensors = []
     targets = []
+
+    resolved_side_mask_paths = _normalize_mask_paths(side_mask_paths)
+    resolved_top_mask_paths = _normalize_mask_paths(top_mask_paths)
 
     for _, row in batch_df.iterrows():
         top_img = Image.open(row["top_path"]).convert("RGB")
@@ -208,13 +230,7 @@ def load_pair_batch(batch_df, preprocess, device, side_mask_path=None, top_mask_
 
         # Apply top mask if provided
         top_path = Path(row["top_path"])
-        top_mask_path = None
-        if top_mask_path1 and top_mask_path2:
-            # Shift in camera angle between image "P2050047" and "P2060048"
-            if top_path.name <= "P2050047.JPG":
-                top_mask_path = top_mask_path1
-            else:
-                top_mask_path = top_mask_path2
+        top_mask_path = resolve_mask_path(top_path, resolved_top_mask_paths)
 
         if top_mask_path:
             mask = cv2.imread(str(top_mask_path), cv2.IMREAD_GRAYSCALE)
@@ -226,8 +242,9 @@ def load_pair_batch(batch_df, preprocess, device, side_mask_path=None, top_mask_
                 top_img = Image.fromarray(top_img_np)
 
         # Apply side mask if provided
-        if side_mask_path:
-            mask = cv2.imread(str(side_mask_path), cv2.IMREAD_GRAYSCALE)
+        side_mask_path_resolved = resolve_mask_path(row["side_path"], resolved_side_mask_paths)
+        if side_mask_path_resolved:
+            mask = cv2.imread(str(side_mask_path_resolved), cv2.IMREAD_GRAYSCALE)
             if mask is not None:
                 if mask.shape[:2] != (side_img.height, side_img.width):
                     mask = cv2.resize(mask, (side_img.width, side_img.height), interpolation=cv2.INTER_NEAREST)
@@ -244,8 +261,17 @@ def load_pair_batch(batch_df, preprocess, device, side_mask_path=None, top_mask_
     y_batch = torch.tensor(targets, dtype=torch.float32, device=device)
     return top_batch, side_batch, y_batch
 
-def iterate_batches(samples_df, indices, preprocess, batch_size, shuffle, seed, device,
-                    side_mask_path=None, top_mask_path1=None, top_mask_path2=None):
+def iterate_batches(
+    samples_df,
+    indices,
+    preprocess,
+    batch_size,
+    shuffle,
+    seed,
+    device,
+    side_mask_paths=None,
+    top_mask_paths=None,
+):
     idx = np.array(indices, dtype=int).copy()
     if shuffle:
         rng = np.random.default_rng(seed)
@@ -254,7 +280,13 @@ def iterate_batches(samples_df, indices, preprocess, batch_size, shuffle, seed, 
     for start in range(0, len(idx), batch_size):
         batch_idx = idx[start:start + batch_size]
         batch_df = samples_df.iloc[batch_idx]
-        yield load_pair_batch(batch_df, preprocess, device, side_mask_path, top_mask_path1, top_mask_path2)
+        yield load_pair_batch(
+            batch_df,
+            preprocess,
+            device,
+            side_mask_paths=side_mask_paths,
+            top_mask_paths=top_mask_paths,
+        )
 
 def make_group_train_val_split(indices, groups, seed):
     unique_groups = np.unique(groups[indices])
@@ -276,16 +308,36 @@ def make_group_train_val_split(indices, groups, seed):
 
     return train_idx, val_idx
 
-def predict_indices(samples_df, indices, preprocess, backbone_name, backbone, head, fusion_name, batch_size, device,
-                    side_mask_path=None, top_mask_path1=None, top_mask_path2=None):
+def predict_indices(
+    samples_df,
+    indices,
+    preprocess,
+    backbone_name,
+    backbone,
+    head,
+    fusion_name,
+    batch_size,
+    device,
+    side_mask_paths=None,
+    top_mask_paths=None,
+):
     backbone.eval()
     head.eval()
     preds = []
     ys = []
 
     with torch.no_grad():
-        for top_batch, side_batch, y_batch in iterate_batches(samples_df, indices, preprocess, batch_size, shuffle=False, seed=0, device=device,
-                                                                side_mask_path=side_mask_path, top_mask_path1=top_mask_path1, top_mask_path2=top_mask_path2):
+        for top_batch, side_batch, y_batch in iterate_batches(
+            samples_df,
+            indices,
+            preprocess,
+            batch_size,
+            shuffle=False,
+            seed=0,
+            device=device,
+            side_mask_paths=side_mask_paths,
+            top_mask_paths=top_mask_paths,
+        ):
             top_feat = backbone_forward(backbone_name, backbone, top_batch)
             side_feat = backbone_forward(backbone_name, backbone, side_batch)
             fused = fuse_features(top_feat, side_feat, fusion_name)
@@ -297,8 +349,23 @@ def predict_indices(samples_df, indices, preprocess, backbone_name, backbone, he
     y_pred = np.concatenate(preds)
     return y_true, y_pred
 
-def fit_model(samples_df, train_idx, val_idx, backbone_name, fusion_name, head_name, mode_name, cfg, head_cfg, batch_size, max_epochs, seed, device,
-              side_mask_path=None, top_mask_path1=None, top_mask_path2=None):
+def fit_model(
+    samples_df,
+    train_idx,
+    val_idx,
+    backbone_name,
+    fusion_name,
+    head_name,
+    mode_name,
+    cfg,
+    head_cfg,
+    batch_size,
+    max_epochs,
+    seed,
+    device,
+    side_mask_paths=None,
+    top_mask_paths=None,
+):
     PATIENCE = 6
     seed_everything(seed)
     backbone, preprocess, feature_dim = get_backbone_and_preprocess(backbone_name, device)
@@ -333,8 +400,17 @@ def fit_model(samples_df, train_idx, val_idx, backbone_name, fusion_name, head_n
         head.train()
         batch_losses = []
 
-        for top_batch, side_batch, y_batch in iterate_batches(samples_df, train_idx, preprocess, batch_size, shuffle=True, seed=seed + epoch, device=device,
-                                                                side_mask_path=side_mask_path, top_mask_path1=top_mask_path1, top_mask_path2=top_mask_path2):
+        for top_batch, side_batch, y_batch in iterate_batches(
+            samples_df,
+            train_idx,
+            preprocess,
+            batch_size,
+            shuffle=True,
+            seed=seed + epoch,
+            device=device,
+            side_mask_paths=side_mask_paths,
+            top_mask_paths=top_mask_paths,
+        ):
             optimizer.zero_grad()
             top_feat = backbone_forward(backbone_name, backbone, top_batch)
             side_feat = backbone_forward(backbone_name, backbone, side_batch)
@@ -345,8 +421,19 @@ def fit_model(samples_df, train_idx, val_idx, backbone_name, fusion_name, head_n
             optimizer.step()
             batch_losses.append(loss.item())
 
-        val_true, val_pred = predict_indices(samples_df, val_idx, preprocess, backbone_name, backbone, head, fusion_name, batch_size, device,
-                                             side_mask_path=side_mask_path, top_mask_path1=top_mask_path1, top_mask_path2=top_mask_path2)
+        val_true, val_pred = predict_indices(
+            samples_df,
+            val_idx,
+            preprocess,
+            backbone_name,
+            backbone,
+            head,
+            fusion_name,
+            batch_size,
+            device,
+            side_mask_paths=side_mask_paths,
+            top_mask_paths=top_mask_paths,
+        )
         val_mae = mean_absolute_error(val_true, val_pred)
 
         if val_mae < best_val_mae:

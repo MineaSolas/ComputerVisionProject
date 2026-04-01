@@ -1,0 +1,73 @@
+{
+  "id": 47,
+  "data": {
+    "image": "/data/upload/2/4e90c58d-P3060913.JPG"
+  },
+  "annotations": [
+    {
+      "id": 42,
+      "result": [
+        {
+          "original_width": 4000,
+          "original_height": 3000,
+          "image_rotation": 0,
+          "value": {
+            "points": [
+              [
+                7.2160883280757036,
+                62.302839116719255
+              ],
+              [
+                7.33438485804416,
+                15.930599369085174
+              ],
+              [
+                100,
+                21.766561514195587
+              ],
+              [
+                100,
+                63.24921135646688
+              ]
+            ],
+            "closed": true,
+            "polygonlabels": [
+              "ROI"
+            ]
+          },
+          "id": "iIJ0BcvEck",
+          "from_name": "label",
+          "to_name": "image",
+          "type": "polygonlabels",
+          "origin": "manual"
+        }
+      ],
+      "created_username": " skrafft@tudelft.nl, 1",
+      "created_ago": "24 minutes",
+      "completed_by": {
+        "id": 1,
+        "first_name": "",
+        "last_name": "",
+        "avatar": null,
+        "email": "skrafft@tudelft.nl",
+        "initials": "sk"
+      },
+      "was_cancelled": false,
+      "ground_truth": false,
+      "created_at": "2026-04-01T16:23:33.926340Z",
+      "updated_at": "2026-04-01T16:47:53.055200Z",
+      "draft_created_at": "2026-04-01T16:23:24.411665Z",
+      "lead_time": 124.121,
+      "import_id": null,
+      "last_action": null,
+      "bulk_created": false,
+      "task": 47,
+      "project": 2,
+      "updated_by": 1,
+      "parent_prediction": null,
+      "parent_annotation": null,
+      "last_created_by": null
+    }
+  ],
+  "predictions": []
+}

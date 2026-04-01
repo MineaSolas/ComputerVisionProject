@@ -23,12 +23,31 @@ BATCH_SIZE = 16
 MAX_EPOCHS = 20
 PATIENCE = 3
 
-CSV_PATH = Path("experiments/experiments_1_110.csv")
+CSV_PATH = Path("experiments/experiments_1_110_cleaned.csv")
 TOP_FOLDER = Path("photos/top_view_images")
 SIDE_FOLDER = Path("photos/side_view_images")
-SIDE_ROI_MASK = Path("roi_masks/side_view_roi_mask.png")
-TOP_ROI_MASK_1 = Path("roi_masks/top_view_roi_mask.png")
-TOP_ROI_MASK_2 = Path("roi_masks/top_view_roi_mask2.png")
+SIDE_ROI_MASKS = [
+    Path("roi_masks/side_view_roi_mask_P2190654.png"),
+    Path("roi_masks/side_view_roi_mask_P2190666.png"),
+    Path("roi_masks/side_view_roi_mask_P2270710.png"),
+    Path("roi_masks/side_view_roi_mask_P3020772.png"),
+    Path("roi_masks/side_view_roi_mask_P3060912.png"),
+    Path("roi_masks/side_view_roi_mask_P3090954.png"),
+    Path("roi_masks/side_view_roi_mask_P3090985.png"),
+    Path("roi_masks/side_view_roi_mask_P3131114.png"),
+]
+TOP_ROI_MASKS = [
+    Path("roi_masks/top_view_roi_mask_P2050047.png"),
+    Path("roi_masks/top_view_roi_mask_P2190329.png"),
+    Path("roi_masks/top_view_roi_mask_P3020441.png"),
+    Path("roi_masks/top_view_roi_mask_P3090609.png"),
+    Path("roi_masks/top_view_roi_mask_P3100657.png"),
+]
+
+# Backwards-compatible aliases for older code paths.
+SIDE_ROI_MASK = SIDE_ROI_MASKS[0]
+TOP_ROI_MASK_1 = TOP_ROI_MASKS[0]
+TOP_ROI_MASK_2 = TOP_ROI_MASKS[1]
 EMBEDDING_CACHE_DIR = Path("embeddings")
 EMBEDDING_CACHE_DIR.mkdir(exist_ok=True)
 OUTPUT_DIR = Path("results")
