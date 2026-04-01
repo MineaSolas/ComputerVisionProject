@@ -29,7 +29,9 @@ def find_photo(folder, pic_num):
 def load_image_paths(data_path, top_folder, side_folder):
     data = pd.read_csv(data_path)
     samples = data.copy()
-    samples = samples[samples["volume"] > 0].copy()
+
+    samples["pic_top"] = pd.to_numeric(samples["pic_top"], errors="coerce")
+    samples["pic_side"] = pd.to_numeric(samples["pic_side"], errors="coerce")
     samples = samples[samples["pic_top"].notna() & samples["pic_side"].notna()].copy()
 
     samples["top_path"] = samples["pic_top"].apply(lambda x: find_photo(top_folder, x))
