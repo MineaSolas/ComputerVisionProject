@@ -1,0 +1,2 @@
+backbone,fusion,head,mode,cv_mae_mean,cv_mae_std,cv_rmse_mean,cv_rmse_std,cv_r2_mean,cv_r2_std,inner_mae_mean
+vit_b_16,concat,mlp,last_stage,7.512610340118409,0.7807182485850108,9.443722240925803,1.2831927228129252,0.798448383808136,0.05583277767708679,7.324182815551758
