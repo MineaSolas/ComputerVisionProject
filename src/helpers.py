@@ -16,13 +16,15 @@ def find_photo(folder, pic_num):
         matches.extend(glob.glob(str(folder / f"*{pic_num:04d}.{ext}")))
         matches.extend(glob.glob(str(folder / f"*{pic_num:04d}.{ext.upper()}")))
 
-    if not matches:
+    unique_matches = list(dict.fromkeys(matches))
+
+    if not unique_matches:
         raise FileNotFoundError(f"No photo for {pic_num}")
 
-    if len(matches) > 1:
-        raise ValueError(f"Multiple matches for {pic_num}: {matches}")
+    if len(unique_matches) > 1:
+        raise ValueError(f"Multiple matches for {pic_num}: {unique_matches}")
 
-    return matches[0]
+    return unique_matches[0]
 
 def load_image_paths(data_path, top_folder, side_folder):
     data = pd.read_csv(data_path)
@@ -36,6 +38,7 @@ def load_image_paths(data_path, top_folder, side_folder):
 
     image_paths = sorted({Path(p) for p in samples["top_path"].tolist() + samples["side_path"].tolist()})
     return samples.reset_index(drop=True), image_paths
+
 def seed_everything(seed):
     random.seed(seed)
     np.random.seed(seed)
