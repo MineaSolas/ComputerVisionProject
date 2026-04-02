@@ -3,3 +3,6 @@ photos/
 all_data/
 selected/
 embeddings/
+masks_raw/
+masks_converted/
+mask_conversion.ipynb
