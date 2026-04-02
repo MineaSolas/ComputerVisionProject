@@ -44,6 +44,13 @@ TOP_ROI_MASKS = [
     Path("roi_masks/top_view_roi_mask_P3100657.png"),
 ]
 
+DIAGONAL_CSV_PATH = Path("experiments/experiments_diagonal.csv")
+DIAGONAL_FOLDER = Path("photos/diagonal_view_images")
+DIAGONAL_ROI_MASKS = [
+    Path("roi_masks/diagonal_roi_mask_G0024908.png"),
+    Path("roi_masks/diagonal_roi_mask_G0024910.png"),
+]
+
 # Backwards-compatible aliases for older code paths.
 SIDE_ROI_MASK = SIDE_ROI_MASKS[0]
 TOP_ROI_MASK_1 = TOP_ROI_MASKS[0]
@@ -193,4 +200,21 @@ BEST_REGRESSION_MODEL_CONFIGS = {
     #         "model__learning_rate_init": [1e-3, 3e-4],
     #     },
     # )
+}
+
+NO_PARMS_REGRESSION_MODEL_CONFIGS = {
+    "linear": (
+        make_pipeline(LinearRegression()),
+        {},
+    ),
+
+    "ridge": (
+        make_pipeline(Ridge(alpha=100.0)),
+        {}
+    ),
+
+    "elasticnet": (
+        make_pipeline(ElasticNet(max_iter=20000, alpha=0.1, l1_ratio=0.2)),
+        {}
+    )
 }

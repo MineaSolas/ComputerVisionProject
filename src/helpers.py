@@ -8,6 +8,8 @@ from typing import Iterable
 import numpy as np
 import pandas as pd
 import torch
+from IPython.core.display_functions import display
+
 
 def image_cache_key(image_path, mask_path=None):
     key = str(Path(image_path).resolve())
@@ -49,20 +51,31 @@ def load_image_paths(data_path, top_folder, side_folder):
     image_paths = sorted({Path(p) for p in samples["top_path"].tolist() + samples["side_path"].tolist()})
     return samples.reset_index(drop=True), image_paths
 
+def load_paths(data_path, folder):
+    data = pd.read_csv(data_path)
+    samples = data.copy()
+
+    samples["pic_number"] = pd.to_numeric(samples["pic_number"], errors="coerce") % 10000
+    samples = samples[samples["pic_number"].notna()].copy()
+
+    samples["pic_path"] = samples["pic_number"].apply(lambda x: find_photo(folder, x))
+    samples = samples[samples["pic_path"].notna()].copy()
+
+    image_paths = sorted(Path(p) for p in samples["pic_path"].tolist())
+    return samples.reset_index(drop=True), image_paths
+
+def _extract_boundary_id(path):
+    stem = Path(path).stem
+    match = re.search(r"[A-Z](\d{7})", stem, re.IGNORECASE)
+    if not match:
+        raise ValueError(f"Cannot extract image/mask id from path: {path}")
+    return int(match.group(1))
 
 def _mask_boundary_id(mask_path):
-    match = re.search(r"P(\d{7})", Path(mask_path).stem, re.IGNORECASE)
-    if not match:
-        raise ValueError(f"Cannot extract image id from mask path: {mask_path}")
-    return int(match.group(1))
-
+    return _extract_boundary_id(mask_path)
 
 def _image_id(image_path):
-    match = re.search(r"P(\d{7})", Path(image_path).stem, re.IGNORECASE)
-    if not match:
-        raise ValueError(f"Cannot extract image id from image path: {image_path}")
-    return int(match.group(1))
-
+    return _extract_boundary_id(image_path)
 
 def resolve_mask_path(image_path, mask_paths: Iterable[Path] | Path | str | None):
     if mask_paths is None:
