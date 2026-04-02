@@ -125,6 +125,7 @@ def show_top(df, n=10, metric="cv_mae_mean", columns=None):
             "fusion",
             "regressor",
             "cv_mae_mean",
+            "cv_mse_mean",
             "cv_rmse_mean",
             "cv_r2_mean",
             "source_file",
