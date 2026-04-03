@@ -1,7 +1,7 @@
 import copy
 import cv2
 from PIL import Image
-from PIL.ImagePath import Path
+from pathlib import Path
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import GroupKFold
 from torch import nn
@@ -124,43 +124,93 @@ def select_top_mask_path(top_path, top_mask_path1=None, top_mask_path2=None):
         return top_mask_path1
     return top_mask_path2
 
-def load_masked_image(
-    image_path,
+def _normalize_mask_paths(mask_paths=None):
+    if mask_paths is None:
+        return None
+    if isinstance(mask_paths, (str, Path)):
+        return [Path(mask_paths)]
+    return [Path(p) for p in mask_paths if p is not None]
+
+def load_pair_batch(
+    batch_df,
     preprocess,
-    mask_path=None,
+    device,
+    side_mask_paths=None,
+    top_mask_paths=None,
     image_cache=None,
     mask_cache=None,
 ):
-    if image_cache is not None:
-        cache_key = image_cache_key(image_path, mask_path)
-        if cache_key in image_cache:
-            return image_cache[cache_key]
+    top_tensors = []
+    side_tensors = []
+    targets = []
 
-    image = Image.open(image_path).convert("RGB")
+    image_cache = image_cache if image_cache is not None else {}
+    mask_cache = mask_cache if mask_cache is not None else {}
 
-    if mask_path is not None:
-        if mask_cache is not None and mask_path in mask_cache:
-            mask = mask_cache[mask_path]
+    resolved_side_mask_paths = _normalize_mask_paths(side_mask_paths)
+    resolved_top_mask_paths = _normalize_mask_paths(top_mask_paths)
+
+    for _, row in batch_df.iterrows():
+        top_path = Path(row["top_path"])
+        side_path = Path(row["side_path"])
+
+        # top_img = Image.open(top_path).convert("RGB")
+        if top_path in image_cache:
+            top_img = image_cache[top_path].copy()
         else:
-            mask = cv2.imread(str(mask_path), cv2.IMREAD_GRAYSCALE)
-            if mask is None:
-                raise FileNotFoundError(f"Could not read mask: {mask_path}")
-            if mask_cache is not None:
-                mask_cache[mask_path] = mask
+            top_img = Image.open(top_path).convert("RGB")
+            if len(image_cache) < IMAGE_CACHE_MAX:
+                image_cache[top_path] = top_img.copy()
 
-        if mask.shape[:2] != (image.height, image.width):
-            mask = cv2.resize(mask, (image.width, image.height), interpolation=cv2.INTER_NEAREST)
+        # side_img = Image.open(side_path).convert("RGB")
+        if side_path in image_cache:
+            side_img = image_cache[side_path].copy()
+        else:
+            side_img = Image.open(side_path).convert("RGB")
+            if len(image_cache) < IMAGE_CACHE_MAX:
+                image_cache[side_path] = side_img.copy()
 
-        image_np = np.array(image)
-        image_np[mask == 0] = 0
-        image = Image.fromarray(image_np)
+        top_mask_path = resolve_mask_path(top_path, resolved_top_mask_paths)
+        if top_mask_path:
+            # mask = cv2.imread(str(top_mask_path), cv2.IMREAD_GRAYSCALE)
+            if top_mask_path in mask_cache:
+                mask = mask_cache[top_mask_path]
+            else:
+                mask = cv2.imread(str(top_mask_path), cv2.IMREAD_GRAYSCALE)
+                mask_cache[top_mask_path] = mask
 
-    tensor = preprocess(image)
+            if mask is not None:
+                if mask.shape[:2] != (top_img.height, top_img.width):
+                    mask = cv2.resize(mask, (top_img.width, top_img.height), interpolation=cv2.INTER_NEAREST)
+                top_img_np = np.array(top_img)
+                top_img_np[mask == 0] = 0
+                top_img = Image.fromarray(top_img_np)
 
-    if image_cache is not None:
-        image_cache[image_cache_key(image_path, mask_path)] = tensor
+        side_mask_path_resolved = resolve_mask_path(side_path, resolved_side_mask_paths)
+        if side_mask_path_resolved:
+            # mask = cv2.imread(str(side_mask_path_resolved), cv2.IMREAD_GRAYSCALE)
+            if side_mask_path_resolved in mask_cache:
+                mask = mask_cache[side_mask_path_resolved]
+            else:
+                mask = cv2.imread(str(side_mask_path_resolved), cv2.IMREAD_GRAYSCALE)
+                mask_cache[side_mask_path_resolved] = mask
 
-    return tensor
+            if mask is not None:
+                if mask.shape[:2] != (side_img.height, side_img.width):
+                    mask = cv2.resize(mask, (side_img.width, side_img.height), interpolation=cv2.INTER_NEAREST)
+                side_img_np = np.array(side_img)
+                side_img_np[mask == 0] = 0
+                side_img = Image.fromarray(side_img_np)
+
+        top_tensors.append(preprocess(top_img))
+        side_tensors.append(preprocess(side_img))
+        targets.append(float(row["volume"]))
+
+    top_batch = torch.stack(top_tensors).to(device)
+    side_batch = torch.stack(side_tensors).to(device)
+    y_batch = torch.tensor(targets, dtype=torch.float32, device=device)
+    return top_batch, side_batch, y_batch
+
 
 def iterate_batches(
     samples_df,
@@ -170,40 +220,28 @@ def iterate_batches(
     shuffle,
     seed,
     device,
-    side_mask_path=None,
-    top_mask_path1=None,
-    top_mask_path2=None,
+    side_mask_paths=None,
+    top_mask_paths=None,
     image_cache=None,
     mask_cache=None
 ):
-    idxs = list(indices)
+    idx = np.array(indices, dtype=int).copy()
     if shuffle:
-        rng = random.Random(seed)
-        rng.shuffle(idxs)
+        rng = np.random.default_rng(seed)
+        rng.shuffle(idx)
 
-    for start in range(0, len(idxs), batch_size):
-        batch_idx = idxs[start:start + batch_size]
-        batch = samples_df.iloc[batch_idx]
-
-        top_tensors = []
-        side_tensors = []
-        y_values = []
-
-        for _, row in batch.iterrows():
-            current_top_mask = select_top_mask_path(
-                row["top_path"],
-                top_mask_path1=top_mask_path1,
-                top_mask_path2=top_mask_path2,
-            )
-            top_tensors.append(load_masked_image(row["top_path"], preprocess, current_top_mask, image_cache=image_cache, mask_cache=mask_cache))
-            side_tensors.append(load_masked_image(row["side_path"], preprocess, side_mask_path, image_cache=image_cache, mask_cache=mask_cache))
-            y_values.append(float(row["volume"]))
-
-        top_batch = torch.stack(top_tensors).to(device)
-        side_batch = torch.stack(side_tensors).to(device)
-        y_batch = torch.tensor(y_values, dtype=torch.float32, device=device)
-
-        yield top_batch, side_batch, y_batch
+    for start in range(0, len(idx), batch_size):
+        batch_idx = idx[start:start + batch_size]
+        batch_df = samples_df.iloc[batch_idx]
+        yield load_pair_batch(
+            batch_df,
+            preprocess,
+            device,
+            side_mask_paths=side_mask_paths,
+            top_mask_paths=top_mask_paths,
+            image_cache=image_cache,
+            mask_cache=mask_cache
+        )
 
 def make_optimizer(backbone, head, config):
     backbone_params = [p for p in backbone.parameters() if p.requires_grad]
@@ -237,9 +275,8 @@ def predict_indices(
     fusion_name,
     batch_size,
     device,
-    side_mask_path=None,
-    top_mask_path1=None,
-    top_mask_path2=None,
+    side_mask_paths=None,
+    top_mask_paths=None,
     image_cache=None,
     mask_cache=None
 ):
@@ -258,9 +295,8 @@ def predict_indices(
             shuffle=False,
             seed=0,
             device=device,
-            side_mask_path=side_mask_path,
-            top_mask_path1=top_mask_path1,
-            top_mask_path2=top_mask_path2,
+            side_mask_paths=side_mask_paths,
+            top_mask_paths=top_mask_paths,
             image_cache=image_cache,
             mask_cache=mask_cache
         ):
@@ -285,17 +321,17 @@ def train_single_fold(
     batch_size,
     device,
     seed,
-    side_mask_path=None,
-    top_mask_path1=None,
-    top_mask_path2=None,
+    side_mask_paths=None,
+    top_mask_paths=None,
     patience=PATIENCE,
     min_delta=0.0,
     image_cache=None,
-    mask_cache=None
+    mask_cache=None,
+    use_early_stopping = True
 ):
     seed_everything(seed)
 
-    image_cache = image_cache if image_cache is not None else {}
+    # image_cache = image_cache if image_cache is not None else {}
     mask_cache = mask_cache if mask_cache is not None else {}
 
     backbone_spec = get_finetune_backbone_spec(backbone_name, device)
@@ -335,9 +371,8 @@ def train_single_fold(
                     shuffle=True,
                     seed=seed + epoch,
                     device=device,
-                    side_mask_path=side_mask_path,
-                    top_mask_path1=top_mask_path1,
-                    top_mask_path2=top_mask_path2,
+                    side_mask_paths=side_mask_paths,
+                    top_mask_paths=top_mask_paths,
                     image_cache=image_cache,
                     mask_cache=mask_cache
                 ),
@@ -366,9 +401,8 @@ def train_single_fold(
             fusion_name=fusion_name,
             batch_size=batch_size,
             device=device,
-            side_mask_path=side_mask_path,
-            top_mask_path1=top_mask_path1,
-            top_mask_path2=top_mask_path2,
+            side_mask_paths=side_mask_paths,
+            top_mask_paths=top_mask_paths,
             image_cache=image_cache,
             mask_cache=mask_cache
         )
@@ -392,17 +426,19 @@ def train_single_fold(
             best_val_mae = float(val_mae)
             epochs_without_improvement = 0
             best_state = {
-                "backbone": copy.deepcopy(backbone.state_dict()),
-                "regressor": copy.deepcopy(head.state_dict()),
+                "backbone": {k: v.detach().cpu().clone() for k, v in backbone.state_dict().items()},
+                "regressor": {k: v.detach().cpu().clone() for k, v in head.state_dict().items()},
             }
         else:
             epochs_without_improvement += 1
-            if epochs_without_improvement >= patience:
+            if use_early_stopping and epochs_without_improvement >= patience:
                 break
 
-    if best_state is not None:
+    if use_early_stopping and best_state is not None:
         backbone.load_state_dict(best_state["backbone"])
         head.load_state_dict(best_state["regressor"])
+        backbone.to(device)
+        head.to(device)
 
     return backbone_spec, backbone, head, best_val_mae, history
 
@@ -418,9 +454,8 @@ def run_end_to_end_grid_search_cv(
     batch_size=BATCH_SIZE,
     max_epochs=MAX_EPOCHS,
     device=DEVICE,
-    side_mask_path=None,
-    top_mask_path1=None,
-    top_mask_path2=None,
+    side_mask_paths=None,
+    top_mask_paths=None,
     patience=PATIENCE,
     min_delta=0.0,
     image_cache=None,
@@ -431,8 +466,8 @@ def run_end_to_end_grid_search_cv(
     oof_predictions = {}
     training_histories = {}
 
-    image_cache = image_cache if image_cache is not None else {}
-    mask_cache = mask_cache if mask_cache is not None else {}
+    # image_cache = image_cache if image_cache is not None else {}
+    # mask_cache = mask_cache if mask_cache is not None else {}
 
     for head_name, config_grid in head_configs.items():
         fold_records = []
@@ -499,9 +534,8 @@ def run_end_to_end_grid_search_cv(
                         batch_size=batch_size,
                         device=device,
                         seed=RANDOM_STATE + fold_idx * 100 + inner_fold_idx,
-                        side_mask_path=side_mask_path,
-                        top_mask_path1=top_mask_path1,
-                        top_mask_path2=top_mask_path2,
+                        side_mask_paths=side_mask_paths,
+                        top_mask_paths=top_mask_paths,
                         patience=patience,
                         min_delta=min_delta,
                         image_cache=image_cache,
@@ -532,13 +566,13 @@ def run_end_to_end_grid_search_cv(
                 batch_size=batch_size,
                 device=device,
                 seed=RANDOM_STATE + fold_idx,
-                side_mask_path=side_mask_path,
-                top_mask_path1=top_mask_path1,
-                top_mask_path2=top_mask_path2,
+                side_mask_paths=side_mask_paths,
+                top_mask_paths=top_mask_paths,
                 patience=patience,
                 min_delta=min_delta,
                 image_cache=image_cache,
-                mask_cache=mask_cache
+                mask_cache=mask_cache,
+                use_early_stopping=False
             )
 
             y_test, y_pred = predict_indices(
@@ -551,9 +585,8 @@ def run_end_to_end_grid_search_cv(
                 fusion_name=fusion_name,
                 batch_size=batch_size,
                 device=device,
-                side_mask_path=side_mask_path,
-                top_mask_path1=top_mask_path1,
-                top_mask_path2=top_mask_path2,
+                side_mask_paths=side_mask_paths,
+                top_mask_paths=top_mask_paths,
                 image_cache=image_cache,
                 mask_cache=mask_cache
             )
@@ -603,9 +636,8 @@ def run_end_to_end_nested_cv(
     batch_size=BATCH_SIZE,
     max_epochs=MAX_EPOCHS,
     device=DEVICE,
-    side_mask_path=None,
-    top_mask_path1=None,
-    top_mask_path2=None,
+    side_mask_paths=None,
+    top_mask_paths=None,
     patience=PATIENCE,
     min_delta=0.0,
     image_cache=None,
@@ -618,8 +650,8 @@ def run_end_to_end_nested_cv(
     outer_cv = GroupKFold(n_splits=outer_splits)
     outer_splitter = list(outer_cv.split(dummy_X, y, groups))
 
-    image_cache = image_cache if image_cache is not None else {}
-    mask_cache = mask_cache if mask_cache is not None else {}
+    # image_cache = image_cache if image_cache is not None else {}
+    # mask_cache = mask_cache if mask_cache is not None else {}
 
     return run_end_to_end_grid_search_cv(
         samples_df=samples_df,
@@ -633,9 +665,8 @@ def run_end_to_end_nested_cv(
         batch_size=batch_size,
         max_epochs=max_epochs,
         device=device,
-        side_mask_path=side_mask_path,
-        top_mask_path1=top_mask_path1,
-        top_mask_path2=top_mask_path2,
+        side_mask_paths=side_mask_paths,
+        top_mask_paths=top_mask_paths,
         patience=patience,
         min_delta=min_delta,
         image_cache=image_cache,

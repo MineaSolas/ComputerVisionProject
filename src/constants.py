@@ -22,6 +22,7 @@ INNER_SPLITS = 5
 BATCH_SIZE = 16
 MAX_EPOCHS = 20
 PATIENCE = 3
+IMAGE_CACHE_MAX = 200
 
 CSV_PATH = Path("experiments/experiments_1_110.csv")
 TOP_FOLDER = Path("photos/top_view_images")
