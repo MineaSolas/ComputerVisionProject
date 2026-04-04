@@ -1,0 +1,2919 @@
+
+##########################################################################################
+Evaluating backbone=densenet121, fusion=concat
+##########################################################################################
+
+======================================================================
+GroupKFold | densenet121 | concat | linear
+======================================================================
+Outer Folds:   0%|          | 0/3 [00:00<?, ?it/s]
+# Configs | Outer Fold 1/3:   0%|          | 0/4 [00:00<?, ?it/s]
+
+## Inner Folds | Outer Fold 1/3 | Config 1/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:48<?, ?it/s, best_val_mae=inf, train_loss=1.9442, val_mae=0.5217]
+
+
+### Epochs:   5%|▌         | 1/20 [00:48<15:22, 48.57s/it, best_val_mae=inf, train_loss=1.9442, val_mae=0.5217]
+
+
+### Epochs:   5%|▌         | 1/20 [01:48<15:22, 48.57s/it, best_val_mae=0.5217, train_loss=0.3574, val_mae=0.6093]
+
+
+### Epochs:  10%|█         | 2/20 [01:48<16:32, 55.15s/it, best_val_mae=0.5217, train_loss=0.3574, val_mae=0.6093]
+
+
+### Epochs:  10%|█         | 2/20 [02:46<16:32, 55.15s/it, best_val_mae=0.5217, train_loss=0.2805, val_mae=0.4602]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:46<16:04, 56.75s/it, best_val_mae=0.5217, train_loss=0.2805, val_mae=0.4602]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:44<16:04, 56.75s/it, best_val_mae=0.4602, train_loss=0.0985, val_mae=0.4367]
+
+
+### Epochs:  20%|██        | 4/20 [03:44<15:14, 57.13s/it, best_val_mae=0.4602, train_loss=0.0985, val_mae=0.4367]
+
+
+### Epochs:  20%|██        | 4/20 [04:47<15:14, 57.13s/it, best_val_mae=0.4367, train_loss=0.1176, val_mae=0.4940]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:47<14:48, 59.23s/it, best_val_mae=0.4367, train_loss=0.1176, val_mae=0.4940]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:39<14:48, 59.23s/it, best_val_mae=0.4367, train_loss=0.1519, val_mae=0.5078]
+
+
+### Epochs:  30%|███       | 6/20 [05:39<13:13, 56.66s/it, best_val_mae=0.4367, train_loss=0.1519, val_mae=0.5078]
+
+
+### Epochs:  30%|███       | 6/20 [06:45<13:13, 56.66s/it, best_val_mae=0.4367, train_loss=0.1561, val_mae=0.5157]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:45<12:58, 59.86s/it, best_val_mae=0.4367, train_loss=0.1561, val_mae=0.5157]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:35<12:58, 59.86s/it, best_val_mae=0.4367, train_loss=0.1547, val_mae=0.3975]
+
+
+### Epochs:  40%|████      | 8/20 [07:35<11:19, 56.62s/it, best_val_mae=0.4367, train_loss=0.1547, val_mae=0.3975]
+
+
+### Epochs:  40%|████      | 8/20 [08:48<11:19, 56.62s/it, best_val_mae=0.3975, train_loss=0.1759, val_mae=0.5835]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:48<11:18, 61.65s/it, best_val_mae=0.3975, train_loss=0.1759, val_mae=0.5835]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:37<11:18, 61.65s/it, best_val_mae=0.3975, train_loss=0.0734, val_mae=0.4146]
+
+
+### Epochs:  50%|█████     | 10/20 [09:37<09:37, 57.75s/it, best_val_mae=0.3975, train_loss=0.0734, val_mae=0.4146]
+
+
+### Epochs:  50%|█████     | 10/20 [10:45<09:37, 57.75s/it, best_val_mae=0.3975, train_loss=0.1445, val_mae=0.4074]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:45<09:09, 61.01s/it, best_val_mae=0.3975, train_loss=0.1445, val_mae=0.4074]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:39<09:09, 61.01s/it, best_val_mae=0.3975, train_loss=0.0756, val_mae=0.4074]
+
+
+### Epochs:  60%|██████    | 12/20 [11:39<07:51, 58.95s/it, best_val_mae=0.3975, train_loss=0.0756, val_mae=0.4074]
+
+
+### Epochs:  60%|██████    | 12/20 [12:47<07:51, 58.95s/it, best_val_mae=0.3975, train_loss=0.2138, val_mae=0.4102]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 1/3 | Config 1/4:  33%|███▎      | 1/3 [12:47<25:34, 767.32s/it]
+Early stopping at epoch 13: train_loss=0.2138, val_mae=0.4102
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:52<?, ?it/s, best_val_mae=inf, train_loss=3.2339, val_mae=0.7685]
+
+
+### Epochs:   5%|▌         | 1/20 [00:52<16:31, 52.19s/it, best_val_mae=inf, train_loss=3.2339, val_mae=0.7685]
+
+
+### Epochs:   5%|▌         | 1/20 [02:03<16:31, 52.19s/it, best_val_mae=0.7685, train_loss=0.5647, val_mae=0.5348]
+
+
+### Epochs:  10%|█         | 2/20 [02:03<19:01, 63.42s/it, best_val_mae=0.7685, train_loss=0.5647, val_mae=0.5348]
+
+
+### Epochs:  10%|█         | 2/20 [02:56<19:01, 63.42s/it, best_val_mae=0.5348, train_loss=0.2016, val_mae=0.5141]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:56<16:36, 58.64s/it, best_val_mae=0.5348, train_loss=0.2016, val_mae=0.5141]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:03<16:36, 58.64s/it, best_val_mae=0.5141, train_loss=0.1673, val_mae=0.4733]
+
+
+### Epochs:  20%|██        | 4/20 [04:03<16:28, 61.79s/it, best_val_mae=0.5141, train_loss=0.1673, val_mae=0.4733]
+
+
+### Epochs:  20%|██        | 4/20 [04:55<16:28, 61.79s/it, best_val_mae=0.4733, train_loss=0.0892, val_mae=0.5682]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:55<14:36, 58.41s/it, best_val_mae=0.4733, train_loss=0.0892, val_mae=0.5682]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:03<14:36, 58.41s/it, best_val_mae=0.4733, train_loss=0.1146, val_mae=0.5326]
+
+
+### Epochs:  30%|███       | 6/20 [06:03<14:21, 61.53s/it, best_val_mae=0.4733, train_loss=0.1146, val_mae=0.5326]
+
+
+### Epochs:  30%|███       | 6/20 [06:56<14:21, 61.53s/it, best_val_mae=0.4733, train_loss=0.0625, val_mae=0.5270]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:56<12:43, 58.75s/it, best_val_mae=0.4733, train_loss=0.0625, val_mae=0.5270]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:08<12:43, 58.75s/it, best_val_mae=0.4733, train_loss=0.1482, val_mae=0.4409]
+
+
+### Epochs:  40%|████      | 8/20 [08:08<12:38, 63.22s/it, best_val_mae=0.4733, train_loss=0.1482, val_mae=0.4409]
+
+
+### Epochs:  40%|████      | 8/20 [09:00<12:38, 63.22s/it, best_val_mae=0.4409, train_loss=0.1353, val_mae=0.4740]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:00<10:56, 59.65s/it, best_val_mae=0.4409, train_loss=0.1353, val_mae=0.4740]
+
+
+### Epochs:  45%|████▌     | 9/20 [10:09<10:56, 59.65s/it, best_val_mae=0.4409, train_loss=0.0875, val_mae=0.6361]
+
+
+### Epochs:  50%|█████     | 10/20 [10:09<10:25, 62.51s/it, best_val_mae=0.4409, train_loss=0.0875, val_mae=0.6361]
+
+
+### Epochs:  50%|█████     | 10/20 [11:06<10:25, 62.51s/it, best_val_mae=0.4409, train_loss=0.1211, val_mae=0.4668]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:06<09:07, 60.86s/it, best_val_mae=0.4409, train_loss=0.1211, val_mae=0.4668]
+
+
+### Epochs:  55%|█████▌    | 11/20 [12:12<09:07, 60.86s/it, best_val_mae=0.4409, train_loss=0.0913, val_mae=0.4424]
+
+
+### Epochs:  60%|██████    | 12/20 [12:12<08:17, 62.22s/it, best_val_mae=0.4409, train_loss=0.0913, val_mae=0.4424]
+
+
+### Epochs:  60%|██████    | 12/20 [13:09<08:17, 62.22s/it, best_val_mae=0.4409, train_loss=0.1075, val_mae=0.4658]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 1/3 | Config 1/4:  67%|██████▋   | 2/3 [25:57<13:00, 780.50s/it]
+Early stopping at epoch 13: train_loss=0.1075, val_mae=0.4658
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:11<?, ?it/s, best_val_mae=inf, train_loss=2.3469, val_mae=0.5802]
+
+
+### Epochs:   5%|▌         | 1/20 [01:12<22:48, 72.01s/it, best_val_mae=inf, train_loss=2.3469, val_mae=0.5802]
+
+
+### Epochs:   5%|▌         | 1/20 [02:06<22:48, 72.01s/it, best_val_mae=0.5802, train_loss=0.5935, val_mae=0.6194]
+
+
+### Epochs:  10%|█         | 2/20 [02:06<18:34, 61.89s/it, best_val_mae=0.5802, train_loss=0.5935, val_mae=0.6194]
+
+
+### Epochs:  10%|█         | 2/20 [03:01<18:34, 61.89s/it, best_val_mae=0.5802, train_loss=0.4681, val_mae=0.5596]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:01<16:36, 58.64s/it, best_val_mae=0.5802, train_loss=0.4681, val_mae=0.5596]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:10<16:36, 58.64s/it, best_val_mae=0.5596, train_loss=0.2708, val_mae=0.4797]
+
+
+### Epochs:  20%|██        | 4/20 [04:10<16:44, 62.80s/it, best_val_mae=0.5596, train_loss=0.2708, val_mae=0.4797]
+
+
+### Epochs:  20%|██        | 4/20 [05:01<16:44, 62.80s/it, best_val_mae=0.4797, train_loss=0.1540, val_mae=0.5071]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:01<14:35, 58.39s/it, best_val_mae=0.4797, train_loss=0.1540, val_mae=0.5071]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:09<14:35, 58.39s/it, best_val_mae=0.4797, train_loss=0.1213, val_mae=0.4973]
+
+
+### Epochs:  30%|███       | 6/20 [06:09<14:25, 61.83s/it, best_val_mae=0.4797, train_loss=0.1213, val_mae=0.4973]
+
+
+### Epochs:  30%|███       | 6/20 [07:00<14:25, 61.83s/it, best_val_mae=0.4797, train_loss=0.1734, val_mae=0.4529]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:00<12:37, 58.27s/it, best_val_mae=0.4797, train_loss=0.1734, val_mae=0.4529]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:08<12:37, 58.27s/it, best_val_mae=0.4529, train_loss=0.1331, val_mae=0.4789]
+
+
+### Epochs:  40%|████      | 8/20 [08:08<12:16, 61.37s/it, best_val_mae=0.4529, train_loss=0.1331, val_mae=0.4789]
+
+
+### Epochs:  40%|████      | 8/20 [08:59<12:16, 61.37s/it, best_val_mae=0.4529, train_loss=0.0895, val_mae=0.5229]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:59<10:40, 58.19s/it, best_val_mae=0.4529, train_loss=0.0895, val_mae=0.5229]
+
+
+### Epochs:  45%|████▌     | 9/20 [10:09<10:40, 58.19s/it, best_val_mae=0.4529, train_loss=0.1277, val_mae=0.4741]
+
+
+### Epochs:  50%|█████     | 10/20 [10:09<10:17, 61.76s/it, best_val_mae=0.4529, train_loss=0.1277, val_mae=0.4741]
+
+
+### Epochs:  50%|█████     | 10/20 [10:59<10:17, 61.76s/it, best_val_mae=0.4529, train_loss=0.1895, val_mae=0.5160]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:59<08:43, 58.18s/it, best_val_mae=0.4529, train_loss=0.1895, val_mae=0.5160]
+
+
+### Epochs:  55%|█████▌    | 11/20 [12:12<08:43, 58.18s/it, best_val_mae=0.4529, train_loss=0.2618, val_mae=0.5455]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 1/3 | Config 1/4: 100%|██████████| 3/3 [38:09<00:00, 758.50s/it]
+
+                                                                                            
+# Configs | Outer Fold 1/3:   0%|          | 0/4 [38:09<?, ?it/s, config_idx=1/4, mean_inner_mae=0.4304]
+# Configs | Outer Fold 1/3:  25%|██▌       | 1/4 [38:09<1:54:28, 2289.37s/it, config_idx=1/4, mean_inner_mae=0.4304]
+Early stopping at epoch 12: train_loss=0.2618, val_mae=0.5455
+
+
+## Inner Folds | Outer Fold 1/3 | Config 2/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:49<?, ?it/s, best_val_mae=inf, train_loss=1.9443, val_mae=0.5224]
+
+
+### Epochs:   5%|▌         | 1/20 [00:49<15:46, 49.82s/it, best_val_mae=inf, train_loss=1.9443, val_mae=0.5224]
+
+
+### Epochs:   5%|▌         | 1/20 [02:05<15:46, 49.82s/it, best_val_mae=0.5224, train_loss=0.3579, val_mae=0.6092]
+
+
+### Epochs:  10%|█         | 2/20 [02:05<19:35, 65.32s/it, best_val_mae=0.5224, train_loss=0.3579, val_mae=0.6092]
+
+
+### Epochs:  10%|█         | 2/20 [02:54<19:35, 65.32s/it, best_val_mae=0.5224, train_loss=0.2815, val_mae=0.4609]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:54<16:22, 57.78s/it, best_val_mae=0.5224, train_loss=0.2815, val_mae=0.4609]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:06<16:22, 57.78s/it, best_val_mae=0.4609, train_loss=0.0986, val_mae=0.4376]
+
+
+### Epochs:  20%|██        | 4/20 [04:06<16:50, 63.16s/it, best_val_mae=0.4609, train_loss=0.0986, val_mae=0.4376]
+
+
+### Epochs:  20%|██        | 4/20 [04:57<16:50, 63.16s/it, best_val_mae=0.4376, train_loss=0.1178, val_mae=0.4958]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:57<14:43, 58.93s/it, best_val_mae=0.4376, train_loss=0.1178, val_mae=0.4958]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:04<14:43, 58.93s/it, best_val_mae=0.4376, train_loss=0.1526, val_mae=0.5093]
+
+
+### Epochs:  30%|███       | 6/20 [06:04<14:24, 61.76s/it, best_val_mae=0.4376, train_loss=0.1526, val_mae=0.5093]
+
+
+### Epochs:  30%|███       | 6/20 [06:59<14:24, 61.76s/it, best_val_mae=0.4376, train_loss=0.1570, val_mae=0.5183]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:59<12:51, 59.35s/it, best_val_mae=0.4376, train_loss=0.1570, val_mae=0.5183]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:55<12:51, 59.35s/it, best_val_mae=0.4376, train_loss=0.1552, val_mae=0.3983]
+
+
+### Epochs:  40%|████      | 8/20 [07:55<11:38, 58.24s/it, best_val_mae=0.4376, train_loss=0.1552, val_mae=0.3983]
+
+
+### Epochs:  40%|████      | 8/20 [09:02<11:38, 58.24s/it, best_val_mae=0.3983, train_loss=0.1761, val_mae=0.5827]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:02<11:10, 60.99s/it, best_val_mae=0.3983, train_loss=0.1761, val_mae=0.5827]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:52<11:10, 60.99s/it, best_val_mae=0.3983, train_loss=0.0735, val_mae=0.4155]
+
+
+### Epochs:  50%|█████     | 10/20 [09:52<09:37, 57.75s/it, best_val_mae=0.3983, train_loss=0.0735, val_mae=0.4155]
+
+
+### Epochs:  50%|█████     | 10/20 [11:05<09:37, 57.75s/it, best_val_mae=0.3983, train_loss=0.1452, val_mae=0.4075]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:05<09:22, 62.50s/it, best_val_mae=0.3983, train_loss=0.1452, val_mae=0.4075]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:57<09:22, 62.50s/it, best_val_mae=0.3983, train_loss=0.0752, val_mae=0.4081]
+
+
+### Epochs:  60%|██████    | 12/20 [11:57<07:54, 59.30s/it, best_val_mae=0.3983, train_loss=0.0752, val_mae=0.4081]
+
+
+### Epochs:  60%|██████    | 12/20 [13:08<07:54, 59.30s/it, best_val_mae=0.3983, train_loss=0.2161, val_mae=0.4087]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 1/3 | Config 2/4:  33%|███▎      | 1/3 [13:08<26:16, 788.45s/it]
+Early stopping at epoch 13: train_loss=0.2161, val_mae=0.4087
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:49<?, ?it/s, best_val_mae=inf, train_loss=3.2341, val_mae=0.7690]
+
+
+### Epochs:   5%|▌         | 1/20 [00:49<15:47, 49.85s/it, best_val_mae=inf, train_loss=3.2341, val_mae=0.7690]
+
+
+### Epochs:   5%|▌         | 1/20 [02:03<15:47, 49.85s/it, best_val_mae=0.7690, train_loss=0.5652, val_mae=0.5359]
+
+
+### Epochs:  10%|█         | 2/20 [02:03<19:13, 64.09s/it, best_val_mae=0.7690, train_loss=0.5652, val_mae=0.5359]
+
+
+### Epochs:  10%|█         | 2/20 [02:54<19:13, 64.09s/it, best_val_mae=0.5359, train_loss=0.2024, val_mae=0.5145]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:54<16:24, 57.91s/it, best_val_mae=0.5359, train_loss=0.2024, val_mae=0.5145]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:56<16:24, 57.91s/it, best_val_mae=0.5145, train_loss=0.1675, val_mae=0.4738]
+
+
+### Epochs:  20%|██        | 4/20 [03:56<15:52, 59.55s/it, best_val_mae=0.5145, train_loss=0.1675, val_mae=0.4738]
+
+
+### Epochs:  20%|██        | 4/20 [04:57<15:52, 59.55s/it, best_val_mae=0.4738, train_loss=0.0892, val_mae=0.5698]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:57<15:02, 60.19s/it, best_val_mae=0.4738, train_loss=0.0892, val_mae=0.5698]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:56<15:02, 60.19s/it, best_val_mae=0.4738, train_loss=0.1146, val_mae=0.5343]
+
+
+### Epochs:  30%|███       | 6/20 [05:56<13:56, 59.71s/it, best_val_mae=0.4738, train_loss=0.1146, val_mae=0.5343]
+
+
+### Epochs:  30%|███       | 6/20 [07:04<13:56, 59.71s/it, best_val_mae=0.4738, train_loss=0.0626, val_mae=0.5285]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:04<13:31, 62.41s/it, best_val_mae=0.4738, train_loss=0.0626, val_mae=0.5285]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:59<13:31, 62.41s/it, best_val_mae=0.4738, train_loss=0.1488, val_mae=0.4416]
+
+
+### Epochs:  40%|████      | 8/20 [07:59<11:59, 59.98s/it, best_val_mae=0.4738, train_loss=0.1488, val_mae=0.4416]
+
+
+### Epochs:  40%|████      | 8/20 [09:09<11:59, 59.98s/it, best_val_mae=0.4416, train_loss=0.1366, val_mae=0.4741]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:09<11:33, 63.05s/it, best_val_mae=0.4416, train_loss=0.1366, val_mae=0.4741]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:59<11:33, 63.05s/it, best_val_mae=0.4416, train_loss=0.0873, val_mae=0.6393]
+
+
+### Epochs:  50%|█████     | 10/20 [09:59<09:52, 59.22s/it, best_val_mae=0.4416, train_loss=0.0873, val_mae=0.6393]
+
+
+### Epochs:  50%|█████     | 10/20 [11:14<09:52, 59.22s/it, best_val_mae=0.4416, train_loss=0.1211, val_mae=0.4687]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:14<09:35, 63.99s/it, best_val_mae=0.4416, train_loss=0.1211, val_mae=0.4687]
+
+
+### Epochs:  55%|█████▌    | 11/20 [12:04<09:35, 63.99s/it, best_val_mae=0.4416, train_loss=0.0907, val_mae=0.4428]
+
+
+### Epochs:  60%|██████    | 12/20 [12:04<07:58, 59.79s/it, best_val_mae=0.4416, train_loss=0.0907, val_mae=0.4428]
+
+
+### Epochs:  60%|██████    | 12/20 [13:14<07:58, 59.79s/it, best_val_mae=0.4416, train_loss=0.1073, val_mae=0.4641]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 1/3 | Config 2/4:  67%|██████▋   | 2/3 [26:22<13:11, 791.90s/it]
+Early stopping at epoch 13: train_loss=0.1073, val_mae=0.4641
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:00<?, ?it/s, best_val_mae=inf, train_loss=2.3473, val_mae=0.5806]
+
+
+### Epochs:   5%|▌         | 1/20 [01:00<19:04, 60.25s/it, best_val_mae=inf, train_loss=2.3473, val_mae=0.5806]
+
+
+### Epochs:   5%|▌         | 1/20 [02:08<19:04, 60.25s/it, best_val_mae=0.5806, train_loss=0.5939, val_mae=0.6200]
+
+
+### Epochs:  10%|█         | 2/20 [02:08<19:34, 65.24s/it, best_val_mae=0.5806, train_loss=0.5939, val_mae=0.6200]
+
+
+### Epochs:  10%|█         | 2/20 [03:00<19:34, 65.24s/it, best_val_mae=0.5806, train_loss=0.4688, val_mae=0.5588]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:00<16:41, 58.90s/it, best_val_mae=0.5806, train_loss=0.4688, val_mae=0.5588]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:08<16:41, 58.90s/it, best_val_mae=0.5588, train_loss=0.2709, val_mae=0.4800]
+
+
+### Epochs:  20%|██        | 4/20 [04:08<16:42, 62.63s/it, best_val_mae=0.5588, train_loss=0.2709, val_mae=0.4800]
+
+
+### Epochs:  20%|██        | 4/20 [05:00<16:42, 62.63s/it, best_val_mae=0.4800, train_loss=0.1541, val_mae=0.5087]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:00<14:38, 58.57s/it, best_val_mae=0.4800, train_loss=0.1541, val_mae=0.5087]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:11<14:38, 58.57s/it, best_val_mae=0.4800, train_loss=0.1213, val_mae=0.4954]
+
+
+### Epochs:  30%|███       | 6/20 [06:11<14:40, 62.87s/it, best_val_mae=0.4800, train_loss=0.1213, val_mae=0.4954]
+
+
+### Epochs:  30%|███       | 6/20 [07:02<14:40, 62.87s/it, best_val_mae=0.4800, train_loss=0.1737, val_mae=0.4524]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:02<12:46, 58.94s/it, best_val_mae=0.4800, train_loss=0.1737, val_mae=0.4524]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:16<12:46, 58.94s/it, best_val_mae=0.4524, train_loss=0.1344, val_mae=0.4783]
+
+
+### Epochs:  40%|████      | 8/20 [08:16<12:46, 63.87s/it, best_val_mae=0.4524, train_loss=0.1344, val_mae=0.4783]
+
+
+### Epochs:  40%|████      | 8/20 [09:07<12:46, 63.87s/it, best_val_mae=0.4524, train_loss=0.0892, val_mae=0.5258]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:07<10:57, 59.74s/it, best_val_mae=0.4524, train_loss=0.0892, val_mae=0.5258]
+
+
+### Epochs:  45%|████▌     | 9/20 [10:19<10:57, 59.74s/it, best_val_mae=0.4524, train_loss=0.1262, val_mae=0.4765]
+
+
+### Epochs:  50%|█████     | 10/20 [10:19<10:36, 63.60s/it, best_val_mae=0.4524, train_loss=0.1262, val_mae=0.4765]
+
+
+### Epochs:  50%|█████     | 10/20 [11:10<10:36, 63.60s/it, best_val_mae=0.4524, train_loss=0.1888, val_mae=0.5067]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:10<08:57, 59.77s/it, best_val_mae=0.4524, train_loss=0.1888, val_mae=0.5067]
+
+
+### Epochs:  55%|█████▌    | 11/20 [12:21<08:57, 59.77s/it, best_val_mae=0.4524, train_loss=0.2603, val_mae=0.5475]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 1/3 | Config 2/4: 100%|██████████| 3/3 [38:44<00:00, 769.12s/it]
+
+                                                                                            
+# Configs | Outer Fold 1/3:  25%|██▌       | 1/4 [1:16:54<1:54:28, 2289.37s/it, config_idx=2/4, mean_inner_mae=0.4308]
+# Configs | Outer Fold 1/3:  50%|█████     | 2/4 [1:16:54<1:17:00, 2310.20s/it, config_idx=2/4, mean_inner_mae=0.4308]
+Early stopping at epoch 12: train_loss=0.2603, val_mae=0.5475
+
+
+## Inner Folds | Outer Fold 1/3 | Config 3/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:54<?, ?it/s, best_val_mae=inf, train_loss=2.3615, val_mae=0.5974]
+
+
+### Epochs:   5%|▌         | 1/20 [00:54<17:11, 54.28s/it, best_val_mae=inf, train_loss=2.3615, val_mae=0.5974]
+
+
+### Epochs:   5%|▌         | 1/20 [02:07<17:11, 54.28s/it, best_val_mae=0.5974, train_loss=0.6285, val_mae=0.5366]
+
+
+### Epochs:  10%|█         | 2/20 [02:07<19:32, 65.13s/it, best_val_mae=0.5974, train_loss=0.6285, val_mae=0.5366]
+
+
+### Epochs:  10%|█         | 2/20 [02:57<19:32, 65.13s/it, best_val_mae=0.5366, train_loss=0.2657, val_mae=0.4030]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:57<16:30, 58.24s/it, best_val_mae=0.5366, train_loss=0.2657, val_mae=0.4030]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:11<16:30, 58.24s/it, best_val_mae=0.4030, train_loss=0.1052, val_mae=0.4588]
+
+
+### Epochs:  20%|██        | 4/20 [04:11<17:13, 64.62s/it, best_val_mae=0.4030, train_loss=0.1052, val_mae=0.4588]
+
+
+### Epochs:  20%|██        | 4/20 [05:01<17:13, 64.62s/it, best_val_mae=0.4030, train_loss=0.1086, val_mae=0.4247]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:01<14:53, 59.54s/it, best_val_mae=0.4030, train_loss=0.1086, val_mae=0.4247]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:11<14:53, 59.54s/it, best_val_mae=0.4030, train_loss=0.0901, val_mae=0.4182]
+
+
+### Epochs:  30%|███       | 6/20 [06:11<14:42, 63.06s/it, best_val_mae=0.4030, train_loss=0.0901, val_mae=0.4182]
+
+
+### Epochs:  30%|███       | 6/20 [07:06<14:42, 63.06s/it, best_val_mae=0.4030, train_loss=0.1090, val_mae=0.4366]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:06<13:01, 60.15s/it, best_val_mae=0.4030, train_loss=0.1090, val_mae=0.4366]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:15<13:01, 60.15s/it, best_val_mae=0.4030, train_loss=0.1742, val_mae=0.4783]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 1/3 | Config 3/4:  33%|███▎      | 1/3 [08:15<16:30, 495.37s/it]
+Early stopping at epoch 8: train_loss=0.1742, val_mae=0.4783
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:55<?, ?it/s, best_val_mae=inf, train_loss=4.1833, val_mae=0.6462]
+
+
+### Epochs:   5%|▌         | 1/20 [00:55<17:43, 55.99s/it, best_val_mae=inf, train_loss=4.1833, val_mae=0.6462]
+
+
+### Epochs:   5%|▌         | 1/20 [02:02<17:43, 55.99s/it, best_val_mae=0.6462, train_loss=0.5923, val_mae=0.8771]
+
+
+### Epochs:  10%|█         | 2/20 [02:02<18:35, 61.97s/it, best_val_mae=0.6462, train_loss=0.5923, val_mae=0.8771]
+
+
+### Epochs:  10%|█         | 2/20 [03:03<18:35, 61.97s/it, best_val_mae=0.6462, train_loss=0.3884, val_mae=0.3960]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:03<17:31, 61.87s/it, best_val_mae=0.6462, train_loss=0.3884, val_mae=0.3960]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:04<17:31, 61.87s/it, best_val_mae=0.3960, train_loss=0.1547, val_mae=0.4844]
+
+
+### Epochs:  20%|██        | 4/20 [04:04<16:21, 61.36s/it, best_val_mae=0.3960, train_loss=0.1547, val_mae=0.4844]
+
+
+### Epochs:  20%|██        | 4/20 [05:14<16:21, 61.36s/it, best_val_mae=0.3960, train_loss=0.0807, val_mae=0.4977]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:14<16:04, 64.32s/it, best_val_mae=0.3960, train_loss=0.0807, val_mae=0.4977]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:03<16:04, 64.32s/it, best_val_mae=0.3960, train_loss=0.0960, val_mae=0.4832]
+
+
+### Epochs:  30%|███       | 6/20 [06:03<13:48, 59.14s/it, best_val_mae=0.3960, train_loss=0.0960, val_mae=0.4832]
+
+
+### Epochs:  30%|███       | 6/20 [07:13<13:48, 59.14s/it, best_val_mae=0.3960, train_loss=0.0519, val_mae=0.4736]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:13<13:37, 62.88s/it, best_val_mae=0.3960, train_loss=0.0519, val_mae=0.4736]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:08<13:37, 62.88s/it, best_val_mae=0.3960, train_loss=0.1133, val_mae=0.4783]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 1/3 | Config 3/4:  67%|██████▋   | 2/3 [16:24<08:11, 491.57s/it]
+Early stopping at epoch 8: train_loss=0.1133, val_mae=0.4783
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:13<?, ?it/s, best_val_mae=inf, train_loss=2.6588, val_mae=0.6516]
+
+
+### Epochs:   5%|▌         | 1/20 [01:13<23:16, 73.52s/it, best_val_mae=inf, train_loss=2.6588, val_mae=0.6516]
+
+
+### Epochs:   5%|▌         | 1/20 [02:05<23:16, 73.52s/it, best_val_mae=0.6516, train_loss=0.5705, val_mae=0.4959]
+
+
+### Epochs:  10%|█         | 2/20 [02:05<18:18, 61.02s/it, best_val_mae=0.6516, train_loss=0.5705, val_mae=0.4959]
+
+
+### Epochs:  10%|█         | 2/20 [03:16<18:18, 61.02s/it, best_val_mae=0.4959, train_loss=0.2604, val_mae=0.4978]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:16<18:33, 65.49s/it, best_val_mae=0.4959, train_loss=0.2604, val_mae=0.4978]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:09<18:33, 65.49s/it, best_val_mae=0.4959, train_loss=0.1491, val_mae=0.4794]
+
+
+### Epochs:  20%|██        | 4/20 [04:09<16:09, 60.59s/it, best_val_mae=0.4959, train_loss=0.1491, val_mae=0.4794]
+
+
+### Epochs:  20%|██        | 4/20 [05:23<16:09, 60.59s/it, best_val_mae=0.4794, train_loss=0.1377, val_mae=0.4727]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:23<16:21, 65.44s/it, best_val_mae=0.4794, train_loss=0.1377, val_mae=0.4727]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:13<16:21, 65.44s/it, best_val_mae=0.4727, train_loss=0.0728, val_mae=0.4655]
+
+
+### Epochs:  30%|███       | 6/20 [06:13<14:00, 60.04s/it, best_val_mae=0.4727, train_loss=0.0728, val_mae=0.4655]
+
+
+### Epochs:  30%|███       | 6/20 [07:26<14:00, 60.04s/it, best_val_mae=0.4655, train_loss=0.1313, val_mae=0.4630]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:26<13:56, 64.37s/it, best_val_mae=0.4655, train_loss=0.1313, val_mae=0.4630]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:18<13:56, 64.37s/it, best_val_mae=0.4630, train_loss=0.1226, val_mae=0.4572]
+
+
+### Epochs:  40%|████      | 8/20 [08:18<12:06, 60.56s/it, best_val_mae=0.4630, train_loss=0.1226, val_mae=0.4572]
+
+
+### Epochs:  40%|████      | 8/20 [09:31<12:06, 60.56s/it, best_val_mae=0.4572, train_loss=0.1267, val_mae=0.4516]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:31<11:46, 64.25s/it, best_val_mae=0.4572, train_loss=0.1267, val_mae=0.4516]
+
+
+### Epochs:  45%|████▌     | 9/20 [10:23<11:46, 64.25s/it, best_val_mae=0.4516, train_loss=0.0734, val_mae=0.4624]
+
+
+### Epochs:  50%|█████     | 10/20 [10:23<10:03, 60.37s/it, best_val_mae=0.4516, train_loss=0.0734, val_mae=0.4624]
+
+
+### Epochs:  50%|█████     | 10/20 [11:32<10:03, 60.37s/it, best_val_mae=0.4516, train_loss=0.0666, val_mae=0.4551]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:32<09:29, 63.28s/it, best_val_mae=0.4516, train_loss=0.0666, val_mae=0.4551]
+
+
+### Epochs:  55%|█████▌    | 11/20 [12:31<09:29, 63.28s/it, best_val_mae=0.4516, train_loss=0.1282, val_mae=0.4563]
+
+
+### Epochs:  60%|██████    | 12/20 [12:31<08:14, 61.87s/it, best_val_mae=0.4516, train_loss=0.1282, val_mae=0.4563]
+
+
+### Epochs:  60%|██████    | 12/20 [13:33<08:14, 61.87s/it, best_val_mae=0.4516, train_loss=0.0606, val_mae=0.4594]
+
+
+### Epochs:  65%|██████▌   | 13/20 [13:33<07:13, 61.91s/it, best_val_mae=0.4516, train_loss=0.0606, val_mae=0.4594]
+
+
+### Epochs:  65%|██████▌   | 13/20 [14:39<07:13, 61.91s/it, best_val_mae=0.4516, train_loss=0.0866, val_mae=0.4568]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 1/3 | Config 3/4: 100%|██████████| 3/3 [31:03<00:00, 668.79s/it]
+
+                                                                                            
+# Configs | Outer Fold 1/3:  50%|█████     | 2/4 [1:47:58<1:17:00, 2310.20s/it, config_idx=3/4, mean_inner_mae=0.4169]
+# Configs | Outer Fold 1/3:  75%|███████▌  | 3/4 [1:47:58<35:06, 2106.45s/it, config_idx=3/4, mean_inner_mae=0.4169]  
+Early stopping at epoch 14: train_loss=0.0866, val_mae=0.4568
+
+
+## Inner Folds | Outer Fold 1/3 | Config 4/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:07<?, ?it/s, best_val_mae=inf, train_loss=2.3608, val_mae=0.5975]
+
+
+### Epochs:   5%|▌         | 1/20 [01:07<21:18, 67.28s/it, best_val_mae=inf, train_loss=2.3608, val_mae=0.5975]
+
+
+### Epochs:   5%|▌         | 1/20 [02:05<21:18, 67.28s/it, best_val_mae=0.5975, train_loss=0.6300, val_mae=0.5362]
+
+
+### Epochs:  10%|█         | 2/20 [02:05<18:32, 61.81s/it, best_val_mae=0.5975, train_loss=0.6300, val_mae=0.5362]
+
+
+### Epochs:  10%|█         | 2/20 [03:08<18:32, 61.81s/it, best_val_mae=0.5362, train_loss=0.2667, val_mae=0.4029]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:08<17:41, 62.45s/it, best_val_mae=0.5362, train_loss=0.2667, val_mae=0.4029]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:12<17:41, 62.45s/it, best_val_mae=0.4029, train_loss=0.1051, val_mae=0.4595]
+
+
+### Epochs:  20%|██        | 4/20 [04:12<16:47, 63.00s/it, best_val_mae=0.4029, train_loss=0.1051, val_mae=0.4595]
+
+
+### Epochs:  20%|██        | 4/20 [05:09<16:47, 63.00s/it, best_val_mae=0.4029, train_loss=0.1088, val_mae=0.4252]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:09<15:16, 61.08s/it, best_val_mae=0.4029, train_loss=0.1088, val_mae=0.4252]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:16<15:16, 61.08s/it, best_val_mae=0.4029, train_loss=0.0903, val_mae=0.4178]
+
+
+### Epochs:  30%|███       | 6/20 [06:16<14:41, 62.97s/it, best_val_mae=0.4029, train_loss=0.0903, val_mae=0.4178]
+
+
+### Epochs:  30%|███       | 6/20 [07:08<14:41, 62.97s/it, best_val_mae=0.4029, train_loss=0.1087, val_mae=0.4364]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:08<12:49, 59.21s/it, best_val_mae=0.4029, train_loss=0.1087, val_mae=0.4364]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:23<12:49, 59.21s/it, best_val_mae=0.4029, train_loss=0.1743, val_mae=0.4771]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 1/3 | Config 4/4:  33%|███▎      | 1/3 [08:23<16:47, 503.52s/it]
+Early stopping at epoch 8: train_loss=0.1743, val_mae=0.4771
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:55<?, ?it/s, best_val_mae=inf, train_loss=4.1827, val_mae=0.6464]
+
+
+### Epochs:   5%|▌         | 1/20 [00:55<17:27, 55.12s/it, best_val_mae=inf, train_loss=4.1827, val_mae=0.6464]
+
+
+### Epochs:   5%|▌         | 1/20 [02:02<17:27, 55.12s/it, best_val_mae=0.6464, train_loss=0.5940, val_mae=0.8767]
+
+
+### Epochs:  10%|█         | 2/20 [02:02<18:42, 62.38s/it, best_val_mae=0.6464, train_loss=0.5940, val_mae=0.8767]
+
+
+### Epochs:  10%|█         | 2/20 [02:54<18:42, 62.38s/it, best_val_mae=0.6464, train_loss=0.3894, val_mae=0.3954]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:54<16:22, 57.81s/it, best_val_mae=0.6464, train_loss=0.3894, val_mae=0.3954]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:04<16:22, 57.81s/it, best_val_mae=0.3954, train_loss=0.1548, val_mae=0.4843]
+
+
+### Epochs:  20%|██        | 4/20 [04:04<16:42, 62.63s/it, best_val_mae=0.3954, train_loss=0.1548, val_mae=0.4843]
+
+
+### Epochs:  20%|██        | 4/20 [04:59<16:42, 62.63s/it, best_val_mae=0.3954, train_loss=0.0809, val_mae=0.4980]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:59<14:56, 59.75s/it, best_val_mae=0.3954, train_loss=0.0809, val_mae=0.4980]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:12<14:56, 59.75s/it, best_val_mae=0.3954, train_loss=0.0959, val_mae=0.4830]
+
+
+### Epochs:  30%|███       | 6/20 [06:12<14:57, 64.14s/it, best_val_mae=0.3954, train_loss=0.0959, val_mae=0.4830]
+
+
+### Epochs:  30%|███       | 6/20 [07:05<14:57, 64.14s/it, best_val_mae=0.3954, train_loss=0.0518, val_mae=0.4729]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:05<13:06, 60.51s/it, best_val_mae=0.3954, train_loss=0.0518, val_mae=0.4729]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:19<13:06, 60.51s/it, best_val_mae=0.3954, train_loss=0.1135, val_mae=0.4779]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 1/3 | Config 4/4:  67%|██████▋   | 2/3 [16:43<08:21, 501.30s/it]
+Early stopping at epoch 8: train_loss=0.1135, val_mae=0.4779
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:49<?, ?it/s, best_val_mae=inf, train_loss=2.6585, val_mae=0.6519]
+
+
+### Epochs:   5%|▌         | 1/20 [00:49<15:32, 49.08s/it, best_val_mae=inf, train_loss=2.6585, val_mae=0.6519]
+
+
+### Epochs:   5%|▌         | 1/20 [02:03<15:32, 49.08s/it, best_val_mae=0.6519, train_loss=0.5720, val_mae=0.4959]
+
+
+### Epochs:  10%|█         | 2/20 [02:03<19:09, 63.88s/it, best_val_mae=0.6519, train_loss=0.5720, val_mae=0.4959]
+
+
+### Epochs:  10%|█         | 2/20 [02:55<19:09, 63.88s/it, best_val_mae=0.4959, train_loss=0.2610, val_mae=0.4970]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:55<16:38, 58.73s/it, best_val_mae=0.4959, train_loss=0.2610, val_mae=0.4970]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:58<16:38, 58.73s/it, best_val_mae=0.4959, train_loss=0.1493, val_mae=0.4795]
+
+
+### Epochs:  20%|██        | 4/20 [03:59<16:07, 60.45s/it, best_val_mae=0.4959, train_loss=0.1493, val_mae=0.4795]
+
+
+### Epochs:  20%|██        | 4/20 [05:04<16:07, 60.45s/it, best_val_mae=0.4795, train_loss=0.1378, val_mae=0.4725]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:05<15:36, 62.45s/it, best_val_mae=0.4795, train_loss=0.1378, val_mae=0.4725]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:01<15:36, 62.45s/it, best_val_mae=0.4725, train_loss=0.0729, val_mae=0.4655]
+
+
+### Epochs:  30%|███       | 6/20 [06:01<14:04, 60.29s/it, best_val_mae=0.4725, train_loss=0.0729, val_mae=0.4655]
+
+
+### Epochs:  30%|███       | 6/20 [07:11<14:04, 60.29s/it, best_val_mae=0.4655, train_loss=0.1315, val_mae=0.4623]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:11<13:47, 63.63s/it, best_val_mae=0.4655, train_loss=0.1315, val_mae=0.4623]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:04<13:47, 63.63s/it, best_val_mae=0.4623, train_loss=0.1230, val_mae=0.4571]
+
+
+### Epochs:  40%|████      | 8/20 [08:04<12:03, 60.28s/it, best_val_mae=0.4623, train_loss=0.1230, val_mae=0.4571]
+
+
+### Epochs:  40%|████      | 8/20 [09:13<12:03, 60.28s/it, best_val_mae=0.4571, train_loss=0.1269, val_mae=0.4517]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:13<11:30, 62.82s/it, best_val_mae=0.4571, train_loss=0.1269, val_mae=0.4517]
+
+
+### Epochs:  45%|████▌     | 9/20 [10:04<11:30, 62.82s/it, best_val_mae=0.4517, train_loss=0.0734, val_mae=0.4616]
+
+
+### Epochs:  50%|█████     | 10/20 [10:04<09:52, 59.21s/it, best_val_mae=0.4517, train_loss=0.0734, val_mae=0.4616]
+
+
+### Epochs:  50%|█████     | 10/20 [11:18<09:52, 59.21s/it, best_val_mae=0.4517, train_loss=0.0665, val_mae=0.4552]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:18<09:34, 63.84s/it, best_val_mae=0.4517, train_loss=0.0665, val_mae=0.4552]
+
+
+### Epochs:  55%|█████▌    | 11/20 [12:14<09:34, 63.84s/it, best_val_mae=0.4517, train_loss=0.1284, val_mae=0.4562]
+
+
+### Epochs:  60%|██████    | 12/20 [12:14<08:10, 61.36s/it, best_val_mae=0.4517, train_loss=0.1284, val_mae=0.4562]
+
+
+### Epochs:  60%|██████    | 12/20 [13:23<08:10, 61.36s/it, best_val_mae=0.4517, train_loss=0.0604, val_mae=0.4592]
+
+
+### Epochs:  65%|██████▌   | 13/20 [13:23<07:25, 63.71s/it, best_val_mae=0.4517, train_loss=0.0604, val_mae=0.4592]
+
+
+### Epochs:  65%|██████▌   | 13/20 [14:15<07:25, 63.71s/it, best_val_mae=0.4517, train_loss=0.0860, val_mae=0.4569]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 1/3 | Config 4/4: 100%|██████████| 3/3 [30:59<00:00, 663.20s/it]
+
+                                                                                            
+# Configs | Outer Fold 1/3:  75%|███████▌  | 3/4 [2:18:57<35:06, 2106.45s/it, config_idx=4/4, mean_inner_mae=0.4167]
+# Configs | Outer Fold 1/3: 100%|██████████| 4/4 [2:18:57<00:00, 2008.81s/it, config_idx=4/4, mean_inner_mae=0.4167]
+                                                                                                                    
+Early stopping at epoch 14: train_loss=0.0860, val_mae=0.4569
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+### Epochs:   0%|          | 0/20 [01:39<?, ?it/s, best_val_mae=inf, train_loss=2.3771, val_mae=0.7406]
+### Epochs:   5%|▌         | 1/20 [01:39<31:24, 99.17s/it, best_val_mae=inf, train_loss=2.3771, val_mae=0.7406]
+### Epochs:   5%|▌         | 1/20 [03:16<31:24, 99.17s/it, best_val_mae=0.7406, train_loss=0.5134, val_mae=0.3556]
+### Epochs:  10%|█         | 2/20 [03:16<29:30, 98.36s/it, best_val_mae=0.7406, train_loss=0.5134, val_mae=0.3556]
+### Epochs:  10%|█         | 2/20 [04:54<29:30, 98.36s/it, best_val_mae=0.3556, train_loss=0.1467, val_mae=0.4545]
+### Epochs:  15%|█▌        | 3/20 [04:54<27:45, 97.96s/it, best_val_mae=0.3556, train_loss=0.1467, val_mae=0.4545]
+### Epochs:  15%|█▌        | 3/20 [06:11<27:45, 97.96s/it, best_val_mae=0.3556, train_loss=0.1110, val_mae=0.3932]
+### Epochs:  20%|██        | 4/20 [06:11<23:56, 89.77s/it, best_val_mae=0.3556, train_loss=0.1110, val_mae=0.3932]
+### Epochs:  20%|██        | 4/20 [07:47<23:56, 89.77s/it, best_val_mae=0.3556, train_loss=0.0810, val_mae=0.4167]
+### Epochs:  25%|██▌       | 5/20 [07:47<23:01, 92.07s/it, best_val_mae=0.3556, train_loss=0.0810, val_mae=0.4167]
+### Epochs:  25%|██▌       | 5/20 [09:29<23:01, 92.07s/it, best_val_mae=0.3556, train_loss=0.0963, val_mae=0.4117]
+### Epochs:  30%|███       | 6/20 [09:29<22:14, 95.29s/it, best_val_mae=0.3556, train_loss=0.0963, val_mae=0.4117]
+### Epochs:  30%|███       | 6/20 [11:09<22:14, 95.29s/it, best_val_mae=0.3556, train_loss=0.0823, val_mae=0.3841]
+### Epochs:  35%|███▌      | 7/20 [11:09<20:58, 96.82s/it, best_val_mae=0.3556, train_loss=0.0823, val_mae=0.3841]
+### Epochs:  35%|███▌      | 7/20 [12:29<20:58, 96.82s/it, best_val_mae=0.3556, train_loss=0.0846, val_mae=0.3753]
+### Epochs:  40%|████      | 8/20 [12:29<18:16, 91.40s/it, best_val_mae=0.3556, train_loss=0.0846, val_mae=0.3753]
+### Epochs:  40%|████      | 8/20 [14:06<18:16, 91.40s/it, best_val_mae=0.3556, train_loss=0.2051, val_mae=0.4369]
+### Epochs:  45%|████▌     | 9/20 [14:06<17:06, 93.33s/it, best_val_mae=0.3556, train_loss=0.2051, val_mae=0.4369]
+### Epochs:  45%|████▌     | 9/20 [15:44<17:06, 93.33s/it, best_val_mae=0.3556, train_loss=0.0772, val_mae=0.4906]
+### Epochs:  50%|█████     | 10/20 [15:44<15:46, 94.69s/it, best_val_mae=0.3556, train_loss=0.0772, val_mae=0.4906]
+### Epochs:  50%|█████     | 10/20 [17:24<15:46, 94.69s/it, best_val_mae=0.3556, train_loss=0.1624, val_mae=0.3553]
+### Epochs:  55%|█████▌    | 11/20 [17:24<14:26, 96.32s/it, best_val_mae=0.3556, train_loss=0.1624, val_mae=0.3553]
+### Epochs:  55%|█████▌    | 11/20 [18:44<14:26, 96.32s/it, best_val_mae=0.3553, train_loss=0.1018, val_mae=0.3504]
+### Epochs:  60%|██████    | 12/20 [18:44<12:10, 91.31s/it, best_val_mae=0.3553, train_loss=0.1018, val_mae=0.3504]
+### Epochs:  60%|██████    | 12/20 [20:21<12:10, 91.31s/it, best_val_mae=0.3504, train_loss=0.0910, val_mae=0.3818]
+### Epochs:  65%|██████▌   | 13/20 [20:21<10:51, 93.04s/it, best_val_mae=0.3504, train_loss=0.0910, val_mae=0.3818]
+### Epochs:  65%|██████▌   | 13/20 [21:59<10:51, 93.04s/it, best_val_mae=0.3504, train_loss=0.0624, val_mae=0.4009]
+### Epochs:  70%|███████   | 14/20 [21:59<09:28, 94.68s/it, best_val_mae=0.3504, train_loss=0.0624, val_mae=0.4009]
+### Epochs:  70%|███████   | 14/20 [23:37<09:28, 94.68s/it, best_val_mae=0.3504, train_loss=0.1161, val_mae=0.4162]
+### Epochs:  75%|███████▌  | 15/20 [23:37<07:57, 95.46s/it, best_val_mae=0.3504, train_loss=0.1161, val_mae=0.4162]
+### Epochs:  75%|███████▌  | 15/20 [25:10<07:57, 95.46s/it, best_val_mae=0.3504, train_loss=0.1132, val_mae=0.4436]
+### Epochs:  80%|████████  | 16/20 [25:10<06:19, 94.91s/it, best_val_mae=0.3504, train_loss=0.1132, val_mae=0.4436]
+### Epochs:  80%|████████  | 16/20 [26:36<06:19, 94.91s/it, best_val_mae=0.3504, train_loss=0.0756, val_mae=0.3949]
+### Epochs:  85%|████████▌ | 17/20 [26:36<04:36, 92.04s/it, best_val_mae=0.3504, train_loss=0.0756, val_mae=0.3949]
+### Epochs:  85%|████████▌ | 17/20 [28:17<04:36, 92.04s/it, best_val_mae=0.3504, train_loss=0.1908, val_mae=0.3763]
+### Epochs:  90%|█████████ | 18/20 [28:17<03:10, 95.02s/it, best_val_mae=0.3504, train_loss=0.1908, val_mae=0.3763]
+### Epochs:  90%|█████████ | 18/20 [29:57<03:10, 95.02s/it, best_val_mae=0.3504, train_loss=0.0671, val_mae=0.3811]
+### Epochs:  95%|█████████▌| 19/20 [29:57<01:36, 96.23s/it, best_val_mae=0.3504, train_loss=0.0671, val_mae=0.3811]
+### Epochs:  95%|█████████▌| 19/20 [31:23<01:36, 96.23s/it, best_val_mae=0.3504, train_loss=0.0549, val_mae=0.4462]
+### Epochs: 100%|██████████| 20/20 [31:23<00:00, 93.40s/it, best_val_mae=0.3504, train_loss=0.0549, val_mae=0.4462]
+Outer Folds:  33%|███▎      | 1/3 [2:50:59<5:41:58, 10259.05s/it, MAE=0.446, RMSE=0.519, best={'lr_backbone': 0.0001, 'lr_head': 0.0003, 'weight_decay': 0.001}]
+Outer Fold 1: MAE=0.446, RMSE=0.519, R2=0.8059177805521138, best={'lr_backbone': 0.0001, 'lr_head': 0.0003, 'weight_decay': 0.001}
+
+# Configs | Outer Fold 2/3:   0%|          | 0/4 [00:00<?, ?it/s]
+
+## Inner Folds | Outer Fold 2/3 | Config 1/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:51<?, ?it/s, best_val_mae=inf, train_loss=2.2261, val_mae=0.4840]
+
+
+### Epochs:   5%|▌         | 1/20 [00:51<16:12, 51.19s/it, best_val_mae=inf, train_loss=2.2261, val_mae=0.4840]
+
+
+### Epochs:   5%|▌         | 1/20 [01:58<16:12, 51.19s/it, best_val_mae=0.4840, train_loss=0.5517, val_mae=0.6388]
+
+
+### Epochs:  10%|█         | 2/20 [01:58<18:13, 60.72s/it, best_val_mae=0.4840, train_loss=0.5517, val_mae=0.6388]
+
+
+### Epochs:  10%|█         | 2/20 [02:56<18:13, 60.72s/it, best_val_mae=0.4840, train_loss=0.3805, val_mae=0.4271]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:56<16:48, 59.30s/it, best_val_mae=0.4840, train_loss=0.3805, val_mae=0.4271]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:58<16:48, 59.30s/it, best_val_mae=0.4271, train_loss=0.2630, val_mae=0.4033]
+
+
+### Epochs:  20%|██        | 4/20 [03:58<16:05, 60.35s/it, best_val_mae=0.4271, train_loss=0.2630, val_mae=0.4033]
+
+
+### Epochs:  20%|██        | 4/20 [04:59<16:05, 60.35s/it, best_val_mae=0.4033, train_loss=0.1409, val_mae=0.3944]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:59<15:13, 60.87s/it, best_val_mae=0.4033, train_loss=0.1409, val_mae=0.3944]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:54<15:13, 60.87s/it, best_val_mae=0.3944, train_loss=0.0938, val_mae=0.3627]
+
+
+### Epochs:  30%|███       | 6/20 [05:54<13:43, 58.81s/it, best_val_mae=0.3944, train_loss=0.0938, val_mae=0.3627]
+
+
+### Epochs:  30%|███       | 6/20 [07:01<13:43, 58.81s/it, best_val_mae=0.3627, train_loss=0.1729, val_mae=0.3764]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:01<13:19, 61.54s/it, best_val_mae=0.3627, train_loss=0.1729, val_mae=0.3764]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:53<13:19, 61.54s/it, best_val_mae=0.3627, train_loss=0.1302, val_mae=0.3739]
+
+
+### Epochs:  40%|████      | 8/20 [07:53<11:41, 58.47s/it, best_val_mae=0.3627, train_loss=0.1302, val_mae=0.3739]
+
+
+### Epochs:  40%|████      | 8/20 [09:05<11:41, 58.47s/it, best_val_mae=0.3627, train_loss=0.1463, val_mae=0.3689]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:05<11:27, 62.47s/it, best_val_mae=0.3627, train_loss=0.1463, val_mae=0.3689]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:54<11:27, 62.47s/it, best_val_mae=0.3627, train_loss=0.1437, val_mae=0.3687]
+
+
+### Epochs:  50%|█████     | 10/20 [09:54<09:44, 58.44s/it, best_val_mae=0.3627, train_loss=0.1437, val_mae=0.3687]
+
+
+### Epochs:  50%|█████     | 10/20 [11:04<09:44, 58.44s/it, best_val_mae=0.3627, train_loss=0.0908, val_mae=0.3791]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 1/4:  33%|███▎      | 1/3 [11:04<22:08, 664.49s/it]
+Early stopping at epoch 11: train_loss=0.0908, val_mae=0.3791
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:49<?, ?it/s, best_val_mae=inf, train_loss=2.0955, val_mae=0.5024]
+
+
+### Epochs:   5%|▌         | 1/20 [00:49<15:34, 49.21s/it, best_val_mae=inf, train_loss=2.0955, val_mae=0.5024]
+
+
+### Epochs:   5%|▌         | 1/20 [02:00<15:34, 49.21s/it, best_val_mae=0.5024, train_loss=0.5327, val_mae=0.5497]
+
+
+### Epochs:  10%|█         | 2/20 [02:00<18:36, 62.03s/it, best_val_mae=0.5024, train_loss=0.5327, val_mae=0.5497]
+
+
+### Epochs:  10%|█         | 2/20 [02:46<18:36, 62.03s/it, best_val_mae=0.5024, train_loss=0.2808, val_mae=0.4303]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:46<15:33, 54.89s/it, best_val_mae=0.5024, train_loss=0.2808, val_mae=0.4303]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:38<15:33, 54.89s/it, best_val_mae=0.4303, train_loss=0.1546, val_mae=0.4253]
+
+
+### Epochs:  20%|██        | 4/20 [03:39<14:22, 53.91s/it, best_val_mae=0.4303, train_loss=0.1546, val_mae=0.4253]
+
+
+### Epochs:  20%|██        | 4/20 [04:44<14:22, 53.91s/it, best_val_mae=0.4253, train_loss=0.0836, val_mae=0.4591]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:44<14:31, 58.12s/it, best_val_mae=0.4253, train_loss=0.0836, val_mae=0.4591]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:32<14:31, 58.12s/it, best_val_mae=0.4253, train_loss=0.0659, val_mae=0.4144]
+
+
+### Epochs:  30%|███       | 6/20 [05:32<12:42, 54.50s/it, best_val_mae=0.4253, train_loss=0.0659, val_mae=0.4144]
+
+
+### Epochs:  30%|███       | 6/20 [06:42<12:42, 54.50s/it, best_val_mae=0.4144, train_loss=0.1007, val_mae=0.5007]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:42<12:56, 59.73s/it, best_val_mae=0.4144, train_loss=0.1007, val_mae=0.5007]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:27<12:56, 59.73s/it, best_val_mae=0.4144, train_loss=0.2710, val_mae=0.4071]
+
+
+### Epochs:  40%|████      | 8/20 [07:27<11:01, 55.12s/it, best_val_mae=0.4144, train_loss=0.2710, val_mae=0.4071]
+
+
+### Epochs:  40%|████      | 8/20 [08:28<11:01, 55.12s/it, best_val_mae=0.4071, train_loss=0.1366, val_mae=0.4320]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:28<10:25, 56.82s/it, best_val_mae=0.4071, train_loss=0.1366, val_mae=0.4320]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:23<10:25, 56.82s/it, best_val_mae=0.4071, train_loss=0.2756, val_mae=0.5571]
+
+
+### Epochs:  50%|█████     | 10/20 [09:23<09:24, 56.40s/it, best_val_mae=0.4071, train_loss=0.2756, val_mae=0.5571]
+
+
+### Epochs:  50%|█████     | 10/20 [10:16<09:24, 56.40s/it, best_val_mae=0.4071, train_loss=0.1559, val_mae=0.4444]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:16<08:17, 55.29s/it, best_val_mae=0.4071, train_loss=0.1559, val_mae=0.4444]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:19<08:17, 55.29s/it, best_val_mae=0.4071, train_loss=0.0914, val_mae=0.4123]
+
+
+### Epochs:  60%|██████    | 12/20 [11:19<07:40, 57.52s/it, best_val_mae=0.4071, train_loss=0.0914, val_mae=0.4123]
+
+
+### Epochs:  60%|██████    | 12/20 [12:07<07:40, 57.52s/it, best_val_mae=0.4071, train_loss=0.1296, val_mae=0.4184]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 1/4:  67%|██████▋   | 2/3 [23:11<11:41, 701.49s/it]
+Early stopping at epoch 13: train_loss=0.1296, val_mae=0.4184
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:09<?, ?it/s, best_val_mae=inf, train_loss=3.5040, val_mae=0.8425]
+
+
+### Epochs:   5%|▌         | 1/20 [01:09<21:55, 69.22s/it, best_val_mae=inf, train_loss=3.5040, val_mae=0.8425]
+
+
+### Epochs:   5%|▌         | 1/20 [01:55<21:55, 69.22s/it, best_val_mae=0.8425, train_loss=0.6427, val_mae=0.4177]
+
+
+### Epochs:  10%|█         | 2/20 [01:55<16:47, 55.96s/it, best_val_mae=0.8425, train_loss=0.6427, val_mae=0.4177]
+
+
+### Epochs:  10%|█         | 2/20 [03:00<16:47, 55.96s/it, best_val_mae=0.4177, train_loss=0.3095, val_mae=0.4194]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:00<16:54, 59.68s/it, best_val_mae=0.4177, train_loss=0.3095, val_mae=0.4194]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:54<16:54, 59.68s/it, best_val_mae=0.4177, train_loss=0.1375, val_mae=0.4750]
+
+
+### Epochs:  20%|██        | 4/20 [03:54<15:20, 57.53s/it, best_val_mae=0.4177, train_loss=0.1375, val_mae=0.4750]
+
+
+### Epochs:  20%|██        | 4/20 [04:44<15:20, 57.53s/it, best_val_mae=0.4177, train_loss=0.1178, val_mae=0.4428]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:44<13:45, 55.01s/it, best_val_mae=0.4177, train_loss=0.1178, val_mae=0.4428]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:48<13:45, 55.01s/it, best_val_mae=0.4177, train_loss=0.0744, val_mae=0.4801]
+
+
+### Epochs:  30%|███       | 6/20 [05:48<13:31, 57.99s/it, best_val_mae=0.4177, train_loss=0.0744, val_mae=0.4801]
+
+
+### Epochs:  30%|███       | 6/20 [06:37<13:31, 57.99s/it, best_val_mae=0.4177, train_loss=0.1200, val_mae=0.4710]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 2/3 | Config 1/4: 100%|██████████| 3/3 [29:49<00:00, 562.85s/it]
+
+                                                                                            
+# Configs | Outer Fold 2/3:   0%|          | 0/4 [29:49<?, ?it/s, config_idx=1/4, mean_inner_mae=0.3958]
+# Configs | Outer Fold 2/3:  25%|██▌       | 1/4 [29:49<1:29:29, 1789.76s/it, config_idx=1/4, mean_inner_mae=0.3958]
+Early stopping at epoch 7: train_loss=0.1200, val_mae=0.4710
+
+
+## Inner Folds | Outer Fold 2/3 | Config 2/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:06<?, ?it/s, best_val_mae=inf, train_loss=2.2262, val_mae=0.4842]
+
+
+### Epochs:   5%|▌         | 1/20 [01:06<21:04, 66.56s/it, best_val_mae=inf, train_loss=2.2262, val_mae=0.4842]
+
+
+### Epochs:   5%|▌         | 1/20 [01:53<21:04, 66.56s/it, best_val_mae=0.4842, train_loss=0.5520, val_mae=0.6403]
+
+
+### Epochs:  10%|█         | 2/20 [01:53<16:34, 55.26s/it, best_val_mae=0.4842, train_loss=0.5520, val_mae=0.6403]
+
+
+### Epochs:  10%|█         | 2/20 [03:00<16:34, 55.26s/it, best_val_mae=0.4842, train_loss=0.3813, val_mae=0.4264]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:00<17:05, 60.31s/it, best_val_mae=0.4842, train_loss=0.3813, val_mae=0.4264]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:48<17:05, 60.31s/it, best_val_mae=0.4264, train_loss=0.2635, val_mae=0.4032]
+
+
+### Epochs:  20%|██        | 4/20 [03:48<14:50, 55.65s/it, best_val_mae=0.4264, train_loss=0.2635, val_mae=0.4032]
+
+
+### Epochs:  20%|██        | 4/20 [04:44<14:50, 55.65s/it, best_val_mae=0.4032, train_loss=0.1415, val_mae=0.3955]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:44<13:55, 55.70s/it, best_val_mae=0.4032, train_loss=0.1415, val_mae=0.3955]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:46<13:55, 55.70s/it, best_val_mae=0.3955, train_loss=0.0938, val_mae=0.3618]
+
+
+### Epochs:  30%|███       | 6/20 [05:46<13:30, 57.88s/it, best_val_mae=0.3955, train_loss=0.0938, val_mae=0.3618]
+
+
+### Epochs:  30%|███       | 6/20 [06:33<13:30, 57.88s/it, best_val_mae=0.3618, train_loss=0.1738, val_mae=0.3753]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:33<11:46, 54.32s/it, best_val_mae=0.3618, train_loss=0.1738, val_mae=0.3753]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:43<11:46, 54.32s/it, best_val_mae=0.3618, train_loss=0.1311, val_mae=0.3734]
+
+
+### Epochs:  40%|████      | 8/20 [07:43<11:51, 59.29s/it, best_val_mae=0.3618, train_loss=0.1311, val_mae=0.3734]
+
+
+### Epochs:  40%|████      | 8/20 [08:29<11:51, 59.29s/it, best_val_mae=0.3618, train_loss=0.1476, val_mae=0.3676]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:29<10:06, 55.18s/it, best_val_mae=0.3618, train_loss=0.1476, val_mae=0.3676]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:37<10:06, 55.18s/it, best_val_mae=0.3618, train_loss=0.1443, val_mae=0.3677]
+
+
+### Epochs:  50%|█████     | 10/20 [09:37<09:50, 59.07s/it, best_val_mae=0.3618, train_loss=0.1443, val_mae=0.3677]
+
+
+### Epochs:  50%|█████     | 10/20 [10:23<09:50, 59.07s/it, best_val_mae=0.3618, train_loss=0.0904, val_mae=0.3759]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 2/4:  33%|███▎      | 1/3 [10:24<20:48, 624.08s/it]
+Early stopping at epoch 11: train_loss=0.0904, val_mae=0.3759
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:04<?, ?it/s, best_val_mae=inf, train_loss=2.0956, val_mae=0.5024]
+
+
+### Epochs:   5%|▌         | 1/20 [01:04<20:17, 64.06s/it, best_val_mae=inf, train_loss=2.0956, val_mae=0.5024]
+
+
+### Epochs:   5%|▌         | 1/20 [01:54<20:17, 64.06s/it, best_val_mae=0.5024, train_loss=0.5335, val_mae=0.5518]
+
+
+### Epochs:  10%|█         | 2/20 [01:54<16:44, 55.83s/it, best_val_mae=0.5024, train_loss=0.5335, val_mae=0.5518]
+
+
+### Epochs:  10%|█         | 2/20 [02:56<16:44, 55.83s/it, best_val_mae=0.5024, train_loss=0.2814, val_mae=0.4300]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:56<16:42, 59.00s/it, best_val_mae=0.5024, train_loss=0.2814, val_mae=0.4300]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:46<16:42, 59.00s/it, best_val_mae=0.4300, train_loss=0.1545, val_mae=0.4265]
+
+
+### Epochs:  20%|██        | 4/20 [03:46<14:47, 55.48s/it, best_val_mae=0.4300, train_loss=0.1545, val_mae=0.4265]
+
+
+### Epochs:  20%|██        | 4/20 [04:40<14:47, 55.48s/it, best_val_mae=0.4265, train_loss=0.0837, val_mae=0.4612]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:40<13:39, 54.67s/it, best_val_mae=0.4265, train_loss=0.0837, val_mae=0.4612]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:41<13:39, 54.67s/it, best_val_mae=0.4265, train_loss=0.0659, val_mae=0.4137]
+
+
+### Epochs:  30%|███       | 6/20 [05:41<13:18, 57.05s/it, best_val_mae=0.4265, train_loss=0.0659, val_mae=0.4137]
+
+
+### Epochs:  30%|███       | 6/20 [06:29<13:18, 57.05s/it, best_val_mae=0.4137, train_loss=0.1010, val_mae=0.5039]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:29<11:40, 53.92s/it, best_val_mae=0.4137, train_loss=0.1010, val_mae=0.5039]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:41<11:40, 53.92s/it, best_val_mae=0.4137, train_loss=0.2713, val_mae=0.4084]
+
+
+### Epochs:  40%|████      | 8/20 [07:41<11:55, 59.60s/it, best_val_mae=0.4137, train_loss=0.2713, val_mae=0.4084]
+
+
+### Epochs:  40%|████      | 8/20 [08:26<11:55, 59.60s/it, best_val_mae=0.4084, train_loss=0.1368, val_mae=0.4288]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:26<10:08, 55.31s/it, best_val_mae=0.4084, train_loss=0.1368, val_mae=0.4288]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:34<10:08, 55.31s/it, best_val_mae=0.4084, train_loss=0.2737, val_mae=0.5601]
+
+
+### Epochs:  50%|█████     | 10/20 [09:34<09:50, 59.03s/it, best_val_mae=0.4084, train_loss=0.2737, val_mae=0.5601]
+
+
+### Epochs:  50%|█████     | 10/20 [10:21<09:50, 59.03s/it, best_val_mae=0.4084, train_loss=0.1540, val_mae=0.4489]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:21<08:18, 55.36s/it, best_val_mae=0.4084, train_loss=0.1540, val_mae=0.4489]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:28<08:18, 55.36s/it, best_val_mae=0.4084, train_loss=0.0929, val_mae=0.4146]
+
+
+### Epochs:  60%|██████    | 12/20 [11:28<07:52, 59.07s/it, best_val_mae=0.4084, train_loss=0.0929, val_mae=0.4146]
+
+
+### Epochs:  60%|██████    | 12/20 [12:15<07:52, 59.07s/it, best_val_mae=0.4084, train_loss=0.1300, val_mae=0.4180]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 2/4:  67%|██████▋   | 2/3 [22:39<11:29, 689.64s/it]
+Early stopping at epoch 13: train_loss=0.1300, val_mae=0.4180
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:06<?, ?it/s, best_val_mae=inf, train_loss=3.5046, val_mae=0.8433]
+
+
+### Epochs:   5%|▌         | 1/20 [01:06<20:56, 66.12s/it, best_val_mae=inf, train_loss=3.5046, val_mae=0.8433]
+
+
+### Epochs:   5%|▌         | 1/20 [01:51<20:56, 66.12s/it, best_val_mae=0.8433, train_loss=0.6429, val_mae=0.4182]
+
+
+### Epochs:  10%|█         | 2/20 [01:51<16:08, 53.83s/it, best_val_mae=0.8433, train_loss=0.6429, val_mae=0.4182]
+
+
+### Epochs:  10%|█         | 2/20 [03:01<16:08, 53.83s/it, best_val_mae=0.4182, train_loss=0.3106, val_mae=0.4190]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:01<17:21, 61.25s/it, best_val_mae=0.4182, train_loss=0.3106, val_mae=0.4190]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:47<17:21, 61.25s/it, best_val_mae=0.4182, train_loss=0.1378, val_mae=0.4754]
+
+
+### Epochs:  20%|██        | 4/20 [03:47<14:46, 55.39s/it, best_val_mae=0.4182, train_loss=0.1378, val_mae=0.4754]
+
+
+### Epochs:  20%|██        | 4/20 [04:48<14:46, 55.39s/it, best_val_mae=0.4182, train_loss=0.1179, val_mae=0.4437]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:48<14:17, 57.15s/it, best_val_mae=0.4182, train_loss=0.1179, val_mae=0.4437]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:42<14:17, 57.15s/it, best_val_mae=0.4182, train_loss=0.0744, val_mae=0.4816]
+
+
+### Epochs:  30%|███       | 6/20 [05:42<13:08, 56.35s/it, best_val_mae=0.4182, train_loss=0.0744, val_mae=0.4816]
+
+
+### Epochs:  30%|███       | 6/20 [06:35<13:08, 56.35s/it, best_val_mae=0.4182, train_loss=0.1203, val_mae=0.4736]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 2/3 | Config 2/4: 100%|██████████| 3/3 [29:15<00:00, 555.60s/it]
+
+                                                                                            
+# Configs | Outer Fold 2/3:  25%|██▌       | 1/4 [59:05<1:29:29, 1789.76s/it, config_idx=2/4, mean_inner_mae=0.3961]
+# Configs | Outer Fold 2/3:  50%|█████     | 2/4 [59:05<58:59, 1769.73s/it, config_idx=2/4, mean_inner_mae=0.3961]  
+Early stopping at epoch 7: train_loss=0.1203, val_mae=0.4736
+
+
+## Inner Folds | Outer Fold 2/3 | Config 3/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:02<?, ?it/s, best_val_mae=inf, train_loss=2.9564, val_mae=0.5678]
+
+
+### Epochs:   5%|▌         | 1/20 [01:02<19:48, 62.55s/it, best_val_mae=inf, train_loss=2.9564, val_mae=0.5678]
+
+
+### Epochs:   5%|▌         | 1/20 [01:48<19:48, 62.55s/it, best_val_mae=0.5678, train_loss=0.6835, val_mae=0.5118]
+
+
+### Epochs:  10%|█         | 2/20 [01:48<15:55, 53.08s/it, best_val_mae=0.5678, train_loss=0.6835, val_mae=0.5118]
+
+
+### Epochs:  10%|█         | 2/20 [02:58<15:55, 53.08s/it, best_val_mae=0.5118, train_loss=0.2114, val_mae=0.3965]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:58<17:06, 60.35s/it, best_val_mae=0.5118, train_loss=0.2114, val_mae=0.3965]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:45<17:06, 60.35s/it, best_val_mae=0.3965, train_loss=0.1610, val_mae=0.4206]
+
+
+### Epochs:  20%|██        | 4/20 [03:45<14:43, 55.20s/it, best_val_mae=0.3965, train_loss=0.1610, val_mae=0.4206]
+
+
+### Epochs:  20%|██        | 4/20 [04:52<14:43, 55.20s/it, best_val_mae=0.3965, train_loss=0.1369, val_mae=0.4071]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:52<14:53, 59.60s/it, best_val_mae=0.3965, train_loss=0.1369, val_mae=0.4071]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:40<14:53, 59.60s/it, best_val_mae=0.3965, train_loss=0.0752, val_mae=0.3872]
+
+
+### Epochs:  30%|███       | 6/20 [05:40<12:59, 55.69s/it, best_val_mae=0.3965, train_loss=0.0752, val_mae=0.3872]
+
+
+### Epochs:  30%|███       | 6/20 [06:44<12:59, 55.69s/it, best_val_mae=0.3872, train_loss=0.1004, val_mae=0.3924]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:44<12:39, 58.43s/it, best_val_mae=0.3872, train_loss=0.1004, val_mae=0.3924]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:35<12:39, 58.43s/it, best_val_mae=0.3872, train_loss=0.1022, val_mae=0.3930]
+
+
+### Epochs:  40%|████      | 8/20 [07:35<11:10, 55.85s/it, best_val_mae=0.3872, train_loss=0.1022, val_mae=0.3930]
+
+
+### Epochs:  40%|████      | 8/20 [08:29<11:10, 55.85s/it, best_val_mae=0.3872, train_loss=0.1036, val_mae=0.3910]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:29<10:08, 55.30s/it, best_val_mae=0.3872, train_loss=0.1036, val_mae=0.3910]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:32<10:08, 55.30s/it, best_val_mae=0.3872, train_loss=0.1031, val_mae=0.3779]
+
+
+### Epochs:  50%|█████     | 10/20 [09:32<09:36, 57.65s/it, best_val_mae=0.3872, train_loss=0.1031, val_mae=0.3779]
+
+
+### Epochs:  50%|█████     | 10/20 [10:17<09:36, 57.65s/it, best_val_mae=0.3779, train_loss=0.1109, val_mae=0.4074]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:17<08:05, 53.98s/it, best_val_mae=0.3779, train_loss=0.1109, val_mae=0.4074]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:22<08:05, 53.98s/it, best_val_mae=0.3779, train_loss=0.0772, val_mae=0.3820]
+
+
+### Epochs:  60%|██████    | 12/20 [11:22<07:36, 57.07s/it, best_val_mae=0.3779, train_loss=0.0772, val_mae=0.3820]
+
+
+### Epochs:  60%|██████    | 12/20 [12:14<07:36, 57.07s/it, best_val_mae=0.3779, train_loss=0.0868, val_mae=0.4046]
+
+
+### Epochs:  65%|██████▌   | 13/20 [12:14<06:30, 55.72s/it, best_val_mae=0.3779, train_loss=0.0868, val_mae=0.4046]
+
+
+### Epochs:  65%|██████▌   | 13/20 [13:14<06:30, 55.72s/it, best_val_mae=0.3779, train_loss=0.0721, val_mae=0.3917]
+
+
+### Epochs:  70%|███████   | 14/20 [13:14<05:41, 56.90s/it, best_val_mae=0.3779, train_loss=0.0721, val_mae=0.3917]
+
+
+### Epochs:  70%|███████   | 14/20 [14:07<05:41, 56.90s/it, best_val_mae=0.3779, train_loss=0.1441, val_mae=0.3809]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 3/4:  33%|███▎      | 1/3 [14:07<28:15, 847.89s/it]
+Early stopping at epoch 15: train_loss=0.1441, val_mae=0.3809
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:01<?, ?it/s, best_val_mae=inf, train_loss=2.7579, val_mae=0.6300]
+
+
+### Epochs:   5%|▌         | 1/20 [01:01<19:24, 61.28s/it, best_val_mae=inf, train_loss=2.7579, val_mae=0.6300]
+
+
+### Epochs:   5%|▌         | 1/20 [01:52<19:24, 61.28s/it, best_val_mae=0.6300, train_loss=0.6740, val_mae=0.5146]
+
+
+### Epochs:  10%|█         | 2/20 [01:52<16:38, 55.44s/it, best_val_mae=0.6300, train_loss=0.6740, val_mae=0.5146]
+
+
+### Epochs:  10%|█         | 2/20 [02:42<16:38, 55.44s/it, best_val_mae=0.5146, train_loss=0.3077, val_mae=0.4600]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:42<14:59, 52.94s/it, best_val_mae=0.5146, train_loss=0.3077, val_mae=0.4600]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:48<14:59, 52.94s/it, best_val_mae=0.4600, train_loss=0.1674, val_mae=0.4390]
+
+
+### Epochs:  20%|██        | 4/20 [03:48<15:30, 58.13s/it, best_val_mae=0.4600, train_loss=0.1674, val_mae=0.4390]
+
+
+### Epochs:  20%|██        | 4/20 [04:35<15:30, 58.13s/it, best_val_mae=0.4390, train_loss=0.0690, val_mae=0.4287]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:35<13:32, 54.19s/it, best_val_mae=0.4390, train_loss=0.0690, val_mae=0.4287]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:44<13:32, 54.19s/it, best_val_mae=0.4287, train_loss=0.0436, val_mae=0.4254]
+
+
+### Epochs:  30%|███       | 6/20 [05:44<13:48, 59.16s/it, best_val_mae=0.4287, train_loss=0.0436, val_mae=0.4254]
+
+
+### Epochs:  30%|███       | 6/20 [06:31<13:48, 59.16s/it, best_val_mae=0.4254, train_loss=0.1117, val_mae=0.4244]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:31<11:55, 55.05s/it, best_val_mae=0.4254, train_loss=0.1117, val_mae=0.4244]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:41<11:55, 55.05s/it, best_val_mae=0.4244, train_loss=0.1430, val_mae=0.4181]
+
+
+### Epochs:  40%|████      | 8/20 [07:41<11:56, 59.75s/it, best_val_mae=0.4244, train_loss=0.1430, val_mae=0.4181]
+
+
+### Epochs:  40%|████      | 8/20 [08:27<11:56, 59.75s/it, best_val_mae=0.4181, train_loss=0.1641, val_mae=0.4391]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:27<10:13, 55.73s/it, best_val_mae=0.4181, train_loss=0.1641, val_mae=0.4391]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:31<10:13, 55.73s/it, best_val_mae=0.4181, train_loss=0.1441, val_mae=0.4261]
+
+
+### Epochs:  50%|█████     | 10/20 [09:31<09:41, 58.12s/it, best_val_mae=0.4181, train_loss=0.1441, val_mae=0.4261]
+
+
+### Epochs:  50%|█████     | 10/20 [10:21<09:41, 58.12s/it, best_val_mae=0.4181, train_loss=0.1293, val_mae=0.4224]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:21<08:22, 55.79s/it, best_val_mae=0.4181, train_loss=0.1293, val_mae=0.4224]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:15<08:22, 55.79s/it, best_val_mae=0.4181, train_loss=0.0812, val_mae=0.4123]
+
+
+### Epochs:  60%|██████    | 12/20 [11:15<07:21, 55.21s/it, best_val_mae=0.4181, train_loss=0.0812, val_mae=0.4123]
+
+
+### Epochs:  60%|██████    | 12/20 [12:17<07:21, 55.21s/it, best_val_mae=0.4123, train_loss=0.1162, val_mae=0.4284]
+
+
+### Epochs:  65%|██████▌   | 13/20 [12:17<06:40, 57.23s/it, best_val_mae=0.4123, train_loss=0.1162, val_mae=0.4284]
+
+
+### Epochs:  65%|██████▌   | 13/20 [13:06<06:40, 57.23s/it, best_val_mae=0.4123, train_loss=0.0596, val_mae=0.4277]
+
+
+### Epochs:  70%|███████   | 14/20 [13:06<05:27, 54.59s/it, best_val_mae=0.4123, train_loss=0.0596, val_mae=0.4277]
+
+
+### Epochs:  70%|███████   | 14/20 [14:12<05:27, 54.59s/it, best_val_mae=0.4123, train_loss=0.0895, val_mae=0.4274]
+
+
+### Epochs:  75%|███████▌  | 15/20 [14:12<04:50, 58.14s/it, best_val_mae=0.4123, train_loss=0.0895, val_mae=0.4274]
+
+
+### Epochs:  75%|███████▌  | 15/20 [15:00<04:50, 58.14s/it, best_val_mae=0.4123, train_loss=0.1178, val_mae=0.4219]
+
+
+### Epochs:  80%|████████  | 16/20 [15:00<03:39, 54.93s/it, best_val_mae=0.4123, train_loss=0.1178, val_mae=0.4219]
+
+
+### Epochs:  80%|████████  | 16/20 [16:07<03:39, 54.93s/it, best_val_mae=0.4123, train_loss=0.1740, val_mae=0.4254]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 3/4:  67%|██████▋   | 2/3 [30:15<15:18, 918.37s/it]
+Early stopping at epoch 17: train_loss=0.1740, val_mae=0.4254
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:46<?, ?it/s, best_val_mae=inf, train_loss=4.8648, val_mae=0.5902]
+
+
+### Epochs:   5%|▌         | 1/20 [00:46<14:48, 46.75s/it, best_val_mae=inf, train_loss=4.8648, val_mae=0.5902]
+
+
+### Epochs:   5%|▌         | 1/20 [01:54<14:48, 46.75s/it, best_val_mae=0.5902, train_loss=0.5704, val_mae=0.7895]
+
+
+### Epochs:  10%|█         | 2/20 [01:54<17:47, 59.28s/it, best_val_mae=0.5902, train_loss=0.5704, val_mae=0.7895]
+
+
+### Epochs:  10%|█         | 2/20 [02:39<17:47, 59.28s/it, best_val_mae=0.5902, train_loss=0.3619, val_mae=0.4050]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:39<14:55, 52.66s/it, best_val_mae=0.5902, train_loss=0.3619, val_mae=0.4050]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:40<14:55, 52.66s/it, best_val_mae=0.4050, train_loss=0.1519, val_mae=0.4116]
+
+
+### Epochs:  20%|██        | 4/20 [03:40<14:53, 55.86s/it, best_val_mae=0.4050, train_loss=0.1519, val_mae=0.4116]
+
+
+### Epochs:  20%|██        | 4/20 [04:33<14:53, 55.86s/it, best_val_mae=0.4050, train_loss=0.1204, val_mae=0.4785]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:33<13:40, 54.72s/it, best_val_mae=0.4050, train_loss=0.1204, val_mae=0.4785]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:25<13:40, 54.72s/it, best_val_mae=0.4050, train_loss=0.0638, val_mae=0.4396]
+
+
+### Epochs:  30%|███       | 6/20 [05:25<12:36, 54.06s/it, best_val_mae=0.4050, train_loss=0.0638, val_mae=0.4396]
+
+
+### Epochs:  30%|███       | 6/20 [06:31<12:36, 54.06s/it, best_val_mae=0.4050, train_loss=0.1100, val_mae=0.4021]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:31<12:30, 57.77s/it, best_val_mae=0.4050, train_loss=0.1100, val_mae=0.4021]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:19<12:30, 57.77s/it, best_val_mae=0.4021, train_loss=0.1485, val_mae=0.4324]
+
+
+### Epochs:  40%|████      | 8/20 [07:19<10:56, 54.73s/it, best_val_mae=0.4021, train_loss=0.1485, val_mae=0.4324]
+
+
+### Epochs:  40%|████      | 8/20 [08:29<10:56, 54.73s/it, best_val_mae=0.4021, train_loss=0.0771, val_mae=0.3968]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:29<10:55, 59.58s/it, best_val_mae=0.4021, train_loss=0.0771, val_mae=0.3968]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:15<10:55, 59.58s/it, best_val_mae=0.3968, train_loss=0.0795, val_mae=0.4432]
+
+
+### Epochs:  50%|█████     | 10/20 [09:15<09:13, 55.36s/it, best_val_mae=0.3968, train_loss=0.0795, val_mae=0.4432]
+
+
+### Epochs:  50%|█████     | 10/20 [10:33<09:13, 55.36s/it, best_val_mae=0.3968, train_loss=0.0771, val_mae=0.4340]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:33<09:21, 62.40s/it, best_val_mae=0.3968, train_loss=0.0771, val_mae=0.4340]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:23<09:21, 62.40s/it, best_val_mae=0.3968, train_loss=0.1669, val_mae=0.4322]
+
+
+### Epochs:  60%|██████    | 12/20 [11:23<07:46, 58.36s/it, best_val_mae=0.3968, train_loss=0.1669, val_mae=0.4322]
+
+
+### Epochs:  60%|██████    | 12/20 [12:11<07:46, 58.36s/it, best_val_mae=0.3968, train_loss=0.1307, val_mae=0.4896]
+
+
+### Epochs:  65%|██████▌   | 13/20 [12:11<06:28, 55.47s/it, best_val_mae=0.3968, train_loss=0.1307, val_mae=0.4896]
+
+
+### Epochs:  65%|██████▌   | 13/20 [13:00<06:28, 55.47s/it, best_val_mae=0.3968, train_loss=0.1177, val_mae=0.4134]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 3/4: 100%|██████████| 3/3 [43:16<00:00, 855.54s/it]
+
+                                                                                            
+# Configs | Outer Fold 2/3:  50%|█████     | 2/4 [1:42:21<58:59, 1769.73s/it, config_idx=3/4, mean_inner_mae=0.3957]
+# Configs | Outer Fold 2/3:  75%|███████▌  | 3/4 [1:42:21<35:47, 2147.20s/it, config_idx=3/4, mean_inner_mae=0.3957]
+Early stopping at epoch 14: train_loss=0.1177, val_mae=0.4134
+
+
+## Inner Folds | Outer Fold 2/3 | Config 4/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:49<?, ?it/s, best_val_mae=inf, train_loss=2.9556, val_mae=0.5677]
+
+
+### Epochs:   5%|▌         | 1/20 [00:49<15:39, 49.46s/it, best_val_mae=inf, train_loss=2.9556, val_mae=0.5677]
+
+
+### Epochs:   5%|▌         | 1/20 [01:39<15:39, 49.46s/it, best_val_mae=0.5677, train_loss=0.6854, val_mae=0.5132]
+
+
+### Epochs:  10%|█         | 2/20 [01:39<14:57, 49.84s/it, best_val_mae=0.5677, train_loss=0.6854, val_mae=0.5132]
+
+
+### Epochs:  10%|█         | 2/20 [02:30<14:57, 49.84s/it, best_val_mae=0.5132, train_loss=0.2117, val_mae=0.3960]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:30<14:13, 50.22s/it, best_val_mae=0.5132, train_loss=0.2117, val_mae=0.3960]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:19<14:13, 50.22s/it, best_val_mae=0.3960, train_loss=0.1610, val_mae=0.4209]
+
+
+### Epochs:  20%|██        | 4/20 [03:19<13:20, 50.01s/it, best_val_mae=0.3960, train_loss=0.1610, val_mae=0.4209]
+
+
+### Epochs:  20%|██        | 4/20 [04:10<13:20, 50.01s/it, best_val_mae=0.3960, train_loss=0.1371, val_mae=0.4074]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:10<12:31, 50.13s/it, best_val_mae=0.3960, train_loss=0.1371, val_mae=0.4074]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:00<12:31, 50.13s/it, best_val_mae=0.3960, train_loss=0.0752, val_mae=0.3864]
+
+
+### Epochs:  30%|███       | 6/20 [05:00<11:43, 50.24s/it, best_val_mae=0.3960, train_loss=0.0752, val_mae=0.3864]
+
+
+### Epochs:  30%|███       | 6/20 [05:51<11:43, 50.24s/it, best_val_mae=0.3864, train_loss=0.1006, val_mae=0.3917]
+
+
+### Epochs:  35%|███▌      | 7/20 [05:51<10:56, 50.51s/it, best_val_mae=0.3864, train_loss=0.1006, val_mae=0.3917]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:42<10:56, 50.51s/it, best_val_mae=0.3864, train_loss=0.1023, val_mae=0.3935]
+
+
+### Epochs:  40%|████      | 8/20 [06:42<10:05, 50.45s/it, best_val_mae=0.3864, train_loss=0.1023, val_mae=0.3935]
+
+
+### Epochs:  40%|████      | 8/20 [07:30<10:05, 50.45s/it, best_val_mae=0.3864, train_loss=0.1037, val_mae=0.3905]
+
+
+### Epochs:  45%|████▌     | 9/20 [07:30<09:08, 49.89s/it, best_val_mae=0.3864, train_loss=0.1037, val_mae=0.3905]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:20<09:08, 49.89s/it, best_val_mae=0.3864, train_loss=0.1029, val_mae=0.3775]
+
+
+### Epochs:  50%|█████     | 10/20 [08:20<08:16, 49.70s/it, best_val_mae=0.3864, train_loss=0.1029, val_mae=0.3775]
+
+
+### Epochs:  50%|█████     | 10/20 [09:11<08:16, 49.70s/it, best_val_mae=0.3775, train_loss=0.1109, val_mae=0.4086]
+
+
+### Epochs:  55%|█████▌    | 11/20 [09:11<07:31, 50.20s/it, best_val_mae=0.3775, train_loss=0.1109, val_mae=0.4086]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:01<07:31, 50.20s/it, best_val_mae=0.3775, train_loss=0.0774, val_mae=0.3817]
+
+
+### Epochs:  60%|██████    | 12/20 [10:01<06:41, 50.25s/it, best_val_mae=0.3775, train_loss=0.0774, val_mae=0.3817]
+
+
+### Epochs:  60%|██████    | 12/20 [10:53<06:41, 50.25s/it, best_val_mae=0.3775, train_loss=0.0869, val_mae=0.4042]
+
+
+### Epochs:  65%|██████▌   | 13/20 [10:53<05:55, 50.75s/it, best_val_mae=0.3775, train_loss=0.0869, val_mae=0.4042]
+
+
+### Epochs:  65%|██████▌   | 13/20 [11:43<05:55, 50.75s/it, best_val_mae=0.3775, train_loss=0.0723, val_mae=0.3893]
+
+
+### Epochs:  70%|███████   | 14/20 [11:43<05:03, 50.55s/it, best_val_mae=0.3775, train_loss=0.0723, val_mae=0.3893]
+
+
+### Epochs:  70%|███████   | 14/20 [12:33<05:03, 50.55s/it, best_val_mae=0.3775, train_loss=0.1444, val_mae=0.3817]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 4/4:  33%|███▎      | 1/3 [12:33<25:07, 753.70s/it]
+Early stopping at epoch 15: train_loss=0.1444, val_mae=0.3817
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:49<?, ?it/s, best_val_mae=inf, train_loss=2.7571, val_mae=0.6304]
+
+
+### Epochs:   5%|▌         | 1/20 [00:49<15:45, 49.77s/it, best_val_mae=inf, train_loss=2.7571, val_mae=0.6304]
+
+
+### Epochs:   5%|▌         | 1/20 [01:40<15:45, 49.77s/it, best_val_mae=0.6304, train_loss=0.6757, val_mae=0.5150]
+
+
+### Epochs:  10%|█         | 2/20 [01:40<15:02, 50.17s/it, best_val_mae=0.6304, train_loss=0.6757, val_mae=0.5150]
+
+
+### Epochs:  10%|█         | 2/20 [02:29<15:02, 50.17s/it, best_val_mae=0.5150, train_loss=0.3083, val_mae=0.4591]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:29<14:04, 49.68s/it, best_val_mae=0.5150, train_loss=0.3083, val_mae=0.4591]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:20<14:04, 49.68s/it, best_val_mae=0.4591, train_loss=0.1675, val_mae=0.4386]
+
+
+### Epochs:  20%|██        | 4/20 [03:20<13:23, 50.21s/it, best_val_mae=0.4591, train_loss=0.1675, val_mae=0.4386]
+
+
+### Epochs:  20%|██        | 4/20 [04:09<13:23, 50.21s/it, best_val_mae=0.4386, train_loss=0.0692, val_mae=0.4284]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:09<12:29, 49.95s/it, best_val_mae=0.4386, train_loss=0.0692, val_mae=0.4284]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:00<12:29, 49.95s/it, best_val_mae=0.4284, train_loss=0.0435, val_mae=0.4247]
+
+
+### Epochs:  30%|███       | 6/20 [05:00<11:40, 50.05s/it, best_val_mae=0.4284, train_loss=0.0435, val_mae=0.4247]
+
+
+### Epochs:  30%|███       | 6/20 [05:50<11:40, 50.05s/it, best_val_mae=0.4247, train_loss=0.1117, val_mae=0.4232]
+
+
+### Epochs:  35%|███▌      | 7/20 [05:50<10:53, 50.29s/it, best_val_mae=0.4247, train_loss=0.1117, val_mae=0.4232]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:40<10:53, 50.29s/it, best_val_mae=0.4232, train_loss=0.1433, val_mae=0.4170]
+
+
+### Epochs:  40%|████      | 8/20 [06:40<10:02, 50.23s/it, best_val_mae=0.4232, train_loss=0.1433, val_mae=0.4170]
+
+
+### Epochs:  40%|████      | 8/20 [07:30<10:02, 50.23s/it, best_val_mae=0.4170, train_loss=0.1646, val_mae=0.4399]
+
+
+### Epochs:  45%|████▌     | 9/20 [07:30<09:10, 50.05s/it, best_val_mae=0.4170, train_loss=0.1646, val_mae=0.4399]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:20<09:10, 50.05s/it, best_val_mae=0.4170, train_loss=0.1442, val_mae=0.4245]
+
+
+### Epochs:  50%|█████     | 10/20 [08:20<08:19, 49.93s/it, best_val_mae=0.4170, train_loss=0.1442, val_mae=0.4245]
+
+
+### Epochs:  50%|█████     | 10/20 [09:10<08:19, 49.93s/it, best_val_mae=0.4170, train_loss=0.1297, val_mae=0.4214]
+
+
+### Epochs:  55%|█████▌    | 11/20 [09:10<07:29, 49.97s/it, best_val_mae=0.4170, train_loss=0.1297, val_mae=0.4214]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:02<07:29, 49.97s/it, best_val_mae=0.4170, train_loss=0.0812, val_mae=0.4105]
+
+
+### Epochs:  60%|██████    | 12/20 [10:02<06:44, 50.51s/it, best_val_mae=0.4170, train_loss=0.0812, val_mae=0.4105]
+
+
+### Epochs:  60%|██████    | 12/20 [10:51<06:44, 50.51s/it, best_val_mae=0.4105, train_loss=0.1169, val_mae=0.4260]
+
+
+### Epochs:  65%|██████▌   | 13/20 [10:51<05:50, 50.13s/it, best_val_mae=0.4105, train_loss=0.1169, val_mae=0.4260]
+
+
+### Epochs:  65%|██████▌   | 13/20 [11:42<05:50, 50.13s/it, best_val_mae=0.4105, train_loss=0.0596, val_mae=0.4269]
+
+
+### Epochs:  70%|███████   | 14/20 [11:42<05:03, 50.53s/it, best_val_mae=0.4105, train_loss=0.0596, val_mae=0.4269]
+
+
+### Epochs:  70%|███████   | 14/20 [12:33<05:03, 50.53s/it, best_val_mae=0.4105, train_loss=0.0900, val_mae=0.4252]
+
+
+### Epochs:  75%|███████▌  | 15/20 [12:33<04:12, 50.58s/it, best_val_mae=0.4105, train_loss=0.0900, val_mae=0.4252]
+
+
+### Epochs:  75%|███████▌  | 15/20 [13:23<04:12, 50.58s/it, best_val_mae=0.4105, train_loss=0.1178, val_mae=0.4204]
+
+
+### Epochs:  80%|████████  | 16/20 [13:23<03:21, 50.28s/it, best_val_mae=0.4105, train_loss=0.1178, val_mae=0.4204]
+
+
+### Epochs:  80%|████████  | 16/20 [14:13<03:21, 50.28s/it, best_val_mae=0.4105, train_loss=0.1741, val_mae=0.4235]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 4/4:  67%|██████▋   | 2/3 [26:47<13:32, 812.67s/it]
+Early stopping at epoch 17: train_loss=0.1741, val_mae=0.4235
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:50<?, ?it/s, best_val_mae=inf, train_loss=4.8639, val_mae=0.5901]
+
+
+### Epochs:   5%|▌         | 1/20 [00:50<15:57, 50.41s/it, best_val_mae=inf, train_loss=4.8639, val_mae=0.5901]
+
+
+### Epochs:   5%|▌         | 1/20 [01:41<15:57, 50.41s/it, best_val_mae=0.5901, train_loss=0.5725, val_mae=0.7913]
+
+
+### Epochs:  10%|█         | 2/20 [01:41<15:17, 50.97s/it, best_val_mae=0.5901, train_loss=0.5725, val_mae=0.7913]
+
+
+### Epochs:  10%|█         | 2/20 [02:31<15:17, 50.97s/it, best_val_mae=0.5901, train_loss=0.3629, val_mae=0.4051]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:31<14:14, 50.27s/it, best_val_mae=0.5901, train_loss=0.3629, val_mae=0.4051]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:21<14:14, 50.27s/it, best_val_mae=0.4051, train_loss=0.1522, val_mae=0.4117]
+
+
+### Epochs:  20%|██        | 4/20 [03:21<13:27, 50.44s/it, best_val_mae=0.4051, train_loss=0.1522, val_mae=0.4117]
+
+
+### Epochs:  20%|██        | 4/20 [04:11<13:27, 50.44s/it, best_val_mae=0.4051, train_loss=0.1205, val_mae=0.4799]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:11<12:30, 50.02s/it, best_val_mae=0.4051, train_loss=0.1205, val_mae=0.4799]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:03<12:30, 50.02s/it, best_val_mae=0.4051, train_loss=0.0637, val_mae=0.4402]
+
+
+### Epochs:  30%|███       | 6/20 [05:03<11:51, 50.84s/it, best_val_mae=0.4051, train_loss=0.0637, val_mae=0.4402]
+
+
+### Epochs:  30%|███       | 6/20 [05:55<11:51, 50.84s/it, best_val_mae=0.4051, train_loss=0.1101, val_mae=0.4017]
+
+
+### Epochs:  35%|███▌      | 7/20 [05:55<11:05, 51.18s/it, best_val_mae=0.4051, train_loss=0.1101, val_mae=0.4017]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:46<11:05, 51.18s/it, best_val_mae=0.4017, train_loss=0.1485, val_mae=0.4328]
+
+
+### Epochs:  40%|████      | 8/20 [06:46<10:13, 51.10s/it, best_val_mae=0.4017, train_loss=0.1485, val_mae=0.4328]
+
+
+### Epochs:  40%|████      | 8/20 [07:37<10:13, 51.10s/it, best_val_mae=0.4017, train_loss=0.0772, val_mae=0.3957]
+
+
+### Epochs:  45%|████▌     | 9/20 [07:37<09:23, 51.23s/it, best_val_mae=0.4017, train_loss=0.0772, val_mae=0.3957]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:27<09:23, 51.23s/it, best_val_mae=0.3957, train_loss=0.0798, val_mae=0.4470]
+
+
+### Epochs:  50%|█████     | 10/20 [08:27<08:26, 50.69s/it, best_val_mae=0.3957, train_loss=0.0798, val_mae=0.4470]
+
+
+### Epochs:  50%|█████     | 10/20 [09:19<08:26, 50.69s/it, best_val_mae=0.3957, train_loss=0.0771, val_mae=0.4332]
+
+
+### Epochs:  55%|█████▌    | 11/20 [09:19<07:38, 50.98s/it, best_val_mae=0.3957, train_loss=0.0771, val_mae=0.4332]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:09<07:38, 50.98s/it, best_val_mae=0.3957, train_loss=0.1668, val_mae=0.4335]
+
+
+### Epochs:  60%|██████    | 12/20 [10:09<06:45, 50.73s/it, best_val_mae=0.3957, train_loss=0.1668, val_mae=0.4335]
+
+
+### Epochs:  60%|██████    | 12/20 [10:58<06:45, 50.73s/it, best_val_mae=0.3957, train_loss=0.1310, val_mae=0.4919]
+
+
+### Epochs:  65%|██████▌   | 13/20 [10:58<05:52, 50.34s/it, best_val_mae=0.3957, train_loss=0.1310, val_mae=0.4919]
+
+
+### Epochs:  65%|██████▌   | 13/20 [11:48<05:52, 50.34s/it, best_val_mae=0.3957, train_loss=0.1183, val_mae=0.4153]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 2/3 | Config 4/4: 100%|██████████| 3/3 [38:36<00:00, 765.26s/it]
+
+                                                                                            
+# Configs | Outer Fold 2/3:  75%|███████▌  | 3/4 [2:20:58<35:47, 2147.20s/it, config_idx=4/4, mean_inner_mae=0.3946]
+# Configs | Outer Fold 2/3: 100%|██████████| 4/4 [2:20:58<00:00, 2214.03s/it, config_idx=4/4, mean_inner_mae=0.3946]
+                                                                                                                    
+Early stopping at epoch 14: train_loss=0.1183, val_mae=0.4153
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+### Epochs:   0%|          | 0/20 [01:13<?, ?it/s, best_val_mae=inf, train_loss=1.8276, val_mae=0.6226]
+### Epochs:   5%|▌         | 1/20 [01:13<23:12, 73.30s/it, best_val_mae=inf, train_loss=1.8276, val_mae=0.6226]
+### Epochs:   5%|▌         | 1/20 [02:25<23:12, 73.30s/it, best_val_mae=0.6226, train_loss=0.2679, val_mae=0.3634]
+### Epochs:  10%|█         | 2/20 [02:25<21:49, 72.77s/it, best_val_mae=0.6226, train_loss=0.2679, val_mae=0.3634]
+### Epochs:  10%|█         | 2/20 [03:39<21:49, 72.77s/it, best_val_mae=0.3634, train_loss=0.1265, val_mae=0.3786]
+### Epochs:  15%|█▌        | 3/20 [03:39<20:48, 73.45s/it, best_val_mae=0.3634, train_loss=0.1265, val_mae=0.3786]
+### Epochs:  15%|█▌        | 3/20 [04:51<20:48, 73.45s/it, best_val_mae=0.3634, train_loss=0.1077, val_mae=0.3673]
+### Epochs:  20%|██        | 4/20 [04:51<19:24, 72.79s/it, best_val_mae=0.3634, train_loss=0.1077, val_mae=0.3673]
+### Epochs:  20%|██        | 4/20 [06:05<19:24, 72.79s/it, best_val_mae=0.3634, train_loss=0.1227, val_mae=0.3767]
+### Epochs:  25%|██▌       | 5/20 [06:05<18:17, 73.20s/it, best_val_mae=0.3634, train_loss=0.1227, val_mae=0.3767]
+### Epochs:  25%|██▌       | 5/20 [07:19<18:17, 73.20s/it, best_val_mae=0.3634, train_loss=0.1696, val_mae=0.3933]
+### Epochs:  30%|███       | 6/20 [07:19<17:05, 73.27s/it, best_val_mae=0.3634, train_loss=0.1696, val_mae=0.3933]
+### Epochs:  30%|███       | 6/20 [08:33<17:05, 73.27s/it, best_val_mae=0.3634, train_loss=0.1206, val_mae=0.3527]
+### Epochs:  35%|███▌      | 7/20 [08:33<15:58, 73.74s/it, best_val_mae=0.3634, train_loss=0.1206, val_mae=0.3527]
+### Epochs:  35%|███▌      | 7/20 [09:48<15:58, 73.74s/it, best_val_mae=0.3527, train_loss=0.1631, val_mae=0.3520]
+### Epochs:  40%|████      | 8/20 [09:48<14:47, 73.98s/it, best_val_mae=0.3527, train_loss=0.1631, val_mae=0.3520]
+### Epochs:  40%|████      | 8/20 [11:01<14:47, 73.98s/it, best_val_mae=0.3520, train_loss=0.1221, val_mae=0.3850]
+### Epochs:  45%|████▌     | 9/20 [11:01<13:32, 73.82s/it, best_val_mae=0.3520, train_loss=0.1221, val_mae=0.3850]
+### Epochs:  45%|████▌     | 9/20 [12:15<13:32, 73.82s/it, best_val_mae=0.3520, train_loss=0.1181, val_mae=0.3925]
+### Epochs:  50%|█████     | 10/20 [12:15<12:19, 73.94s/it, best_val_mae=0.3520, train_loss=0.1181, val_mae=0.3925]
+### Epochs:  50%|█████     | 10/20 [13:34<12:19, 73.94s/it, best_val_mae=0.3520, train_loss=0.1598, val_mae=0.3599]
+### Epochs:  55%|█████▌    | 11/20 [13:34<11:17, 75.28s/it, best_val_mae=0.3520, train_loss=0.1598, val_mae=0.3599]
+### Epochs:  55%|█████▌    | 11/20 [14:50<11:17, 75.28s/it, best_val_mae=0.3520, train_loss=0.1261, val_mae=0.3612]
+### Epochs:  60%|██████    | 12/20 [14:50<10:03, 75.47s/it, best_val_mae=0.3520, train_loss=0.1261, val_mae=0.3612]
+### Epochs:  60%|██████    | 12/20 [16:04<10:03, 75.47s/it, best_val_mae=0.3520, train_loss=0.1505, val_mae=0.3711]
+### Epochs:  65%|██████▌   | 13/20 [16:04<08:45, 75.01s/it, best_val_mae=0.3520, train_loss=0.1505, val_mae=0.3711]
+### Epochs:  65%|██████▌   | 13/20 [17:17<08:45, 75.01s/it, best_val_mae=0.3520, train_loss=0.1100, val_mae=0.3486]
+### Epochs:  70%|███████   | 14/20 [17:17<07:27, 74.51s/it, best_val_mae=0.3520, train_loss=0.1100, val_mae=0.3486]
+### Epochs:  70%|███████   | 14/20 [18:32<07:27, 74.51s/it, best_val_mae=0.3486, train_loss=0.1097, val_mae=0.3508]
+### Epochs:  75%|███████▌  | 15/20 [18:32<06:13, 74.71s/it, best_val_mae=0.3486, train_loss=0.1097, val_mae=0.3508]
+### Epochs:  75%|███████▌  | 15/20 [19:44<06:13, 74.71s/it, best_val_mae=0.3486, train_loss=0.0606, val_mae=0.3752]
+### Epochs:  80%|████████  | 16/20 [19:44<04:55, 73.80s/it, best_val_mae=0.3486, train_loss=0.0606, val_mae=0.3752]
+### Epochs:  80%|████████  | 16/20 [20:58<04:55, 73.80s/it, best_val_mae=0.3486, train_loss=0.0558, val_mae=0.3969]
+### Epochs:  85%|████████▌ | 17/20 [20:58<03:41, 73.78s/it, best_val_mae=0.3486, train_loss=0.0558, val_mae=0.3969]
+### Epochs:  85%|████████▌ | 17/20 [22:13<03:41, 73.78s/it, best_val_mae=0.3486, train_loss=0.1846, val_mae=0.3568]
+### Epochs:  90%|█████████ | 18/20 [22:13<02:28, 74.23s/it, best_val_mae=0.3486, train_loss=0.1846, val_mae=0.3568]
+### Epochs:  90%|█████████ | 18/20 [23:27<02:28, 74.23s/it, best_val_mae=0.3486, train_loss=0.0945, val_mae=0.3713]
+### Epochs:  95%|█████████▌| 19/20 [23:27<01:14, 74.17s/it, best_val_mae=0.3486, train_loss=0.0945, val_mae=0.3713]
+### Epochs:  95%|█████████▌| 19/20 [24:42<01:14, 74.17s/it, best_val_mae=0.3486, train_loss=0.1283, val_mae=0.3387]
+### Epochs: 100%|██████████| 20/20 [24:42<00:00, 74.43s/it, best_val_mae=0.3486, train_loss=0.1283, val_mae=0.3387]
+Outer Folds:  67%|██████▋   | 2/3 [5:37:05<2:48:07, 10087.21s/it, MAE=0.339, RMSE=0.428, best={'lr_backbone': 0.0001, 'lr_head': 0.0003, 'weight_decay': 0.001}]
+Outer Fold 2: MAE=0.339, RMSE=0.428, R2=0.8748823997568466, best={'lr_backbone': 0.0001, 'lr_head': 0.0003, 'weight_decay': 0.001}
+
+# Configs | Outer Fold 3/3:   0%|          | 0/4 [00:00<?, ?it/s]
+
+## Inner Folds | Outer Fold 3/3 | Config 1/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:48<?, ?it/s, best_val_mae=inf, train_loss=2.3586, val_mae=0.4594]
+
+
+### Epochs:   5%|▌         | 1/20 [00:48<15:29, 48.93s/it, best_val_mae=inf, train_loss=2.3586, val_mae=0.4594]
+
+
+### Epochs:   5%|▌         | 1/20 [01:41<15:29, 48.93s/it, best_val_mae=0.4594, train_loss=0.6951, val_mae=0.7232]
+
+
+### Epochs:  10%|█         | 2/20 [01:41<15:14, 50.82s/it, best_val_mae=0.4594, train_loss=0.6951, val_mae=0.7232]
+
+
+### Epochs:  10%|█         | 2/20 [02:32<15:14, 50.82s/it, best_val_mae=0.4594, train_loss=0.2498, val_mae=0.3964]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:32<14:30, 51.21s/it, best_val_mae=0.4594, train_loss=0.2498, val_mae=0.3964]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:25<14:30, 51.21s/it, best_val_mae=0.3964, train_loss=0.1226, val_mae=0.4856]
+
+
+### Epochs:  20%|██        | 4/20 [03:25<13:48, 51.78s/it, best_val_mae=0.3964, train_loss=0.1226, val_mae=0.4856]
+
+
+### Epochs:  20%|██        | 4/20 [04:19<13:48, 51.78s/it, best_val_mae=0.3964, train_loss=0.0528, val_mae=0.4601]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:19<13:06, 52.45s/it, best_val_mae=0.3964, train_loss=0.0528, val_mae=0.4601]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:11<13:06, 52.45s/it, best_val_mae=0.3964, train_loss=0.1664, val_mae=0.5310]
+
+
+### Epochs:  30%|███       | 6/20 [05:11<12:16, 52.62s/it, best_val_mae=0.3964, train_loss=0.1664, val_mae=0.5310]
+
+
+### Epochs:  30%|███       | 6/20 [06:06<12:16, 52.62s/it, best_val_mae=0.3964, train_loss=0.1488, val_mae=0.5217]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:06<11:32, 53.24s/it, best_val_mae=0.3964, train_loss=0.1488, val_mae=0.5217]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:01<11:32, 53.24s/it, best_val_mae=0.3964, train_loss=0.0703, val_mae=0.4020]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 3/3 | Config 1/4:  33%|███▎      | 1/3 [07:02<14:04, 422.04s/it]
+Early stopping at epoch 8: train_loss=0.0703, val_mae=0.4020
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:53<?, ?it/s, best_val_mae=inf, train_loss=2.0653, val_mae=0.5097]
+
+
+### Epochs:   5%|▌         | 1/20 [00:53<16:57, 53.55s/it, best_val_mae=inf, train_loss=2.0653, val_mae=0.5097]
+
+
+### Epochs:   5%|▌         | 1/20 [01:45<16:57, 53.55s/it, best_val_mae=0.5097, train_loss=0.5984, val_mae=0.7289]
+
+
+### Epochs:  10%|█         | 2/20 [01:45<15:47, 52.64s/it, best_val_mae=0.5097, train_loss=0.5984, val_mae=0.7289]
+
+
+### Epochs:  10%|█         | 2/20 [02:37<15:47, 52.64s/it, best_val_mae=0.5097, train_loss=0.2604, val_mae=0.4313]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:37<14:52, 52.52s/it, best_val_mae=0.5097, train_loss=0.2604, val_mae=0.4313]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:29<14:52, 52.52s/it, best_val_mae=0.4313, train_loss=0.1439, val_mae=0.4371]
+
+
+### Epochs:  20%|██        | 4/20 [03:29<13:55, 52.23s/it, best_val_mae=0.4313, train_loss=0.1439, val_mae=0.4371]
+
+
+### Epochs:  20%|██        | 4/20 [04:21<13:55, 52.23s/it, best_val_mae=0.4313, train_loss=0.1360, val_mae=0.3825]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:21<13:01, 52.07s/it, best_val_mae=0.4313, train_loss=0.1360, val_mae=0.3825]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:14<13:01, 52.07s/it, best_val_mae=0.3825, train_loss=0.3519, val_mae=0.3799]
+
+
+### Epochs:  30%|███       | 6/20 [05:14<12:11, 52.28s/it, best_val_mae=0.3825, train_loss=0.3519, val_mae=0.3799]
+
+
+### Epochs:  30%|███       | 6/20 [06:05<12:11, 52.28s/it, best_val_mae=0.3799, train_loss=0.0828, val_mae=0.4491]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:05<11:16, 52.08s/it, best_val_mae=0.3799, train_loss=0.0828, val_mae=0.4491]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:57<11:16, 52.08s/it, best_val_mae=0.3799, train_loss=0.1235, val_mae=0.3927]
+
+
+### Epochs:  40%|████      | 8/20 [06:57<10:24, 52.05s/it, best_val_mae=0.3799, train_loss=0.1235, val_mae=0.3927]
+
+
+### Epochs:  40%|████      | 8/20 [07:51<10:24, 52.05s/it, best_val_mae=0.3799, train_loss=0.1300, val_mae=0.3826]
+
+
+### Epochs:  45%|████▌     | 9/20 [07:51<09:38, 52.59s/it, best_val_mae=0.3799, train_loss=0.1300, val_mae=0.3826]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:45<09:38, 52.59s/it, best_val_mae=0.3799, train_loss=0.1031, val_mae=0.3896]
+
+
+### Epochs:  50%|█████     | 10/20 [08:45<08:50, 53.02s/it, best_val_mae=0.3799, train_loss=0.1031, val_mae=0.3896]
+
+
+### Epochs:  50%|█████     | 10/20 [09:38<08:50, 53.02s/it, best_val_mae=0.3799, train_loss=0.1242, val_mae=0.3877]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 3/3 | Config 1/4:  67%|██████▋   | 2/3 [16:41<08:34, 514.42s/it]
+Early stopping at epoch 11: train_loss=0.1242, val_mae=0.3877
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:52<?, ?it/s, best_val_mae=inf, train_loss=2.6526, val_mae=0.5465]
+
+
+### Epochs:   5%|▌         | 1/20 [00:52<16:35, 52.41s/it, best_val_mae=inf, train_loss=2.6526, val_mae=0.5465]
+
+
+### Epochs:   5%|▌         | 1/20 [01:45<16:35, 52.41s/it, best_val_mae=0.5465, train_loss=0.3501, val_mae=0.3993]
+
+
+### Epochs:  10%|█         | 2/20 [01:45<15:48, 52.68s/it, best_val_mae=0.5465, train_loss=0.3501, val_mae=0.3993]
+
+
+### Epochs:  10%|█         | 2/20 [02:37<15:48, 52.68s/it, best_val_mae=0.3993, train_loss=0.2655, val_mae=0.4203]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:37<14:53, 52.54s/it, best_val_mae=0.3993, train_loss=0.2655, val_mae=0.4203]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:29<14:53, 52.54s/it, best_val_mae=0.3993, train_loss=0.1588, val_mae=0.5856]
+
+
+### Epochs:  20%|██        | 4/20 [03:29<13:57, 52.35s/it, best_val_mae=0.3993, train_loss=0.1588, val_mae=0.5856]
+
+
+### Epochs:  20%|██        | 4/20 [04:21<13:57, 52.35s/it, best_val_mae=0.3993, train_loss=0.0862, val_mae=0.4128]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:21<13:04, 52.32s/it, best_val_mae=0.3993, train_loss=0.0862, val_mae=0.4128]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:15<13:04, 52.32s/it, best_val_mae=0.3993, train_loss=0.0639, val_mae=0.5743]
+
+
+### Epochs:  30%|███       | 6/20 [05:15<12:18, 52.72s/it, best_val_mae=0.3993, train_loss=0.0639, val_mae=0.5743]
+
+
+### Epochs:  30%|███       | 6/20 [06:08<12:18, 52.72s/it, best_val_mae=0.3993, train_loss=0.0699, val_mae=0.4424]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 3/3 | Config 1/4: 100%|██████████| 3/3 [22:50<00:00, 447.97s/it]
+
+                                                                                            
+# Configs | Outer Fold 3/3:   0%|          | 0/4 [22:50<?, ?it/s, config_idx=1/4, mean_inner_mae=0.3919]
+# Configs | Outer Fold 3/3:  25%|██▌       | 1/4 [22:50<1:08:30, 1370.02s/it, config_idx=1/4, mean_inner_mae=0.3919]
+Early stopping at epoch 7: train_loss=0.0699, val_mae=0.4424
+
+
+## Inner Folds | Outer Fold 3/3 | Config 2/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:53<?, ?it/s, best_val_mae=inf, train_loss=2.3587, val_mae=0.4593]
+
+
+### Epochs:   5%|▌         | 1/20 [00:53<16:47, 53.03s/it, best_val_mae=inf, train_loss=2.3587, val_mae=0.4593]
+
+
+### Epochs:   5%|▌         | 1/20 [01:45<16:47, 53.03s/it, best_val_mae=0.4593, train_loss=0.6960, val_mae=0.7252]
+
+
+### Epochs:  10%|█         | 2/20 [01:45<15:53, 52.98s/it, best_val_mae=0.4593, train_loss=0.6960, val_mae=0.7252]
+
+
+### Epochs:  10%|█         | 2/20 [02:40<15:53, 52.98s/it, best_val_mae=0.4593, train_loss=0.2500, val_mae=0.3967]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:40<15:13, 53.73s/it, best_val_mae=0.4593, train_loss=0.2500, val_mae=0.3967]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:33<15:13, 53.73s/it, best_val_mae=0.3967, train_loss=0.1224, val_mae=0.4868]
+
+
+### Epochs:  20%|██        | 4/20 [03:33<14:16, 53.51s/it, best_val_mae=0.3967, train_loss=0.1224, val_mae=0.4868]
+
+
+### Epochs:  20%|██        | 4/20 [04:25<14:16, 53.51s/it, best_val_mae=0.3967, train_loss=0.0531, val_mae=0.4618]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:25<13:14, 52.99s/it, best_val_mae=0.3967, train_loss=0.0531, val_mae=0.4618]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:19<13:14, 52.99s/it, best_val_mae=0.3967, train_loss=0.1667, val_mae=0.5340]
+
+
+### Epochs:  30%|███       | 6/20 [05:19<12:26, 53.31s/it, best_val_mae=0.3967, train_loss=0.1667, val_mae=0.5340]
+
+
+### Epochs:  30%|███       | 6/20 [06:13<12:26, 53.31s/it, best_val_mae=0.3967, train_loss=0.1494, val_mae=0.5255]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:13<11:36, 53.55s/it, best_val_mae=0.3967, train_loss=0.1494, val_mae=0.5255]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:06<11:36, 53.55s/it, best_val_mae=0.3967, train_loss=0.0709, val_mae=0.4033]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 3/3 | Config 2/4:  33%|███▎      | 1/3 [07:06<14:12, 426.19s/it]
+Early stopping at epoch 8: train_loss=0.0709, val_mae=0.4033
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:52<?, ?it/s, best_val_mae=inf, train_loss=2.0651, val_mae=0.5094]
+
+
+### Epochs:   5%|▌         | 1/20 [00:52<16:44, 52.86s/it, best_val_mae=inf, train_loss=2.0651, val_mae=0.5094]
+
+
+### Epochs:   5%|▌         | 1/20 [01:45<16:44, 52.86s/it, best_val_mae=0.5094, train_loss=0.5993, val_mae=0.7299]
+
+
+### Epochs:  10%|█         | 2/20 [01:45<15:44, 52.49s/it, best_val_mae=0.5094, train_loss=0.5993, val_mae=0.7299]
+
+
+### Epochs:  10%|█         | 2/20 [02:37<15:44, 52.49s/it, best_val_mae=0.5094, train_loss=0.2611, val_mae=0.4320]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:37<14:49, 52.32s/it, best_val_mae=0.5094, train_loss=0.2611, val_mae=0.4320]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:29<14:49, 52.32s/it, best_val_mae=0.4320, train_loss=0.1445, val_mae=0.4377]
+
+
+### Epochs:  20%|██        | 4/20 [03:29<13:54, 52.18s/it, best_val_mae=0.4320, train_loss=0.1445, val_mae=0.4377]
+
+
+### Epochs:  20%|██        | 4/20 [04:22<13:54, 52.18s/it, best_val_mae=0.4320, train_loss=0.1363, val_mae=0.3826]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:22<13:08, 52.60s/it, best_val_mae=0.4320, train_loss=0.1363, val_mae=0.3826]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:14<13:08, 52.60s/it, best_val_mae=0.3826, train_loss=0.3536, val_mae=0.3796]
+
+
+### Epochs:  30%|███       | 6/20 [05:14<12:12, 52.35s/it, best_val_mae=0.3826, train_loss=0.3536, val_mae=0.3796]
+
+
+### Epochs:  30%|███       | 6/20 [06:05<12:12, 52.35s/it, best_val_mae=0.3796, train_loss=0.0825, val_mae=0.4512]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:05<11:13, 51.80s/it, best_val_mae=0.3796, train_loss=0.0825, val_mae=0.4512]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:57<11:13, 51.80s/it, best_val_mae=0.3796, train_loss=0.1236, val_mae=0.3928]
+
+
+### Epochs:  40%|████      | 8/20 [06:57<10:23, 51.95s/it, best_val_mae=0.3796, train_loss=0.1236, val_mae=0.3928]
+
+
+### Epochs:  40%|████      | 8/20 [07:53<10:23, 51.95s/it, best_val_mae=0.3796, train_loss=0.1310, val_mae=0.3839]
+
+
+### Epochs:  45%|████▌     | 9/20 [07:53<09:45, 53.18s/it, best_val_mae=0.3796, train_loss=0.1310, val_mae=0.3839]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:48<09:45, 53.18s/it, best_val_mae=0.3796, train_loss=0.1049, val_mae=0.3884]
+
+
+### Epochs:  50%|█████     | 10/20 [08:48<08:59, 53.93s/it, best_val_mae=0.3796, train_loss=0.1049, val_mae=0.3884]
+
+
+### Epochs:  50%|█████     | 10/20 [09:42<08:59, 53.93s/it, best_val_mae=0.3796, train_loss=0.1250, val_mae=0.3876]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 3/3 | Config 2/4:  67%|██████▋   | 2/3 [16:48<08:38, 518.06s/it]
+Early stopping at epoch 11: train_loss=0.1250, val_mae=0.3876
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:53<?, ?it/s, best_val_mae=inf, train_loss=2.6527, val_mae=0.5462]
+
+
+### Epochs:   5%|▌         | 1/20 [00:53<16:56, 53.51s/it, best_val_mae=inf, train_loss=2.6527, val_mae=0.5462]
+
+
+### Epochs:   5%|▌         | 1/20 [01:47<16:56, 53.51s/it, best_val_mae=0.5462, train_loss=0.3504, val_mae=0.3990]
+
+
+### Epochs:  10%|█         | 2/20 [01:47<16:03, 53.54s/it, best_val_mae=0.5462, train_loss=0.3504, val_mae=0.3990]
+
+
+### Epochs:  10%|█         | 2/20 [02:40<16:03, 53.54s/it, best_val_mae=0.3990, train_loss=0.2660, val_mae=0.4198]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:40<15:10, 53.55s/it, best_val_mae=0.3990, train_loss=0.2660, val_mae=0.4198]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:05<15:10, 53.55s/it, best_val_mae=0.3990, train_loss=0.1588, val_mae=0.5862]
+
+
+### Epochs:  20%|██        | 4/20 [04:05<17:34, 65.93s/it, best_val_mae=0.3990, train_loss=0.1588, val_mae=0.5862]
+
+
+### Epochs:  20%|██        | 4/20 [05:02<17:34, 65.93s/it, best_val_mae=0.3990, train_loss=0.0861, val_mae=0.4129]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:02<15:38, 62.53s/it, best_val_mae=0.3990, train_loss=0.0861, val_mae=0.4129]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:11<15:38, 62.53s/it, best_val_mae=0.3990, train_loss=0.0637, val_mae=0.5755]
+
+
+### Epochs:  30%|███       | 6/20 [06:11<15:07, 64.84s/it, best_val_mae=0.3990, train_loss=0.0637, val_mae=0.5755]
+
+
+### Epochs:  30%|███       | 6/20 [07:07<15:07, 64.84s/it, best_val_mae=0.3990, train_loss=0.0699, val_mae=0.4425]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 3/3 | Config 2/4: 100%|██████████| 3/3 [23:56<00:00, 476.98s/it]
+
+                                                                                            
+# Configs | Outer Fold 3/3:  25%|██▌       | 1/4 [46:46<1:08:30, 1370.02s/it, config_idx=2/4, mean_inner_mae=0.3918]
+# Configs | Outer Fold 3/3:  50%|█████     | 2/4 [46:46<46:58, 1409.22s/it, config_idx=2/4, mean_inner_mae=0.3918]  
+Early stopping at epoch 7: train_loss=0.0699, val_mae=0.4425
+
+
+## Inner Folds | Outer Fold 3/3 | Config 3/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:08<?, ?it/s, best_val_mae=inf, train_loss=2.6468, val_mae=0.5701]
+
+
+### Epochs:   5%|▌         | 1/20 [01:08<21:37, 68.31s/it, best_val_mae=inf, train_loss=2.6468, val_mae=0.5701]
+
+
+### Epochs:   5%|▌         | 1/20 [02:01<21:37, 68.31s/it, best_val_mae=0.5701, train_loss=0.6977, val_mae=0.6690]
+
+
+### Epochs:  10%|█         | 2/20 [02:01<17:50, 59.48s/it, best_val_mae=0.5701, train_loss=0.6977, val_mae=0.6690]
+
+
+### Epochs:  10%|█         | 2/20 [03:02<17:50, 59.48s/it, best_val_mae=0.5701, train_loss=0.2545, val_mae=0.3903]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:02<17:01, 60.07s/it, best_val_mae=0.5701, train_loss=0.2545, val_mae=0.3903]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:02<17:01, 60.07s/it, best_val_mae=0.3903, train_loss=0.1022, val_mae=0.4548]
+
+
+### Epochs:  20%|██        | 4/20 [04:02<16:01, 60.09s/it, best_val_mae=0.3903, train_loss=0.1022, val_mae=0.4548]
+
+
+### Epochs:  20%|██        | 4/20 [05:21<16:01, 60.09s/it, best_val_mae=0.3903, train_loss=0.0548, val_mae=0.4567]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:21<16:42, 66.82s/it, best_val_mae=0.3903, train_loss=0.0548, val_mae=0.4567]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:17<16:42, 66.82s/it, best_val_mae=0.3903, train_loss=0.1826, val_mae=0.4053]
+
+
+### Epochs:  30%|███       | 6/20 [06:17<14:44, 63.20s/it, best_val_mae=0.3903, train_loss=0.1826, val_mae=0.4053]
+
+
+### Epochs:  30%|███       | 6/20 [07:15<14:44, 63.20s/it, best_val_mae=0.3903, train_loss=0.0844, val_mae=0.4530]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:15<13:19, 61.51s/it, best_val_mae=0.3903, train_loss=0.0844, val_mae=0.4530]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:19<13:19, 61.51s/it, best_val_mae=0.3903, train_loss=0.0479, val_mae=0.4389]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 3/3 | Config 3/4:  33%|███▎      | 1/3 [08:19<16:39, 499.63s/it]
+Early stopping at epoch 8: train_loss=0.0479, val_mae=0.4389
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:51<?, ?it/s, best_val_mae=inf, train_loss=2.4774, val_mae=0.6089]
+
+
+### Epochs:   5%|▌         | 1/20 [00:51<16:12, 51.16s/it, best_val_mae=inf, train_loss=2.4774, val_mae=0.6089]
+
+
+### Epochs:   5%|▌         | 1/20 [02:02<16:12, 51.16s/it, best_val_mae=0.6089, train_loss=0.6539, val_mae=0.5821]
+
+
+### Epochs:  10%|█         | 2/20 [02:02<18:56, 63.12s/it, best_val_mae=0.6089, train_loss=0.6539, val_mae=0.5821]
+
+
+### Epochs:  10%|█         | 2/20 [02:52<18:56, 63.12s/it, best_val_mae=0.5821, train_loss=0.2853, val_mae=0.3993]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:52<16:10, 57.07s/it, best_val_mae=0.5821, train_loss=0.2853, val_mae=0.3993]
+
+
+### Epochs:  15%|█▌        | 3/20 [04:05<16:10, 57.07s/it, best_val_mae=0.3993, train_loss=0.1136, val_mae=0.4551]
+
+
+### Epochs:  20%|██        | 4/20 [04:05<16:51, 63.23s/it, best_val_mae=0.3993, train_loss=0.1136, val_mae=0.4551]
+
+
+### Epochs:  20%|██        | 4/20 [04:54<16:51, 63.23s/it, best_val_mae=0.3993, train_loss=0.1562, val_mae=0.4466]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:54<14:35, 58.35s/it, best_val_mae=0.3993, train_loss=0.1562, val_mae=0.4466]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:05<14:35, 58.35s/it, best_val_mae=0.3993, train_loss=0.2332, val_mae=0.3895]
+
+
+### Epochs:  30%|███       | 6/20 [06:05<14:37, 62.67s/it, best_val_mae=0.3993, train_loss=0.2332, val_mae=0.3895]
+
+
+### Epochs:  30%|███       | 6/20 [06:55<14:37, 62.67s/it, best_val_mae=0.3895, train_loss=0.0776, val_mae=0.4191]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:55<12:40, 58.48s/it, best_val_mae=0.3895, train_loss=0.0776, val_mae=0.4191]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:06<12:40, 58.48s/it, best_val_mae=0.3895, train_loss=0.0993, val_mae=0.4142]
+
+
+### Epochs:  40%|████      | 8/20 [08:06<12:27, 62.27s/it, best_val_mae=0.3895, train_loss=0.0993, val_mae=0.4142]
+
+
+### Epochs:  40%|████      | 8/20 [08:56<12:27, 62.27s/it, best_val_mae=0.3895, train_loss=0.0909, val_mae=0.3841]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:56<10:43, 58.47s/it, best_val_mae=0.3895, train_loss=0.0909, val_mae=0.3841]
+
+
+### Epochs:  45%|████▌     | 9/20 [10:05<10:43, 58.47s/it, best_val_mae=0.3841, train_loss=0.0766, val_mae=0.4164]
+
+
+### Epochs:  50%|█████     | 10/20 [10:05<10:17, 61.79s/it, best_val_mae=0.3841, train_loss=0.0766, val_mae=0.4164]
+
+
+### Epochs:  50%|█████     | 10/20 [10:59<10:17, 61.79s/it, best_val_mae=0.3841, train_loss=0.0842, val_mae=0.3931]
+
+
+### Epochs:  55%|█████▌    | 11/20 [10:59<08:53, 59.27s/it, best_val_mae=0.3841, train_loss=0.0842, val_mae=0.3931]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:47<08:53, 59.27s/it, best_val_mae=0.3841, train_loss=0.0789, val_mae=0.4379]
+
+
+### Epochs:  60%|██████    | 12/20 [11:47<07:28, 56.09s/it, best_val_mae=0.3841, train_loss=0.0789, val_mae=0.4379]
+
+
+### Epochs:  60%|██████    | 12/20 [12:59<07:28, 56.09s/it, best_val_mae=0.3841, train_loss=0.0756, val_mae=0.3962]
+
+
+### Epochs:  65%|██████▌   | 13/20 [12:59<07:05, 60.85s/it, best_val_mae=0.3841, train_loss=0.0756, val_mae=0.3962]
+
+
+### Epochs:  65%|██████▌   | 13/20 [13:49<07:05, 60.85s/it, best_val_mae=0.3841, train_loss=0.0750, val_mae=0.3976]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 3/3 | Config 3/4:  67%|██████▋   | 2/3 [22:09<11:33, 693.81s/it]
+Early stopping at epoch 14: train_loss=0.0750, val_mae=0.3976
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:09<?, ?it/s, best_val_mae=inf, train_loss=3.1553, val_mae=0.6485]
+
+
+### Epochs:   5%|▌         | 1/20 [01:09<22:06, 69.82s/it, best_val_mae=inf, train_loss=3.1553, val_mae=0.6485]
+
+
+### Epochs:   5%|▌         | 1/20 [01:59<22:06, 69.82s/it, best_val_mae=0.6485, train_loss=0.7106, val_mae=0.5856]
+
+
+### Epochs:  10%|█         | 2/20 [01:59<17:22, 57.93s/it, best_val_mae=0.6485, train_loss=0.7106, val_mae=0.5856]
+
+
+### Epochs:  10%|█         | 2/20 [03:09<17:22, 57.93s/it, best_val_mae=0.5856, train_loss=0.3144, val_mae=0.4168]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:09<18:00, 63.56s/it, best_val_mae=0.5856, train_loss=0.3144, val_mae=0.4168]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:59<18:00, 63.56s/it, best_val_mae=0.4168, train_loss=0.1717, val_mae=0.4701]
+
+
+### Epochs:  20%|██        | 4/20 [03:59<15:30, 58.14s/it, best_val_mae=0.4168, train_loss=0.1717, val_mae=0.4701]
+
+
+### Epochs:  20%|██        | 4/20 [05:10<15:30, 58.14s/it, best_val_mae=0.4168, train_loss=0.1727, val_mae=0.4929]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:10<15:42, 62.81s/it, best_val_mae=0.4168, train_loss=0.1727, val_mae=0.4929]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:59<15:42, 62.81s/it, best_val_mae=0.4168, train_loss=0.1114, val_mae=0.4120]
+
+
+### Epochs:  30%|███       | 6/20 [05:59<13:35, 58.24s/it, best_val_mae=0.4168, train_loss=0.1114, val_mae=0.4120]
+
+
+### Epochs:  30%|███       | 6/20 [07:08<13:35, 58.24s/it, best_val_mae=0.4120, train_loss=0.0671, val_mae=0.4938]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:08<13:21, 61.66s/it, best_val_mae=0.4120, train_loss=0.0671, val_mae=0.4938]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:56<13:21, 61.66s/it, best_val_mae=0.4120, train_loss=0.0923, val_mae=0.4173]
+
+
+### Epochs:  40%|████      | 8/20 [07:56<11:28, 57.37s/it, best_val_mae=0.4120, train_loss=0.0923, val_mae=0.4173]
+
+
+### Epochs:  40%|████      | 8/20 [09:06<11:28, 57.37s/it, best_val_mae=0.4120, train_loss=0.1202, val_mae=0.4403]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:06<11:12, 61.15s/it, best_val_mae=0.4120, train_loss=0.1202, val_mae=0.4403]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:56<11:12, 61.15s/it, best_val_mae=0.4120, train_loss=0.0922, val_mae=0.4567]
+
+
+### Epochs:  50%|█████     | 10/20 [09:56<09:37, 57.74s/it, best_val_mae=0.4120, train_loss=0.0922, val_mae=0.4567]
+
+
+### Epochs:  50%|█████     | 10/20 [11:09<09:37, 57.74s/it, best_val_mae=0.4120, train_loss=0.0945, val_mae=0.4245]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 3/3 | Config 3/4: 100%|██████████| 3/3 [33:18<00:00, 682.60s/it]
+
+                                                                                            
+# Configs | Outer Fold 3/3:  50%|█████     | 2/4 [1:20:05<46:58, 1409.22s/it, config_idx=3/4, mean_inner_mae=0.3954]
+# Configs | Outer Fold 3/3:  75%|███████▌  | 3/4 [1:20:05<27:58, 1678.36s/it, config_idx=3/4, mean_inner_mae=0.3954]
+Early stopping at epoch 11: train_loss=0.0945, val_mae=0.4245
+
+
+## Inner Folds | Outer Fold 3/3 | Config 4/4:   0%|          | 0/3 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [00:50<?, ?it/s, best_val_mae=inf, train_loss=2.6463, val_mae=0.5702]
+
+
+### Epochs:   5%|▌         | 1/20 [00:50<15:55, 50.26s/it, best_val_mae=inf, train_loss=2.6463, val_mae=0.5702]
+
+
+### Epochs:   5%|▌         | 1/20 [01:50<15:55, 50.26s/it, best_val_mae=0.5702, train_loss=0.6992, val_mae=0.6683]
+
+
+### Epochs:  10%|█         | 2/20 [01:50<16:50, 56.11s/it, best_val_mae=0.5702, train_loss=0.6992, val_mae=0.6683]
+
+
+### Epochs:  10%|█         | 2/20 [02:50<16:50, 56.11s/it, best_val_mae=0.5702, train_loss=0.2551, val_mae=0.3896]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:50<16:24, 57.90s/it, best_val_mae=0.5702, train_loss=0.2551, val_mae=0.3896]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:41<16:24, 57.90s/it, best_val_mae=0.3896, train_loss=0.1021, val_mae=0.4562]
+
+
+### Epochs:  20%|██        | 4/20 [03:41<14:39, 54.99s/it, best_val_mae=0.3896, train_loss=0.1021, val_mae=0.4562]
+
+
+### Epochs:  20%|██        | 4/20 [04:53<14:39, 54.99s/it, best_val_mae=0.3896, train_loss=0.0549, val_mae=0.4573]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:53<15:17, 61.13s/it, best_val_mae=0.3896, train_loss=0.0549, val_mae=0.4573]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:43<15:17, 61.13s/it, best_val_mae=0.3896, train_loss=0.1827, val_mae=0.4053]
+
+
+### Epochs:  30%|███       | 6/20 [05:43<13:24, 57.48s/it, best_val_mae=0.3896, train_loss=0.1827, val_mae=0.4053]
+
+
+### Epochs:  30%|███       | 6/20 [06:54<13:24, 57.48s/it, best_val_mae=0.3896, train_loss=0.0848, val_mae=0.4526]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:54<13:25, 61.95s/it, best_val_mae=0.3896, train_loss=0.0848, val_mae=0.4526]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:44<13:25, 61.95s/it, best_val_mae=0.3896, train_loss=0.0477, val_mae=0.4397]
+
+
+                                                                                                                  
+
+## Inner Folds | Outer Fold 3/3 | Config 4/4:  33%|███▎      | 1/3 [07:45<15:30, 465.06s/it]
+Early stopping at epoch 8: train_loss=0.0477, val_mae=0.4397
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:10<?, ?it/s, best_val_mae=inf, train_loss=2.4769, val_mae=0.6096]
+
+
+### Epochs:   5%|▌         | 1/20 [01:10<22:10, 70.05s/it, best_val_mae=inf, train_loss=2.4769, val_mae=0.6096]
+
+
+### Epochs:   5%|▌         | 1/20 [01:58<22:10, 70.05s/it, best_val_mae=0.6096, train_loss=0.6555, val_mae=0.5829]
+
+
+### Epochs:  10%|█         | 2/20 [01:58<17:15, 57.55s/it, best_val_mae=0.6096, train_loss=0.6555, val_mae=0.5829]
+
+
+### Epochs:  10%|█         | 2/20 [03:08<17:15, 57.55s/it, best_val_mae=0.5829, train_loss=0.2863, val_mae=0.3987]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:08<17:55, 63.28s/it, best_val_mae=0.5829, train_loss=0.2863, val_mae=0.3987]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:58<17:55, 63.28s/it, best_val_mae=0.3987, train_loss=0.1133, val_mae=0.4556]
+
+
+### Epochs:  20%|██        | 4/20 [03:58<15:27, 57.99s/it, best_val_mae=0.3987, train_loss=0.1133, val_mae=0.4556]
+
+
+### Epochs:  20%|██        | 4/20 [05:10<15:27, 57.99s/it, best_val_mae=0.3987, train_loss=0.1564, val_mae=0.4475]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:10<15:44, 62.94s/it, best_val_mae=0.3987, train_loss=0.1564, val_mae=0.4475]
+
+
+### Epochs:  25%|██▌       | 5/20 [06:02<15:44, 62.94s/it, best_val_mae=0.3987, train_loss=0.2334, val_mae=0.3886]
+
+
+### Epochs:  30%|███       | 6/20 [06:02<13:49, 59.23s/it, best_val_mae=0.3987, train_loss=0.2334, val_mae=0.3886]
+
+
+### Epochs:  30%|███       | 6/20 [07:12<13:49, 59.23s/it, best_val_mae=0.3886, train_loss=0.0776, val_mae=0.4191]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:12<13:33, 62.61s/it, best_val_mae=0.3886, train_loss=0.0776, val_mae=0.4191]
+
+
+### Epochs:  35%|███▌      | 7/20 [08:04<13:33, 62.61s/it, best_val_mae=0.3886, train_loss=0.0993, val_mae=0.4136]
+
+
+### Epochs:  40%|████      | 8/20 [08:04<11:51, 59.31s/it, best_val_mae=0.3886, train_loss=0.0993, val_mae=0.4136]
+
+
+### Epochs:  40%|████      | 8/20 [09:15<11:51, 59.31s/it, best_val_mae=0.3886, train_loss=0.0909, val_mae=0.3837]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:15<11:34, 63.11s/it, best_val_mae=0.3886, train_loss=0.0909, val_mae=0.3837]
+
+
+### Epochs:  45%|████▌     | 9/20 [10:05<11:34, 63.11s/it, best_val_mae=0.3837, train_loss=0.0766, val_mae=0.4166]
+
+
+### Epochs:  50%|█████     | 10/20 [10:05<09:49, 58.91s/it, best_val_mae=0.3837, train_loss=0.0766, val_mae=0.4166]
+
+
+### Epochs:  50%|█████     | 10/20 [11:17<09:49, 58.91s/it, best_val_mae=0.3837, train_loss=0.0841, val_mae=0.3932]
+
+
+### Epochs:  55%|█████▌    | 11/20 [11:17<09:27, 63.11s/it, best_val_mae=0.3837, train_loss=0.0841, val_mae=0.3932]
+
+
+### Epochs:  55%|█████▌    | 11/20 [12:08<09:27, 63.11s/it, best_val_mae=0.3837, train_loss=0.0790, val_mae=0.4376]
+
+
+### Epochs:  60%|██████    | 12/20 [12:08<07:53, 59.17s/it, best_val_mae=0.3837, train_loss=0.0790, val_mae=0.4376]
+
+
+### Epochs:  60%|██████    | 12/20 [13:16<07:53, 59.17s/it, best_val_mae=0.3837, train_loss=0.0756, val_mae=0.3955]
+
+
+### Epochs:  65%|██████▌   | 13/20 [13:16<07:14, 62.10s/it, best_val_mae=0.3837, train_loss=0.0756, val_mae=0.3955]
+
+
+### Epochs:  65%|██████▌   | 13/20 [14:09<07:14, 62.10s/it, best_val_mae=0.3837, train_loss=0.0750, val_mae=0.3965]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 3/3 | Config 4/4:  67%|██████▋   | 2/3 [21:54<11:31, 691.42s/it]
+Early stopping at epoch 14: train_loss=0.0750, val_mae=0.3965
+
+
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+
+
+### Epochs:   0%|          | 0/20 [01:05<?, ?it/s, best_val_mae=inf, train_loss=3.1543, val_mae=0.6486]
+
+
+### Epochs:   5%|▌         | 1/20 [01:05<20:36, 65.09s/it, best_val_mae=inf, train_loss=3.1543, val_mae=0.6486]
+
+
+### Epochs:   5%|▌         | 1/20 [01:53<20:36, 65.09s/it, best_val_mae=0.6486, train_loss=0.7126, val_mae=0.5863]
+
+
+### Epochs:  10%|█         | 2/20 [01:53<16:31, 55.08s/it, best_val_mae=0.6486, train_loss=0.7126, val_mae=0.5863]
+
+
+### Epochs:  10%|█         | 2/20 [02:55<16:31, 55.08s/it, best_val_mae=0.5863, train_loss=0.3151, val_mae=0.4162]
+
+
+### Epochs:  15%|█▌        | 3/20 [02:55<16:33, 58.45s/it, best_val_mae=0.5863, train_loss=0.3151, val_mae=0.4162]
+
+
+### Epochs:  15%|█▌        | 3/20 [03:54<16:33, 58.45s/it, best_val_mae=0.4162, train_loss=0.1715, val_mae=0.4702]
+
+
+### Epochs:  20%|██        | 4/20 [03:54<15:34, 58.44s/it, best_val_mae=0.4162, train_loss=0.1715, val_mae=0.4702]
+
+
+### Epochs:  20%|██        | 4/20 [04:47<15:34, 58.44s/it, best_val_mae=0.4162, train_loss=0.1729, val_mae=0.4934]
+
+
+### Epochs:  25%|██▌       | 5/20 [04:47<14:07, 56.48s/it, best_val_mae=0.4162, train_loss=0.1729, val_mae=0.4934]
+
+
+### Epochs:  25%|██▌       | 5/20 [05:56<14:07, 56.48s/it, best_val_mae=0.4162, train_loss=0.1117, val_mae=0.4123]
+
+
+### Epochs:  30%|███       | 6/20 [05:56<14:13, 60.98s/it, best_val_mae=0.4162, train_loss=0.1117, val_mae=0.4123]
+
+
+### Epochs:  30%|███       | 6/20 [06:46<14:13, 60.98s/it, best_val_mae=0.4123, train_loss=0.0673, val_mae=0.4944]
+
+
+### Epochs:  35%|███▌      | 7/20 [06:46<12:24, 57.30s/it, best_val_mae=0.4123, train_loss=0.0673, val_mae=0.4944]
+
+
+### Epochs:  35%|███▌      | 7/20 [07:53<12:24, 57.30s/it, best_val_mae=0.4123, train_loss=0.0926, val_mae=0.4181]
+
+
+### Epochs:  40%|████      | 8/20 [07:53<12:05, 60.43s/it, best_val_mae=0.4123, train_loss=0.0926, val_mae=0.4181]
+
+
+### Epochs:  40%|████      | 8/20 [08:44<12:05, 60.43s/it, best_val_mae=0.4123, train_loss=0.1204, val_mae=0.4409]
+
+
+### Epochs:  45%|████▌     | 9/20 [08:44<10:30, 57.35s/it, best_val_mae=0.4123, train_loss=0.1204, val_mae=0.4409]
+
+
+### Epochs:  45%|████▌     | 9/20 [09:54<10:30, 57.35s/it, best_val_mae=0.4123, train_loss=0.0922, val_mae=0.4571]
+
+
+### Epochs:  50%|█████     | 10/20 [09:54<10:14, 61.43s/it, best_val_mae=0.4123, train_loss=0.0922, val_mae=0.4571]
+
+
+### Epochs:  50%|█████     | 10/20 [10:45<10:14, 61.43s/it, best_val_mae=0.4123, train_loss=0.0944, val_mae=0.4244]
+
+
+                                                                                                                   
+
+## Inner Folds | Outer Fold 3/3 | Config 4/4: 100%|██████████| 3/3 [32:40<00:00, 670.44s/it]
+
+                                                                                            
+# Configs | Outer Fold 3/3:  75%|███████▌  | 3/4 [1:52:45<27:58, 1678.36s/it, config_idx=4/4, mean_inner_mae=0.3952]
+# Configs | Outer Fold 3/3: 100%|██████████| 4/4 [1:52:45<00:00, 1789.71s/it, config_idx=4/4, mean_inner_mae=0.3952]
+                                                                                                                    
+Early stopping at epoch 11: train_loss=0.0944, val_mae=0.4244
+
+### Epochs:   0%|          | 0/20 [00:00<?, ?it/s]
+### Epochs:   0%|          | 0/20 [01:36<?, ?it/s, best_val_mae=inf, train_loss=1.8261, val_mae=0.5204]
+### Epochs:   5%|▌         | 1/20 [01:36<30:38, 96.77s/it, best_val_mae=inf, train_loss=1.8261, val_mae=0.5204]
+### Epochs:   5%|▌         | 1/20 [03:00<30:38, 96.77s/it, best_val_mae=0.5204, train_loss=0.4659, val_mae=0.4726]
+### Epochs:  10%|█         | 2/20 [03:00<26:40, 88.90s/it, best_val_mae=0.5204, train_loss=0.4659, val_mae=0.4726]
+### Epochs:  10%|█         | 2/20 [04:24<26:40, 88.90s/it, best_val_mae=0.4726, train_loss=0.1210, val_mae=0.5147]
+### Epochs:  15%|█▌        | 3/20 [04:24<24:33, 86.67s/it, best_val_mae=0.4726, train_loss=0.1210, val_mae=0.5147]
+### Epochs:  15%|█▌        | 3/20 [05:56<24:33, 86.67s/it, best_val_mae=0.4726, train_loss=0.1043, val_mae=0.5328]
+### Epochs:  20%|██        | 4/20 [05:56<23:39, 88.71s/it, best_val_mae=0.4726, train_loss=0.1043, val_mae=0.5328]
+### Epochs:  20%|██        | 4/20 [07:32<23:39, 88.71s/it, best_val_mae=0.4726, train_loss=0.0920, val_mae=0.5027]
+### Epochs:  25%|██▌       | 5/20 [07:32<22:52, 91.47s/it, best_val_mae=0.4726, train_loss=0.0920, val_mae=0.5027]
+### Epochs:  25%|██▌       | 5/20 [08:45<22:52, 91.47s/it, best_val_mae=0.4726, train_loss=0.2140, val_mae=0.4804]
+### Epochs:  30%|███       | 6/20 [08:45<19:55, 85.37s/it, best_val_mae=0.4726, train_loss=0.2140, val_mae=0.4804]
+### Epochs:  30%|███       | 6/20 [10:20<19:55, 85.37s/it, best_val_mae=0.4726, train_loss=0.1823, val_mae=0.6069]
+### Epochs:  35%|███▌      | 7/20 [10:20<19:10, 88.54s/it, best_val_mae=0.4726, train_loss=0.1823, val_mae=0.6069]
+### Epochs:  35%|███▌      | 7/20 [11:58<19:10, 88.54s/it, best_val_mae=0.4726, train_loss=0.2165, val_mae=0.4624]
+### Epochs:  40%|████      | 8/20 [11:58<18:17, 91.46s/it, best_val_mae=0.4726, train_loss=0.2165, val_mae=0.4624]
+### Epochs:  40%|████      | 8/20 [13:10<18:17, 91.46s/it, best_val_mae=0.4624, train_loss=0.1330, val_mae=0.7328]
+### Epochs:  45%|████▌     | 9/20 [13:10<15:39, 85.42s/it, best_val_mae=0.4624, train_loss=0.1330, val_mae=0.7328]
+### Epochs:  45%|████▌     | 9/20 [14:45<15:39, 85.42s/it, best_val_mae=0.4624, train_loss=0.0660, val_mae=0.6264]
+### Epochs:  50%|█████     | 10/20 [14:45<14:42, 88.28s/it, best_val_mae=0.4624, train_loss=0.0660, val_mae=0.6264]
+### Epochs:  50%|█████     | 10/20 [16:21<14:42, 88.28s/it, best_val_mae=0.4624, train_loss=0.1793, val_mae=0.7443]
+### Epochs:  55%|█████▌    | 11/20 [16:21<13:36, 90.68s/it, best_val_mae=0.4624, train_loss=0.1793, val_mae=0.7443]
+### Epochs:  55%|█████▌    | 11/20 [17:45<13:36, 90.68s/it, best_val_mae=0.4624, train_loss=0.0845, val_mae=0.4825]
+### Epochs:  60%|██████    | 12/20 [17:45<11:50, 88.75s/it, best_val_mae=0.4624, train_loss=0.0845, val_mae=0.4825]
+### Epochs:  60%|██████    | 12/20 [19:06<11:50, 88.75s/it, best_val_mae=0.4624, train_loss=0.0857, val_mae=0.3888]
+### Epochs:  65%|██████▌   | 13/20 [19:06<10:03, 86.21s/it, best_val_mae=0.4624, train_loss=0.0857, val_mae=0.3888]
+### Epochs:  65%|██████▌   | 13/20 [20:40<10:03, 86.21s/it, best_val_mae=0.3888, train_loss=0.2183, val_mae=0.6926]
+### Epochs:  70%|███████   | 14/20 [20:40<08:52, 88.73s/it, best_val_mae=0.3888, train_loss=0.2183, val_mae=0.6926]
+### Epochs:  70%|███████   | 14/20 [22:19<08:52, 88.73s/it, best_val_mae=0.3888, train_loss=0.1256, val_mae=0.6490]
+### Epochs:  75%|███████▌  | 15/20 [22:19<07:39, 91.81s/it, best_val_mae=0.3888, train_loss=0.1256, val_mae=0.6490]
+### Epochs:  75%|███████▌  | 15/20 [23:39<07:39, 91.81s/it, best_val_mae=0.3888, train_loss=0.2069, val_mae=0.3898]
+### Epochs:  80%|████████  | 16/20 [23:39<05:52, 88.24s/it, best_val_mae=0.3888, train_loss=0.2069, val_mae=0.3898]
+### Epochs:  80%|████████  | 16/20 [25:04<05:52, 88.24s/it, best_val_mae=0.3888, train_loss=0.1738, val_mae=0.6551]
+### Epochs:  85%|████████▌ | 17/20 [25:04<04:21, 87.15s/it, best_val_mae=0.3888, train_loss=0.1738, val_mae=0.6551]
+### Epochs:  85%|████████▌ | 17/20 [26:37<04:21, 87.15s/it, best_val_mae=0.3888, train_loss=0.1460, val_mae=1.0430]
+### Epochs:  90%|█████████ | 18/20 [26:37<02:57, 88.83s/it, best_val_mae=0.3888, train_loss=0.1460, val_mae=1.0430]
+### Epochs:  90%|█████████ | 18/20 [28:00<02:57, 88.83s/it, best_val_mae=0.3888, train_loss=0.1801, val_mae=0.5587]
+### Epochs:  95%|█████████▌| 19/20 [28:00<01:27, 87.33s/it, best_val_mae=0.3888, train_loss=0.1801, val_mae=0.5587]
+### Epochs:  95%|█████████▌| 19/20 [29:29<01:27, 87.33s/it, best_val_mae=0.3888, train_loss=0.1054, val_mae=0.5569]
+### Epochs: 100%|██████████| 20/20 [29:29<00:00, 87.59s/it, best_val_mae=0.3888, train_loss=0.1054, val_mae=0.5569]
+Outer Folds: 100%|██████████| 3/3 [7:59:46<00:00, 9595.38s/it, MAE=0.557, RMSE=0.669, best={'lr_backbone': 0.0001, 'lr_head': 0.001, 'weight_decay': 0.001}]    
+Outer Fold 3: MAE=0.557, RMSE=0.669, R2=0.6839624331433871, best={'lr_backbone': 0.0001, 'lr_head': 0.001, 'weight_decay': 0.001}
+
