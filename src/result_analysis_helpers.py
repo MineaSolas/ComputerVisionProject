@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+from scipy.stats import wilcoxon
 from IPython.display import display
 from src.constants import *
 
@@ -125,7 +127,7 @@ def show_top(df, n=10, metric="cv_mae_mean", columns=None):
             "fusion",
             "regressor",
             "cv_mae_mean",
-            "cv_mse_mean",
+            #"cv_mse_mean",
             "cv_rmse_mean",
             "cv_r2_mean",
             "source_file",
@@ -133,6 +135,7 @@ def show_top(df, n=10, metric="cv_mae_mean", columns=None):
 
     available = [c for c in columns if c in ranked.columns]
     display(ranked[available])
+    return ranked
 
 def summarize_by(df, group_col, metric="cv_mae_mean", top_k=10):
     top_df = sort_results(df, metric=metric).head(top_k)
@@ -155,3 +158,37 @@ def summarize_by(df, group_col, metric="cv_mae_mean", top_k=10):
     summary[f"top_{top_k}_count"] = summary[group_col].map(top_counts).fillna(0).astype(int)
     summary = summary.sort_values(["best_mae", "mean_mae", "best_r2"], ascending=[True, True, False]).reset_index(drop=True)
     return summary
+
+def wilcoxon_test(abs_errors_dict):
+    print("\n--- Statistical Significance (Wilcoxon Signed-Rank Test) ---")
+    if "Multi-View" in abs_errors_dict:
+        multi_errors = abs_errors_dict["Multi-View"]
+
+        for view_name, single_errors in abs_errors_dict.items():
+            if view_name != "Multi-View":
+                if len(multi_errors) == len(single_errors):
+                    stat, p_value = wilcoxon(multi_errors, single_errors)
+                    print(f"Multi-View vs {view_name}:")
+                    print(f"  - p-value = {p_value:.4f}")
+
+                    if p_value < 0.05:
+                        print("  - Result: Statistically SIGNIFICANT difference.")
+                    else:
+                        print("  - Result: NO statistically significant difference.")
+                else:
+                    print(
+                        f"Cannot compare Multi-View and {view_name}: The number of OOF predictions don't match ({len(multi_errors)} vs {len(single_errors)}).")
+
+        if "Top-View" in abs_errors_dict and "Side-View" in abs_errors_dict:
+            top_errors = abs_errors_dict["Top-View"]
+            side_errors = abs_errors_dict["Side-View"]
+
+            if len(top_errors) == len(side_errors):
+                stat, p_value = wilcoxon(top_errors, side_errors)
+                print(f"\nTop-View vs Side-View:")
+                print(f"  - p-value = {p_value:.4f}")
+                if p_value < 0.05:
+                    better_view = "Top-View" if np.mean(top_errors) < np.mean(side_errors) else "Side-View"
+                    print(f"  - Result: SIGNIFICANT difference. {better_view} is better.")
+                else:
+                    print("  - Result: NO statistically significant difference between Top and Side.")

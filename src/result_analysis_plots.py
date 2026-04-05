@@ -1,3 +1,4 @@
+import seaborn as sns
 from src.result_analysis_helpers import *
 from src.training_and_evaluation import *
 
@@ -51,7 +52,7 @@ def plot_pairwise_heatmap(df, row_col, col_col, metric="cv_mae_mean", agg="min",
     plt.tight_layout()
     plt.show()
 
-def plot_best_oof_predictions(results_df, oof_df, experiment_name, top_n=5):
+def plot_best_oof_predictions(results_df, oof_df, experiment_name, top_n=5, color="black"):
     best_rows = results_df.nsmallest(top_n, "cv_mae_mean")
     print(f"Experiment: {experiment_name} (top {top_n} models)")
 
@@ -69,4 +70,64 @@ def plot_best_oof_predictions(results_df, oof_df, experiment_name, top_n=5):
         y_true = subset["y_true"].to_numpy(dtype=float)
         y_pred = subset["y_pred"].to_numpy(dtype=float)
         title = f"{row['backbone']} | {row['fusion']} | {row['regressor']}"
-        make_oof_plot(y_true, y_pred, title_prefix=title)
+        make_oof_plot(y_true, y_pred, title_prefix=title, color=color)
+
+def plot_combined_best_methods(results_dict, metric="MAE"):
+    plot_data = []
+
+    # Iterate through all experiments to find the best method for each
+    for experiment_key, experiment_data in results_dict.items():
+        best_method = None
+        best_mean_score = float('inf')
+        best_method_scores = []
+
+        for method, folds in experiment_data.items():
+            scores = [fold[metric] for fold in folds]
+            mean_score = np.mean(scores)
+
+            if mean_score < best_mean_score:
+                best_mean_score = mean_score
+                best_method = method
+                best_method_scores = scores
+
+        clean_exp_name = experiment_key.split('__')[-1].replace('_', ' ').title()
+        x_label = f"{clean_exp_name}\n({best_method.capitalize()})"
+
+        for score in best_method_scores:
+            plot_data.append({
+                "Experiment": x_label,
+                metric: score
+            })
+
+    # Convert to DataFrame for easy Seaborn plotting
+    df = pd.DataFrame(plot_data)
+    results = df.groupby('Experiment')['MAE'].agg(['mean', 'std'])
+    print(results.to_string())
+    print(f"Mean {metric}: {results['mean'].mean():.2f} +/- {results['std'].mean():.2f}")
+
+    plt.figure(figsize=(10, 6))
+    sns.set_theme(style="whitegrid")
+
+    palette = ["#90C2E7", "#4E8098", "#E63946"]  # Light blue, Dark blue, Red/Orange
+
+    # Plot the boxplot
+    # Change whis=(0, 100) to force whiskers to the 0th and 100th percentiles (min and max)
+    ax = sns.boxplot(x="Experiment", y=metric, data=df,
+                     width=0.4, palette=palette, fliersize=0, whis=(0, 100))
+
+    # Add the individual fold points on top
+    sns.stripplot(x="Experiment", y=metric, data=df,
+                  color="black", size=6, jitter=False, ax=ax, alpha=0.7)
+
+    plt.ylabel(f"{metric} (Liters)", fontsize=12)
+    plt.xlabel("Camera View Setup", fontsize=12)
+    plt.xticks(fontsize=11)
+
+    y_min, y_max = df[metric].min(), df[metric].max()
+    padding = (y_max - y_min) * 0.15
+    plt.ylim(y_min - padding, y_max + padding)
+
+    plt.tight_layout()
+
+    # plt.savefig("combined_view_comparison.png", dpi=300)
+    plt.show()
