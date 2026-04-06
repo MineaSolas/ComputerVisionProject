@@ -117,14 +117,14 @@ def summarise_nested_results(nested_results, backbone_name, fusion_name):
         })
     return pd.DataFrame(rows).sort_values("cv_mae_mean").reset_index(drop=True)
 
-def make_oof_plot(y_true, y_pred, title_prefix=""):
+def make_oof_plot(y_true, y_pred, title_prefix="", color="black"):
     valid = ~np.isnan(y_pred)
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 
     x_max = np.max(y_pred[valid])
     pred_limit = max(6, int(x_max * 1.1))
 
-    axes[0].scatter(y_true[valid], y_pred[valid], alpha=0.8)
+    axes[0].scatter(y_true[valid], y_pred[valid], alpha=0.8, color=color)
     axes[0].plot([0, 6], [0, 6], "--")
     axes[0].set_xlabel("True volume")
     axes[0].set_ylabel("Predicted volume")
@@ -132,7 +132,7 @@ def make_oof_plot(y_true, y_pred, title_prefix=""):
     axes[0].set_xlim(0, 6)
     axes[0].set_ylim(0, pred_limit)
 
-    counts, _, _ = axes[1].hist(y_pred[valid], bins=(round(2 * pred_limit)), range=(0, pred_limit))
+    counts, _, _ = axes[1].hist(y_pred[valid], bins=(round(2 * pred_limit)), range=(0, pred_limit), color=color)
     hist_height = max(80, int(np.max(counts) * 1.1))
     axes[1].set_xlabel("Predicted volume")
     axes[1].set_ylabel("Count")
